@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OperatingSystem.Processes
 {
-    class JobGovernor
+    public class JobGovernor
     {
     }
 }

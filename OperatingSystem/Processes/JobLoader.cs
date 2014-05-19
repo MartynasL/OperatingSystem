@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OperatingSystem.Processes
 {
-    class JobLoader
+    public class JobLoader
     {
     }
 }
