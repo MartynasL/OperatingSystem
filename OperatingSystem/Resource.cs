@@ -7,5 +7,17 @@ namespace OperatingSystem
 {
     public class Resource
     {
+        private ResourceDescriptor descriptor;
+
+        public Resource(int ID, OSCore.ResourceName externalID,
+                        OSCore os, Process creator)
+        {
+            this.descriptor = new ResourceDescriptor(ID, externalID, os, creator);
+        }
+
+        public ResourceDescriptor getDescriptor()
+        {
+            return descriptor;
+        }
     }
 }
