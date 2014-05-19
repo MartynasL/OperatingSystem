@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OperatingSystem
 {
-    class RegState
+    public class RegState
     {
     }
 }

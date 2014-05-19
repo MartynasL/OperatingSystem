@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OperatingSystem
 {
-    class ResourceElements
+    public class ResourceElements
     {
     }
 }
