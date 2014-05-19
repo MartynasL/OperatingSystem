@@ -19,6 +19,7 @@ namespace OperatingSystem
             this.descriptor = new ProcessDescriptor(processList, ID, externalID,
                                                     savedState, processor, os, state,
                                                     parent, priority);
+            this.step = 1;
         }
 
         public ProcessDescriptor getDescriptor()

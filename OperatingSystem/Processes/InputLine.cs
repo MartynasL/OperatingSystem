@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace OperatingSystem.Processes
 {
-    public class InputLine
+    public class InputLine: Process
     {
+        public InputLine(LinkedList<Process> processList,
+                       int ID, OSCore.ProcessName externalID,
+                       RegState savedState, VirtualRealMachine.CPU processor,
+                       OSCore os, OSCore.ProcessState state, Process parent,
+                       int priority)
+            : base(processList, ID, externalID, savedState, processor, os, state,
+                                           parent, priority)
+        {
+
+        }
     }
 }

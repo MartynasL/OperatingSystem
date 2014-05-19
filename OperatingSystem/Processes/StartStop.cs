@@ -16,7 +16,7 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, savedState, processor, os, state,
                                            parent, priority)
         {            
-            this.step = 1;
+            
         }
 
         public void execute()
