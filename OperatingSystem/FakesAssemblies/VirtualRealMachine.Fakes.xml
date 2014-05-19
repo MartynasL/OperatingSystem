@@ -1,0 +1,2384 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtualRealMachine.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.QualityTools.Testing.Fakes.Delegates.VirtualRealMachineDelegates">
+            <summary>Contains custom delegates used for the stubs and shims of VirtualRealMachine</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimCPU">
+            <summary>Shim type of VirtualRealMachine.CPU</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimCPU.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimCPU.#ctor(VirtualRealMachine.CPU)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimCPU.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimCPU.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.ConstructorMemoryRef">
+            <summary>Sets the shim of CPU.CPU(Memory&amp; supervisorMemory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.changeModeInt32Memory">
+            <summary>Sets the shim of CPU.changeMode(Int32 address, Memory memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.compRegistersRegister4BRegister4B">
+            <summary>Sets the shim of CPU.compRegisters(Register4B register1, Register4B register2)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.conditionalJumpInt32Char">
+            <summary>Sets the shim of CPU.conditionalJump(Int32 address, Char ch)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.decRegisterRegister4BRef">
+            <summary>Sets the shim of CPU.decRegister(Register4B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.decTIMERInt32">
+            <summary>Sets the shim of CPU.decTIMER(Int32 value)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.divRegisterMemoryRegister4BWord">
+            <summary>Sets the shim of CPU.divRegisterMemory(Register4B register, Word word)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.divRegistersRegister4BRegister4B">
+            <summary>Sets the shim of CPU.divRegisters(Register4B register1, Register4B register2)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.exchangeRegister1B">
+            <summary>Sets the shim of CPU.exchange(Register1B channel)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.executeInterpretator">
+            <summary>Sets the shim of CPU.execute(Interpretator interpretator)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.getRegisterRegister1B">
+            <summary>Sets the shim of CPU.getRegister(Register1B register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.getRegisterRegister2B">
+            <summary>Sets the shim of CPU.getRegister(Register2B register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.getRegisterRegister4B">
+            <summary>Sets the shim of CPU.getRegister(Register4B register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.halt">
+            <summary>Sets the shim of CPU.halt()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.handleIOI">
+            <summary>Sets the shim of CPU.handleIOI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.handleInterruptInt32">
+            <summary>Sets the shim of CPU.handleInterrupt(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.handlePI">
+            <summary>Sets the shim of CPU.handlePI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.handleSI">
+            <summary>Sets the shim of CPU.handleSI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.handleTI">
+            <summary>Sets the shim of CPU.handleTI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.incRegisterRegister4BRef">
+            <summary>Sets the shim of CPU.incRegister(Register4B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.inputMemoryHDDManagerInt32Int32">
+            <summary>Sets the shim of CPU.input(Memory memory, HDDManager hddManager, Int32 memoryWordAddress, Int32 hddWordAddress)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.inputMemoryInputDeviceInt32">
+            <summary>Sets the shim of CPU.input(Memory memory, InputDevice inputDevice, Int32 blockNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.jumpInt32">
+            <summary>Sets the shim of CPU.jump(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.outputMemoryHDDManagerInt32Int32">
+            <summary>Sets the shim of CPU.output(Memory memory, HDDManager hddManager, Int32 memoryWordAddress, Int32 hddWordAddress)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.outputMemoryOutputDeviceInt32">
+            <summary>Sets the shim of CPU.output(Memory memory, OutputDevice outputDevice, Int32 blockNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.popRegister1BRefMemoryRef">
+            <summary>Sets the shim of CPU.pop(Register1B&amp; register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.popRegister2BRefMemoryRef">
+            <summary>Sets the shim of CPU.pop(Register2B&amp; register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.popRegister4BRefMemoryRef">
+            <summary>Sets the shim of CPU.pop(Register4B&amp; register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.pushRegister1BMemoryRef">
+            <summary>Sets the shim of CPU.push(Register1B register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.pushRegister2BMemoryRef">
+            <summary>Sets the shim of CPU.push(Register2B register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.pushRegister4BMemoryRef">
+            <summary>Sets the shim of CPU.push(Register4B register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.setRegisterRegister1BRef">
+            <summary>Sets the shim of CPU.setRegister(Register1B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.setRegisterRegister2BRef">
+            <summary>Sets the shim of CPU.setRegister(Register2B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.setRegisterRegister4BRef">
+            <summary>Sets the shim of CPU.setRegister(Register4B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.slave">
+            <summary>Sets the shim of CPU.slave()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.test">
+            <summary>Sets the shim of CPU.test()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimCPU.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.changeModeInt32Memory">
+            <summary>Sets the shim of CPU.changeMode(Int32 address, Memory memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.compRegistersRegister4BRegister4B">
+            <summary>Sets the shim of CPU.compRegisters(Register4B register1, Register4B register2)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.conditionalJumpInt32Char">
+            <summary>Sets the shim of CPU.conditionalJump(Int32 address, Char ch)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.decRegisterRegister4BRef">
+            <summary>Sets the shim of CPU.decRegister(Register4B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.decTIMERInt32">
+            <summary>Sets the shim of CPU.decTIMER(Int32 value)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.divRegisterMemoryRegister4BWord">
+            <summary>Sets the shim of CPU.divRegisterMemory(Register4B register, Word word)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.divRegistersRegister4BRegister4B">
+            <summary>Sets the shim of CPU.divRegisters(Register4B register1, Register4B register2)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.exchangeRegister1B">
+            <summary>Sets the shim of CPU.exchange(Register1B channel)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.executeInterpretator">
+            <summary>Sets the shim of CPU.execute(Interpretator interpretator)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.getRegisterRegister1B">
+            <summary>Sets the shim of CPU.getRegister(Register1B register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.getRegisterRegister2B">
+            <summary>Sets the shim of CPU.getRegister(Register2B register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.getRegisterRegister4B">
+            <summary>Sets the shim of CPU.getRegister(Register4B register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.halt">
+            <summary>Sets the shim of CPU.halt()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.handleIOI">
+            <summary>Sets the shim of CPU.handleIOI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.handleInterruptInt32">
+            <summary>Sets the shim of CPU.handleInterrupt(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.handlePI">
+            <summary>Sets the shim of CPU.handlePI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.handleSI">
+            <summary>Sets the shim of CPU.handleSI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.handleTI">
+            <summary>Sets the shim of CPU.handleTI()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.incRegisterRegister4BRef">
+            <summary>Sets the shim of CPU.incRegister(Register4B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.inputMemoryHDDManagerInt32Int32">
+            <summary>Sets the shim of CPU.input(Memory memory, HDDManager hddManager, Int32 memoryWordAddress, Int32 hddWordAddress)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.inputMemoryInputDeviceInt32">
+            <summary>Sets the shim of CPU.input(Memory memory, InputDevice inputDevice, Int32 blockNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.jumpInt32">
+            <summary>Sets the shim of CPU.jump(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.outputMemoryHDDManagerInt32Int32">
+            <summary>Sets the shim of CPU.output(Memory memory, HDDManager hddManager, Int32 memoryWordAddress, Int32 hddWordAddress)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.outputMemoryOutputDeviceInt32">
+            <summary>Sets the shim of CPU.output(Memory memory, OutputDevice outputDevice, Int32 blockNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.popRegister1BRefMemoryRef">
+            <summary>Sets the shim of CPU.pop(Register1B&amp; register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.popRegister2BRefMemoryRef">
+            <summary>Sets the shim of CPU.pop(Register2B&amp; register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.popRegister4BRefMemoryRef">
+            <summary>Sets the shim of CPU.pop(Register4B&amp; register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.pushRegister1BMemoryRef">
+            <summary>Sets the shim of CPU.push(Register1B register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.pushRegister2BMemoryRef">
+            <summary>Sets the shim of CPU.push(Register2B register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.pushRegister4BMemoryRef">
+            <summary>Sets the shim of CPU.push(Register4B register, Memory&amp; memory)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.setRegisterRegister1BRef">
+            <summary>Sets the shim of CPU.setRegister(Register1B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.setRegisterRegister2BRef">
+            <summary>Sets the shim of CPU.setRegister(Register2B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.setRegisterRegister4BRef">
+            <summary>Sets the shim of CPU.setRegister(Register4B&amp; register)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.slave">
+            <summary>Sets the shim of CPU.slave()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimCPU.AllInstances.test">
+            <summary>Sets the shim of CPU.test()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimForm1">
+            <summary>Shim type of VirtualRealMachine.Form1</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.#ctor(VirtualRealMachine.Form1)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.Bind(System.ComponentModel.IComponent)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.Bind(System.ComponentModel.ISynchronizeInvoke)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.Bind(System.Windows.Forms.IBindableComponent)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.Bind(System.Windows.Forms.IContainerControl)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.Bind(System.Windows.Forms.IDropTarget)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.Bind(System.Windows.Forms.IWin32Window)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimForm1.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.Constructor">
+            <summary>Sets the shim of Form1.Form1()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.DisposeBoolean">
+            <summary>Sets the shim of Form1.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.Form1_LoadObjectEventArgs">
+            <summary>Sets the shim of Form1.Form1_Load(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.InitializeComponent">
+            <summary>Sets the shim of Form1.InitializeComponent()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.executeButton_ClickObjectEventArgs">
+            <summary>Sets the shim of Form1.executeButton_Click(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.getInput">
+            <summary>Sets the shim of Form1.getInput()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.getOutput">
+            <summary>Sets the shim of Form1.getOutput()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.initializeListViews">
+            <summary>Sets the shim of Form1.initializeListViews()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.runButton_ClickObjectEventArgs">
+            <summary>Sets the shim of Form1.runButton_Click(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.showIC">
+            <summary>Sets the shim of Form1.showIC()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.updateListViews">
+            <summary>Sets the shim of Form1.updateListViews()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.updateTextBox">
+            <summary>Sets the shim of Form1.updateTextBox()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimForm1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of Form1.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.Form1_LoadObjectEventArgs">
+            <summary>Sets the shim of Form1.Form1_Load(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.InitializeComponent">
+            <summary>Sets the shim of Form1.InitializeComponent()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.executeButton_ClickObjectEventArgs">
+            <summary>Sets the shim of Form1.executeButton_Click(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.getInput">
+            <summary>Sets the shim of Form1.getInput()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.getOutput">
+            <summary>Sets the shim of Form1.getOutput()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.initializeListViews">
+            <summary>Sets the shim of Form1.initializeListViews()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.runButton_ClickObjectEventArgs">
+            <summary>Sets the shim of Form1.runButton_Click(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.showIC">
+            <summary>Sets the shim of Form1.showIC()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.updateListViews">
+            <summary>Sets the shim of Form1.updateListViews()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimForm1.AllInstances.updateTextBox">
+            <summary>Sets the shim of Form1.updateTextBox()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimHDDManager">
+            <summary>Shim type of VirtualRealMachine.HDDManager</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimHDDManager.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimHDDManager.#ctor(VirtualRealMachine.HDDManager)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimHDDManager.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimHDDManager.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimHDDManager.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimHDDManager.ConstructorStringInt32Int32">
+            <summary>Sets the shim of HDDManager.HDDManager(String fileName, Int32 numberOfBlocks, Int32 wordsInBlockNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimHDDManager.getWordAtAddressInt32">
+            <summary>Sets the shim of HDDManager.getWordAtAddress(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimHDDManager.setWordAtAddressInt32Word">
+            <summary>Sets the shim of HDDManager.setWordAtAddress(Int32 address, Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimHDDManager.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimHDDManager.AllInstances.getWordAtAddressInt32">
+            <summary>Sets the shim of HDDManager.getWordAtAddress(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimHDDManager.AllInstances.setWordAtAddressInt32Word">
+            <summary>Sets the shim of HDDManager.setWordAtAddress(Int32 address, Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimInputDevice">
+            <summary>Shim type of VirtualRealMachine.InputDevice</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInputDevice.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInputDevice.#ctor(VirtualRealMachine.InputDevice)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInputDevice.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInputDevice.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInputDevice.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInputDevice.Constructor">
+            <summary>Sets the shim of InputDevice.InputDevice()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInputDevice.enqueueInputMemoryBlock">
+            <summary>Sets the shim of InputDevice.enqueueInput(MemoryBlock block)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInputDevice.getInput">
+            <summary>Sets the shim of InputDevice.getInput()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimInputDevice.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInputDevice.AllInstances.enqueueInputMemoryBlock">
+            <summary>Sets the shim of InputDevice.enqueueInput(MemoryBlock block)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInputDevice.AllInstances.getInput">
+            <summary>Sets the shim of InputDevice.getInput()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimInterpretator">
+            <summary>Shim type of VirtualRealMachine.Interpretator</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInterpretator.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInterpretator.#ctor(VirtualRealMachine.Interpretator)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInterpretator.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimInterpretator.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.ConstructorCPURefMemoryRefMemoryRefInputDeviceRefOutputDeviceRefHDDManagerRef">
+            <summary>Sets the shim of Interpretator.Interpretator(CPU&amp; cpu, Memory&amp; ram, Memory&amp; supervisorMemory, InputDevice&amp; inputDevice, OutputDevice&amp; outputDevice, HDDManager&amp; hddManager)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseCCharCharChar">
+            <summary>Sets the shim of Interpretator.caseC(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseDCharCharChar">
+            <summary>Sets the shim of Interpretator.caseD(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseDivCharCharChar">
+            <summary>Sets the shim of Interpretator.caseDiv(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseGCharCharChar">
+            <summary>Sets the shim of Interpretator.caseG(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseHCharCharChar">
+            <summary>Sets the shim of Interpretator.caseH(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseICharCharChar">
+            <summary>Sets the shim of Interpretator.caseI(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseJCharCharChar">
+            <summary>Sets the shim of Interpretator.caseJ(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseLCharCharChar">
+            <summary>Sets the shim of Interpretator.caseL(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseMCharCharChar">
+            <summary>Sets the shim of Interpretator.caseM(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseMinusCharCharChar">
+            <summary>Sets the shim of Interpretator.caseMinus(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseMulCharCharChar">
+            <summary>Sets the shim of Interpretator.caseMul(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseOCharCharChar">
+            <summary>Sets the shim of Interpretator.caseO(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.casePCharCharChar">
+            <summary>Sets the shim of Interpretator.caseP(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.casePlusCharCharChar">
+            <summary>Sets the shim of Interpretator.casePlus(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseSCharCharChar">
+            <summary>Sets the shim of Interpretator.caseS(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseTCharCharChar">
+            <summary>Sets the shim of Interpretator.caseT(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.caseXCharCharChar">
+            <summary>Sets the shim of Interpretator.caseX(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.changeInterpretatorMemory">
+            <summary>Sets the shim of Interpretator.changeInterpretatorMemory()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.interpretateAddressInt32">
+            <summary>Sets the shim of Interpretator.interpretateAddress(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.interpretateWord">
+            <summary>Sets the shim of Interpretator.interpretate(Word word)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.isAddressCharChar">
+            <summary>Sets the shim of Interpretator.isAddress(Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.isAddressString">
+            <summary>Sets the shim of Interpretator.isAddress(String str)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.isSupervisorMode">
+            <summary>Sets the shim of Interpretator.isSupervisorMode()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.notFound">
+            <summary>Sets the shim of Interpretator.notFound()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseCCharCharChar">
+            <summary>Sets the shim of Interpretator.caseC(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseDCharCharChar">
+            <summary>Sets the shim of Interpretator.caseD(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseDivCharCharChar">
+            <summary>Sets the shim of Interpretator.caseDiv(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseGCharCharChar">
+            <summary>Sets the shim of Interpretator.caseG(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseHCharCharChar">
+            <summary>Sets the shim of Interpretator.caseH(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseICharCharChar">
+            <summary>Sets the shim of Interpretator.caseI(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseJCharCharChar">
+            <summary>Sets the shim of Interpretator.caseJ(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseLCharCharChar">
+            <summary>Sets the shim of Interpretator.caseL(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseMCharCharChar">
+            <summary>Sets the shim of Interpretator.caseM(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseMinusCharCharChar">
+            <summary>Sets the shim of Interpretator.caseMinus(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseMulCharCharChar">
+            <summary>Sets the shim of Interpretator.caseMul(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseOCharCharChar">
+            <summary>Sets the shim of Interpretator.caseO(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.casePCharCharChar">
+            <summary>Sets the shim of Interpretator.caseP(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.casePlusCharCharChar">
+            <summary>Sets the shim of Interpretator.casePlus(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseSCharCharChar">
+            <summary>Sets the shim of Interpretator.caseS(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseTCharCharChar">
+            <summary>Sets the shim of Interpretator.caseT(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.caseXCharCharChar">
+            <summary>Sets the shim of Interpretator.caseX(Char ch2, Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.changeInterpretatorMemory">
+            <summary>Sets the shim of Interpretator.changeInterpretatorMemory()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.interpretateAddressInt32">
+            <summary>Sets the shim of Interpretator.interpretateAddress(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.interpretateWord">
+            <summary>Sets the shim of Interpretator.interpretate(Word word)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.isAddressCharChar">
+            <summary>Sets the shim of Interpretator.isAddress(Char ch3, Char ch4)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.isAddressString">
+            <summary>Sets the shim of Interpretator.isAddress(String str)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.isSupervisorMode">
+            <summary>Sets the shim of Interpretator.isSupervisorMode()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimInterpretator.AllInstances.notFound">
+            <summary>Sets the shim of Interpretator.notFound()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimMemory">
+            <summary>Shim type of VirtualRealMachine.Memory</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemory.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemory.#ctor(VirtualRealMachine.Memory)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemory.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemory.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.ConstructorInt32">
+            <summary>Sets the shim of Memory.Memory(Int32 numberOfBlocks)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.getBlockInt32">
+            <summary>Sets the shim of Memory.getBlock(Int32 blockNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.getWordAtAddressInt32">
+            <summary>Sets the shim of Memory.getWordAtAddress(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.setBlockInt32MemoryBlock">
+            <summary>Sets the shim of Memory.setBlock(Int32 blockNumber, MemoryBlock block)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.setWordAtAddressInt32Word">
+            <summary>Sets the shim of Memory.setWordAtAddress(Int32 address, Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimMemory.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.AllInstances.getBlockInt32">
+            <summary>Sets the shim of Memory.getBlock(Int32 blockNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.AllInstances.getWordAtAddressInt32">
+            <summary>Sets the shim of Memory.getWordAtAddress(Int32 address)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.AllInstances.setBlockInt32MemoryBlock">
+            <summary>Sets the shim of Memory.setBlock(Int32 blockNumber, MemoryBlock block)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemory.AllInstances.setWordAtAddressInt32Word">
+            <summary>Sets the shim of Memory.setWordAtAddress(Int32 address, Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimMemoryBlock">
+            <summary>Shim type of VirtualRealMachine.MemoryBlock</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemoryBlock.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemoryBlock.#ctor(VirtualRealMachine.MemoryBlock)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemoryBlock.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimMemoryBlock.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemoryBlock.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemoryBlock.Constructor">
+            <summary>Sets the shim of MemoryBlock.MemoryBlock()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemoryBlock.getBlockWordInt32">
+            <summary>Sets the shim of MemoryBlock.getBlockWord(Int32 position)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemoryBlock.setBlockWordInt32Word">
+            <summary>Sets the shim of MemoryBlock.setBlockWord(Int32 position, Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimMemoryBlock.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemoryBlock.AllInstances.getBlockWordInt32">
+            <summary>Sets the shim of MemoryBlock.getBlockWord(Int32 position)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimMemoryBlock.AllInstances.setBlockWordInt32Word">
+            <summary>Sets the shim of MemoryBlock.setBlockWord(Int32 position, Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimOutputDevice">
+            <summary>Shim type of VirtualRealMachine.OutputDevice</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimOutputDevice.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimOutputDevice.#ctor(VirtualRealMachine.OutputDevice)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimOutputDevice.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimOutputDevice.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.Constructor">
+            <summary>Sets the shim of OutputDevice.OutputDevice()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.getOutput">
+            <summary>Sets the shim of OutputDevice.getOutput()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.outputExists">
+            <summary>Sets the shim of OutputDevice.outputExists()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.setOutputMemoryBlock">
+            <summary>Sets the shim of OutputDevice.setOutput(MemoryBlock block)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimOutputDevice.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.AllInstances.getOutput">
+            <summary>Sets the shim of OutputDevice.getOutput()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.AllInstances.outputExists">
+            <summary>Sets the shim of OutputDevice.outputExists()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimOutputDevice.AllInstances.setOutputMemoryBlock">
+            <summary>Sets the shim of OutputDevice.setOutput(MemoryBlock block)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimRegister1B">
+            <summary>Shim type of VirtualRealMachine.Register1B</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister1B.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister1B.#ctor(VirtualRealMachine.Register1B)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister1B.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister1B.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.Constructor">
+            <summary>Sets the shim of Register1B.Register1B()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.getIntValue">
+            <summary>Sets the shim of Register1B.getIntValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.getValue">
+            <summary>Sets the shim of Register1B.getValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.setValueChar">
+            <summary>Sets the shim of Register1B.setValue(Char c)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimRegister1B.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.AllInstances.getIntValue">
+            <summary>Sets the shim of Register1B.getIntValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.AllInstances.getValue">
+            <summary>Sets the shim of Register1B.getValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister1B.AllInstances.setValueChar">
+            <summary>Sets the shim of Register1B.setValue(Char c)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimRegister2B">
+            <summary>Shim type of VirtualRealMachine.Register2B</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister2B.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister2B.#ctor(VirtualRealMachine.Register2B)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister2B.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister2B.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister2B.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister2B.Constructor">
+            <summary>Sets the shim of Register2B.Register2B()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister2B.getValue">
+            <summary>Sets the shim of Register2B.getValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister2B.setValueString">
+            <summary>Sets the shim of Register2B.setValue(String value)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimRegister2B.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister2B.AllInstances.getValue">
+            <summary>Sets the shim of Register2B.getValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister2B.AllInstances.setValueString">
+            <summary>Sets the shim of Register2B.setValue(String value)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimRegister4B">
+            <summary>Shim type of VirtualRealMachine.Register4B</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister4B.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister4B.#ctor(VirtualRealMachine.Register4B)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister4B.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimRegister4B.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister4B.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister4B.Constructor">
+            <summary>Sets the shim of Register4B.Register4B()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister4B.getValue">
+            <summary>Sets the shim of Register4B.getValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister4B.setValueWord">
+            <summary>Sets the shim of Register4B.setValue(Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimRegister4B.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister4B.AllInstances.getValue">
+            <summary>Sets the shim of Register4B.getValue()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimRegister4B.AllInstances.setValueWord">
+            <summary>Sets the shim of Register4B.setValue(Word word)</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimWord">
+            <summary>Shim type of VirtualRealMachine.Word</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimWord.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimWord.#ctor(VirtualRealMachine.Word)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimWord.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.ShimWord.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.ConstructorString">
+            <summary>Sets the shim of Word.Word(String stringWord)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.ToString">
+            <summary>Sets the shim of Word.ToString()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.getWordByteInt32">
+            <summary>Sets the shim of Word.getWordByte(Int32 byteNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.setWordString">
+            <summary>Sets the shim of Word.setWord(String stringWord)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.toInt">
+            <summary>Sets the shim of Word.toInt()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.ShimWord.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.AllInstances.ToString01">
+            <summary>Sets the shim of Word.ToString()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.AllInstances.getWordByteInt32">
+            <summary>Sets the shim of Word.getWordByte(Int32 byteNumber)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.AllInstances.setWordString">
+            <summary>Sets the shim of Word.setWord(String stringWord)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.ShimWord.AllInstances.toInt">
+            <summary>Sets the shim of Word.toInt()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubCPU">
+            <summary>Stub type of VirtualRealMachine.CPU</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubCPU.#ctor(VirtualRealMachine.Memory@)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubCPU.InitializeStub">
+            <summary>Initializes a new instance of type StubCPU</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubCPU.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubCPU.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubCPU.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubForm1">
+            <summary>Stub type of VirtualRealMachine.Form1</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AdjustFormScrollbars(System.Boolean)">
+            <summary>Sets the stub of Form.AdjustFormScrollbars(Boolean displayScrollbars)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AdjustFormScrollbarsBoolean">
+            <summary>Sets the stub of Form.AdjustFormScrollbars(Boolean displayScrollbars)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AllowDropGet">
+            <summary>Sets the stub of Control.get_AllowDrop()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AllowDropSetBoolean">
+            <summary>Sets the stub of Control.set_AllowDrop(Boolean value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AnchorGet">
+            <summary>Sets the stub of Control.get_Anchor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AnchorSetAnchorStyles">
+            <summary>Sets the stub of Control.set_Anchor(AnchorStyles value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToAllowDrop">
+            <summary>Attaches delegates to emulate StubForm1.AllowDrop as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToAnchor">
+            <summary>Attaches delegates to emulate StubForm1.Anchor as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToAutoScaleBaseSize">
+            <summary>Attaches delegates to emulate StubForm1.AutoScaleBaseSize as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToAutoScroll">
+            <summary>Attaches delegates to emulate StubForm1.AutoScroll as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToAutoScrollOffset">
+            <summary>Attaches delegates to emulate StubForm1.AutoScrollOffset as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToAutoSize">
+            <summary>Attaches delegates to emulate StubForm1.AutoSize as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToAutoValidate">
+            <summary>Attaches delegates to emulate StubForm1.AutoValidate as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToBackColor">
+            <summary>Attaches delegates to emulate StubForm1.BackColor as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToBackgroundImage">
+            <summary>Attaches delegates to emulate StubForm1.BackgroundImage as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToBackgroundImageLayout">
+            <summary>Attaches delegates to emulate StubForm1.BackgroundImageLayout as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToBindingContext">
+            <summary>Attaches delegates to emulate StubForm1.BindingContext as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToContextMenu">
+            <summary>Attaches delegates to emulate StubForm1.ContextMenu as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToContextMenuStrip">
+            <summary>Attaches delegates to emulate StubForm1.ContextMenuStrip as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToCursor">
+            <summary>Attaches delegates to emulate StubForm1.Cursor as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToDock">
+            <summary>Attaches delegates to emulate StubForm1.Dock as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToDoubleBuffered">
+            <summary>Attaches delegates to emulate StubForm1.DoubleBuffered as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToFont">
+            <summary>Attaches delegates to emulate StubForm1.Font as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToForeColor">
+            <summary>Attaches delegates to emulate StubForm1.ForeColor as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToImeModeBase">
+            <summary>Attaches delegates to emulate StubForm1.ImeModeBase as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToMaximumSize">
+            <summary>Attaches delegates to emulate StubForm1.MaximumSize as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToMinimumSize">
+            <summary>Attaches delegates to emulate StubForm1.MinimumSize as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToRightToLeft">
+            <summary>Attaches delegates to emulate StubForm1.RightToLeft as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToRightToLeftLayout">
+            <summary>Attaches delegates to emulate StubForm1.RightToLeftLayout as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToSite">
+            <summary>Attaches delegates to emulate StubForm1.Site as a property with a backing field.</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.AttachBackingFieldToText">
+            <summary>Attaches delegates to emulate StubForm1.Text as a property with a backing field.</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoScaleBaseSizeGet">
+            <summary>Sets the stub of Form.get_AutoScaleBaseSize()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoScaleBaseSizeSetSize">
+            <summary>Sets the stub of Form.set_AutoScaleBaseSize(Size value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoScrollGet">
+            <summary>Sets the stub of Form.get_AutoScroll()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoScrollOffsetGet">
+            <summary>Sets the stub of Control.get_AutoScrollOffset()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoScrollOffsetSetPoint">
+            <summary>Sets the stub of Control.set_AutoScrollOffset(Point value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoScrollSetBoolean">
+            <summary>Sets the stub of Form.set_AutoScroll(Boolean value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoSizeGet">
+            <summary>Sets the stub of Form.get_AutoSize()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoSizeSetBoolean">
+            <summary>Sets the stub of Form.set_AutoSize(Boolean value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoValidateGet">
+            <summary>Sets the stub of Form.get_AutoValidate()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.AutoValidateSetAutoValidate">
+            <summary>Sets the stub of Form.set_AutoValidate(AutoValidate value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BackColorGet">
+            <summary>Sets the stub of Form.get_BackColor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BackColorSetColor">
+            <summary>Sets the stub of Form.set_BackColor(Color value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BackgroundImageGet">
+            <summary>Sets the stub of Control.get_BackgroundImage()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BackgroundImageLayoutGet">
+            <summary>Sets the stub of Control.get_BackgroundImageLayout()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BackgroundImageLayoutSetImageLayout">
+            <summary>Sets the stub of Control.set_BackgroundImageLayout(ImageLayout value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BackgroundImageSetImage">
+            <summary>Sets the stub of Control.set_BackgroundImage(Image value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BindingContextGet">
+            <summary>Sets the stub of ContainerControl.get_BindingContext()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.BindingContextSetBindingContext">
+            <summary>Sets the stub of ContainerControl.set_BindingContext(BindingContext value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CanEnableImeGet">
+            <summary>Sets the stub of ContainerControl.get_CanEnableIme()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CanRaiseEventsGet">
+            <summary>Sets the stub of Control.get_CanRaiseEvents()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ContextMenuGet">
+            <summary>Sets the stub of Control.get_ContextMenu()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ContextMenuSetContextMenu">
+            <summary>Sets the stub of Control.set_ContextMenu(ContextMenu value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ContextMenuStripGet">
+            <summary>Sets the stub of Control.get_ContextMenuStrip()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ContextMenuStripSetContextMenuStrip">
+            <summary>Sets the stub of Control.set_ContextMenuStrip(ContextMenuStrip value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.CreateAccessibilityInstance">
+            <summary>Sets the stub of Control.CreateAccessibilityInstance()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CreateAccessibilityInstance01">
+            <summary>Sets the stub of Control.CreateAccessibilityInstance()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.CreateControlsInstance">
+            <summary>Sets the stub of Form.CreateControlsInstance()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CreateControlsInstance01">
+            <summary>Sets the stub of Form.CreateControlsInstance()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.CreateHandle">
+            <summary>Sets the stub of Form.CreateHandle()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CreateHandle01">
+            <summary>Sets the stub of Form.CreateHandle()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CreateParamsGet">
+            <summary>Sets the stub of Form.get_CreateParams()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CursorGet">
+            <summary>Sets the stub of Control.get_Cursor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.CursorSetCursor">
+            <summary>Sets the stub of Control.set_Cursor(Cursor value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.DefWndProc(System.Windows.Forms.Message@)">
+            <summary>Sets the stub of Form.DefWndProc(Message&amp; m)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefWndProcMessageRef">
+            <summary>Sets the stub of Form.DefWndProc(Message&amp; m)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefaultCursorGet">
+            <summary>Sets the stub of Control.get_DefaultCursor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefaultImeModeGet">
+            <summary>Sets the stub of Form.get_DefaultImeMode()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefaultMarginGet">
+            <summary>Sets the stub of Control.get_DefaultMargin()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefaultMaximumSizeGet">
+            <summary>Sets the stub of Control.get_DefaultMaximumSize()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefaultMinimumSizeGet">
+            <summary>Sets the stub of Control.get_DefaultMinimumSize()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefaultPaddingGet">
+            <summary>Sets the stub of Control.get_DefaultPadding()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DefaultSizeGet">
+            <summary>Sets the stub of Form.get_DefaultSize()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.DestroyHandle">
+            <summary>Sets the stub of Control.DestroyHandle()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DestroyHandle01">
+            <summary>Sets the stub of Control.DestroyHandle()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DisplayRectangleGet">
+            <summary>Sets the stub of ScrollableControl.get_DisplayRectangle()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.Dispose(System.Boolean)">
+            <summary>Sets the stub of Form1.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DisposeBoolean">
+            <summary>Sets the stub of Form1.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DockGet">
+            <summary>Sets the stub of Control.get_Dock()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DockSetDockStyle">
+            <summary>Sets the stub of Control.set_Dock(DockStyle value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DoubleBufferedGet">
+            <summary>Sets the stub of Control.get_DoubleBuffered()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.DoubleBufferedSetBoolean">
+            <summary>Sets the stub of Control.set_DoubleBuffered(Boolean value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.FocusedGet">
+            <summary>Sets the stub of Control.get_Focused()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.FontGet">
+            <summary>Sets the stub of Control.get_Font()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.FontSetFont">
+            <summary>Sets the stub of Control.set_Font(Font value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ForeColorGet">
+            <summary>Sets the stub of Control.get_ForeColor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ForeColorSetColor">
+            <summary>Sets the stub of Control.set_ForeColor(Color value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.GetAccessibilityObjectById(System.Int32)">
+            <summary>Sets the stub of Control.GetAccessibilityObjectById(Int32 objectId)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.GetAccessibilityObjectByIdInt32">
+            <summary>Sets the stub of Control.GetAccessibilityObjectById(Int32 objectId)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.GetPreferredSize(System.Drawing.Size)">
+            <summary>Sets the stub of Control.GetPreferredSize(Size proposedSize)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.GetPreferredSizeSize">
+            <summary>Sets the stub of Control.GetPreferredSize(Size proposedSize)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.GetScaledBounds(System.Drawing.Rectangle,System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+            <summary>Sets the stub of Form.GetScaledBounds(Rectangle bounds, SizeF factor, BoundsSpecified specified)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.GetScaledBoundsRectangleSizeFBoundsSpecified">
+            <summary>Sets the stub of Form.GetScaledBounds(Rectangle bounds, SizeF factor, BoundsSpecified specified)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.GetService(System.Type)">
+            <summary>Sets the stub of Component.GetService(Type service)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.GetServiceType">
+            <summary>Sets the stub of Component.GetService(Type service)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ImeModeBaseGet">
+            <summary>Sets the stub of Control.get_ImeModeBase()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ImeModeBaseSetImeMode">
+            <summary>Sets the stub of Control.set_ImeModeBase(ImeMode value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.InitLayout">
+            <summary>Sets the stub of Control.InitLayout()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.InitLayout01">
+            <summary>Sets the stub of Control.InitLayout()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.InitializeStub">
+            <summary>Initializes a new instance of type StubForm1</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.IsInputChar(System.Char)">
+            <summary>Sets the stub of Control.IsInputChar(Char charCode)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.IsInputCharChar">
+            <summary>Sets the stub of Control.IsInputChar(Char charCode)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.IsInputKey(System.Windows.Forms.Keys)">
+            <summary>Sets the stub of Control.IsInputKey(Keys keyData)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.IsInputKeyKeys">
+            <summary>Sets the stub of Control.IsInputKey(Keys keyData)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.LayoutEngineGet">
+            <summary>Sets the stub of Control.get_LayoutEngine()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.MaximumSizeGet">
+            <summary>Sets the stub of Form.get_MaximumSize()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.MaximumSizeSetSize">
+            <summary>Sets the stub of Form.set_MaximumSize(Size value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.MinimumSizeGet">
+            <summary>Sets the stub of Form.get_MinimumSize()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.MinimumSizeSetSize">
+            <summary>Sets the stub of Form.set_MinimumSize(Size value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.NotifyInvalidate(System.Drawing.Rectangle)">
+            <summary>Sets the stub of Control.NotifyInvalidate(Rectangle invalidatedArea)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.NotifyInvalidateRectangle">
+            <summary>Sets the stub of Control.NotifyInvalidate(Rectangle invalidatedArea)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnActivated(System.EventArgs)">
+            <summary>Sets the stub of Form.OnActivated(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnActivatedEventArgs">
+            <summary>Sets the stub of Form.OnActivated(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnAutoSizeChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnAutoSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnAutoSizeChangedEventArgs">
+            <summary>Sets the stub of Control.OnAutoSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnAutoValidateChanged(System.EventArgs)">
+            <summary>Sets the stub of ContainerControl.OnAutoValidateChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnAutoValidateChangedEventArgs">
+            <summary>Sets the stub of ContainerControl.OnAutoValidateChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnBackColorChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnBackColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnBackColorChangedEventArgs">
+            <summary>Sets the stub of Control.OnBackColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnBackgroundImageChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnBackgroundImageChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnBackgroundImageChangedEventArgs">
+            <summary>Sets the stub of Form.OnBackgroundImageChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnBackgroundImageLayoutChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnBackgroundImageLayoutChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnBackgroundImageLayoutChangedEventArgs">
+            <summary>Sets the stub of Form.OnBackgroundImageLayoutChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnBindingContextChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnBindingContextChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnBindingContextChangedEventArgs">
+            <summary>Sets the stub of Control.OnBindingContextChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnCausesValidationChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnCausesValidationChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnCausesValidationChangedEventArgs">
+            <summary>Sets the stub of Control.OnCausesValidationChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnChangeUICues(System.Windows.Forms.UICuesEventArgs)">
+            <summary>Sets the stub of Control.OnChangeUICues(UICuesEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnChangeUICuesUICuesEventArgs">
+            <summary>Sets the stub of Control.OnChangeUICues(UICuesEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnClick(System.EventArgs)">
+            <summary>Sets the stub of Control.OnClick(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnClickEventArgs">
+            <summary>Sets the stub of Control.OnClick(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnClientSizeChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnClientSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnClientSizeChangedEventArgs">
+            <summary>Sets the stub of Control.OnClientSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnClosed(System.EventArgs)">
+            <summary>Sets the stub of Form.OnClosed(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnClosedEventArgs">
+            <summary>Sets the stub of Form.OnClosed(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnClosing(System.ComponentModel.CancelEventArgs)">
+            <summary>Sets the stub of Form.OnClosing(CancelEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnClosingCancelEventArgs">
+            <summary>Sets the stub of Form.OnClosing(CancelEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnContextMenuChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnContextMenuChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnContextMenuChangedEventArgs">
+            <summary>Sets the stub of Control.OnContextMenuChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnContextMenuStripChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnContextMenuStripChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnContextMenuStripChangedEventArgs">
+            <summary>Sets the stub of Control.OnContextMenuStripChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnControlAdded(System.Windows.Forms.ControlEventArgs)">
+            <summary>Sets the stub of Control.OnControlAdded(ControlEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnControlAddedControlEventArgs">
+            <summary>Sets the stub of Control.OnControlAdded(ControlEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnControlRemoved(System.Windows.Forms.ControlEventArgs)">
+            <summary>Sets the stub of Control.OnControlRemoved(ControlEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnControlRemovedControlEventArgs">
+            <summary>Sets the stub of Control.OnControlRemoved(ControlEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnCreateControl">
+            <summary>Sets the stub of Form.OnCreateControl()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnCreateControl01">
+            <summary>Sets the stub of Form.OnCreateControl()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnCursorChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnCursorChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnCursorChangedEventArgs">
+            <summary>Sets the stub of Control.OnCursorChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnDeactivate(System.EventArgs)">
+            <summary>Sets the stub of Form.OnDeactivate(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnDeactivateEventArgs">
+            <summary>Sets the stub of Form.OnDeactivate(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnDockChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnDockChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnDockChangedEventArgs">
+            <summary>Sets the stub of Control.OnDockChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnDoubleClick(System.EventArgs)">
+            <summary>Sets the stub of Control.OnDoubleClick(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnDoubleClickEventArgs">
+            <summary>Sets the stub of Control.OnDoubleClick(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>Sets the stub of Control.OnDragDrop(DragEventArgs drgevent)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnDragDropDragEventArgs">
+            <summary>Sets the stub of Control.OnDragDrop(DragEventArgs drgevent)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>Sets the stub of Control.OnDragEnter(DragEventArgs drgevent)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnDragEnterDragEventArgs">
+            <summary>Sets the stub of Control.OnDragEnter(DragEventArgs drgevent)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnDragLeave(System.EventArgs)">
+            <summary>Sets the stub of Control.OnDragLeave(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnDragLeaveEventArgs">
+            <summary>Sets the stub of Control.OnDragLeave(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnDragOver(System.Windows.Forms.DragEventArgs)">
+            <summary>Sets the stub of Control.OnDragOver(DragEventArgs drgevent)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnDragOverDragEventArgs">
+            <summary>Sets the stub of Control.OnDragOver(DragEventArgs drgevent)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnEnabledChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnEnabledChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnEnabledChangedEventArgs">
+            <summary>Sets the stub of Form.OnEnabledChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnEnter(System.EventArgs)">
+            <summary>Sets the stub of Form.OnEnter(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnEnterEventArgs">
+            <summary>Sets the stub of Form.OnEnter(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnFontChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnFontChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnFontChangedEventArgs">
+            <summary>Sets the stub of Form.OnFontChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnForeColorChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnForeColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnForeColorChangedEventArgs">
+            <summary>Sets the stub of Control.OnForeColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnFormClosed(System.Windows.Forms.FormClosedEventArgs)">
+            <summary>Sets the stub of Form.OnFormClosed(FormClosedEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnFormClosedFormClosedEventArgs">
+            <summary>Sets the stub of Form.OnFormClosed(FormClosedEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnFormClosing(System.Windows.Forms.FormClosingEventArgs)">
+            <summary>Sets the stub of Form.OnFormClosing(FormClosingEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnFormClosingFormClosingEventArgs">
+            <summary>Sets the stub of Form.OnFormClosing(FormClosingEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnGiveFeedback(System.Windows.Forms.GiveFeedbackEventArgs)">
+            <summary>Sets the stub of Control.OnGiveFeedback(GiveFeedbackEventArgs gfbevent)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnGiveFeedbackGiveFeedbackEventArgs">
+            <summary>Sets the stub of Control.OnGiveFeedback(GiveFeedbackEventArgs gfbevent)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnGotFocus(System.EventArgs)">
+            <summary>Sets the stub of Control.OnGotFocus(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnGotFocusEventArgs">
+            <summary>Sets the stub of Control.OnGotFocus(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnHandleCreated(System.EventArgs)">
+            <summary>Sets the stub of Form.OnHandleCreated(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnHandleCreatedEventArgs">
+            <summary>Sets the stub of Form.OnHandleCreated(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnHandleDestroyed(System.EventArgs)">
+            <summary>Sets the stub of Form.OnHandleDestroyed(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnHandleDestroyedEventArgs">
+            <summary>Sets the stub of Form.OnHandleDestroyed(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnHelpButtonClicked(System.ComponentModel.CancelEventArgs)">
+            <summary>Sets the stub of Form.OnHelpButtonClicked(CancelEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnHelpButtonClickedCancelEventArgs">
+            <summary>Sets the stub of Form.OnHelpButtonClicked(CancelEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnHelpRequested(System.Windows.Forms.HelpEventArgs)">
+            <summary>Sets the stub of Control.OnHelpRequested(HelpEventArgs hevent)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnHelpRequestedHelpEventArgs">
+            <summary>Sets the stub of Control.OnHelpRequested(HelpEventArgs hevent)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnImeModeChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnImeModeChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnImeModeChangedEventArgs">
+            <summary>Sets the stub of Control.OnImeModeChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnInputLanguageChanged(System.Windows.Forms.InputLanguageChangedEventArgs)">
+            <summary>Sets the stub of Form.OnInputLanguageChanged(InputLanguageChangedEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnInputLanguageChangedInputLanguageChangedEventArgs">
+            <summary>Sets the stub of Form.OnInputLanguageChanged(InputLanguageChangedEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnInputLanguageChanging(System.Windows.Forms.InputLanguageChangingEventArgs)">
+            <summary>Sets the stub of Form.OnInputLanguageChanging(InputLanguageChangingEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnInputLanguageChangingInputLanguageChangingEventArgs">
+            <summary>Sets the stub of Form.OnInputLanguageChanging(InputLanguageChangingEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnInvalidated(System.Windows.Forms.InvalidateEventArgs)">
+            <summary>Sets the stub of Control.OnInvalidated(InvalidateEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnInvalidatedInvalidateEventArgs">
+            <summary>Sets the stub of Control.OnInvalidated(InvalidateEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>Sets the stub of Control.OnKeyDown(KeyEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnKeyDownKeyEventArgs">
+            <summary>Sets the stub of Control.OnKeyDown(KeyEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>Sets the stub of Control.OnKeyPress(KeyPressEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnKeyPressKeyPressEventArgs">
+            <summary>Sets the stub of Control.OnKeyPress(KeyPressEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+            <summary>Sets the stub of Control.OnKeyUp(KeyEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnKeyUpKeyEventArgs">
+            <summary>Sets the stub of Control.OnKeyUp(KeyEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnLayout(System.Windows.Forms.LayoutEventArgs)">
+            <summary>Sets the stub of Form.OnLayout(LayoutEventArgs levent)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnLayoutLayoutEventArgs">
+            <summary>Sets the stub of Form.OnLayout(LayoutEventArgs levent)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnLeave(System.EventArgs)">
+            <summary>Sets the stub of Control.OnLeave(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnLeaveEventArgs">
+            <summary>Sets the stub of Control.OnLeave(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnLoad(System.EventArgs)">
+            <summary>Sets the stub of Form.OnLoad(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnLoadEventArgs">
+            <summary>Sets the stub of Form.OnLoad(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnLocationChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnLocationChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnLocationChangedEventArgs">
+            <summary>Sets the stub of Control.OnLocationChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnLostFocus(System.EventArgs)">
+            <summary>Sets the stub of Control.OnLostFocus(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnLostFocusEventArgs">
+            <summary>Sets the stub of Control.OnLostFocus(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMarginChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnMarginChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMarginChangedEventArgs">
+            <summary>Sets the stub of Control.OnMarginChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMaximizedBoundsChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnMaximizedBoundsChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMaximizedBoundsChangedEventArgs">
+            <summary>Sets the stub of Form.OnMaximizedBoundsChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMaximumSizeChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnMaximumSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMaximumSizeChangedEventArgs">
+            <summary>Sets the stub of Form.OnMaximumSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMdiChildActivate(System.EventArgs)">
+            <summary>Sets the stub of Form.OnMdiChildActivate(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMdiChildActivateEventArgs">
+            <summary>Sets the stub of Form.OnMdiChildActivate(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMenuComplete(System.EventArgs)">
+            <summary>Sets the stub of Form.OnMenuComplete(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMenuCompleteEventArgs">
+            <summary>Sets the stub of Form.OnMenuComplete(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMenuStart(System.EventArgs)">
+            <summary>Sets the stub of Form.OnMenuStart(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMenuStartEventArgs">
+            <summary>Sets the stub of Form.OnMenuStart(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMinimumSizeChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnMinimumSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMinimumSizeChangedEventArgs">
+            <summary>Sets the stub of Form.OnMinimumSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseCaptureChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnMouseCaptureChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseCaptureChangedEventArgs">
+            <summary>Sets the stub of Control.OnMouseCaptureChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>Sets the stub of Control.OnMouseClick(MouseEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseClickMouseEventArgs">
+            <summary>Sets the stub of Control.OnMouseClick(MouseEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>Sets the stub of Control.OnMouseDoubleClick(MouseEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseDoubleClickMouseEventArgs">
+            <summary>Sets the stub of Control.OnMouseDoubleClick(MouseEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>Sets the stub of Control.OnMouseDown(MouseEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseDownMouseEventArgs">
+            <summary>Sets the stub of Control.OnMouseDown(MouseEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseEnter(System.EventArgs)">
+            <summary>Sets the stub of Control.OnMouseEnter(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseEnterEventArgs">
+            <summary>Sets the stub of Control.OnMouseEnter(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseHover(System.EventArgs)">
+            <summary>Sets the stub of Control.OnMouseHover(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseHoverEventArgs">
+            <summary>Sets the stub of Control.OnMouseHover(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseLeave(System.EventArgs)">
+            <summary>Sets the stub of Control.OnMouseLeave(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseLeaveEventArgs">
+            <summary>Sets the stub of Control.OnMouseLeave(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>Sets the stub of Control.OnMouseMove(MouseEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseMoveMouseEventArgs">
+            <summary>Sets the stub of Control.OnMouseMove(MouseEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>Sets the stub of Control.OnMouseUp(MouseEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseUpMouseEventArgs">
+            <summary>Sets the stub of Control.OnMouseUp(MouseEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+            <summary>Sets the stub of ScrollableControl.OnMouseWheel(MouseEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMouseWheelMouseEventArgs">
+            <summary>Sets the stub of ScrollableControl.OnMouseWheel(MouseEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnMove(System.EventArgs)">
+            <summary>Sets the stub of Control.OnMove(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnMoveEventArgs">
+            <summary>Sets the stub of Control.OnMove(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnNotifyMessage(System.Windows.Forms.Message)">
+            <summary>Sets the stub of Control.OnNotifyMessage(Message m)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnNotifyMessageMessage">
+            <summary>Sets the stub of Control.OnNotifyMessage(Message m)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnPaddingChanged(System.EventArgs)">
+            <summary>Sets the stub of ScrollableControl.OnPaddingChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnPaddingChangedEventArgs">
+            <summary>Sets the stub of ScrollableControl.OnPaddingChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>Sets the stub of Form.OnPaint(PaintEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>Sets the stub of ScrollableControl.OnPaintBackground(PaintEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnPaintBackgroundPaintEventArgs">
+            <summary>Sets the stub of ScrollableControl.OnPaintBackground(PaintEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnPaintPaintEventArgs">
+            <summary>Sets the stub of Form.OnPaint(PaintEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentBackColorChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentBackColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentBackColorChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentBackColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentBackgroundImageChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentBackgroundImageChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentBackgroundImageChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentBackgroundImageChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentBindingContextChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentBindingContextChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentBindingContextChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentBindingContextChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentChanged(System.EventArgs)">
+            <summary>Sets the stub of ContainerControl.OnParentChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentChangedEventArgs">
+            <summary>Sets the stub of ContainerControl.OnParentChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentCursorChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentCursorChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentCursorChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentCursorChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentEnabledChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentEnabledChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentEnabledChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentEnabledChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentFontChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentFontChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentFontChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentFontChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentForeColorChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentForeColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentForeColorChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentForeColorChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentRightToLeftChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentRightToLeftChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentRightToLeftChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentRightToLeftChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnParentVisibleChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnParentVisibleChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnParentVisibleChangedEventArgs">
+            <summary>Sets the stub of Control.OnParentVisibleChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnPreviewKeyDown(System.Windows.Forms.PreviewKeyDownEventArgs)">
+            <summary>Sets the stub of Control.OnPreviewKeyDown(PreviewKeyDownEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnPreviewKeyDownPreviewKeyDownEventArgs">
+            <summary>Sets the stub of Control.OnPreviewKeyDown(PreviewKeyDownEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnPrint(System.Windows.Forms.PaintEventArgs)">
+            <summary>Sets the stub of Control.OnPrint(PaintEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnPrintPaintEventArgs">
+            <summary>Sets the stub of Control.OnPrint(PaintEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnQueryContinueDrag(System.Windows.Forms.QueryContinueDragEventArgs)">
+            <summary>Sets the stub of Control.OnQueryContinueDrag(QueryContinueDragEventArgs qcdevent)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnQueryContinueDragQueryContinueDragEventArgs">
+            <summary>Sets the stub of Control.OnQueryContinueDrag(QueryContinueDragEventArgs qcdevent)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnRegionChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnRegionChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnRegionChangedEventArgs">
+            <summary>Sets the stub of Control.OnRegionChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnResize(System.EventArgs)">
+            <summary>Sets the stub of Form.OnResize(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnResizeBegin(System.EventArgs)">
+            <summary>Sets the stub of Form.OnResizeBegin(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnResizeBeginEventArgs">
+            <summary>Sets the stub of Form.OnResizeBegin(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnResizeEnd(System.EventArgs)">
+            <summary>Sets the stub of Form.OnResizeEnd(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnResizeEndEventArgs">
+            <summary>Sets the stub of Form.OnResizeEnd(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnResizeEventArgs">
+            <summary>Sets the stub of Form.OnResize(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnRightToLeftChanged(System.EventArgs)">
+            <summary>Sets the stub of ScrollableControl.OnRightToLeftChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnRightToLeftChangedEventArgs">
+            <summary>Sets the stub of ScrollableControl.OnRightToLeftChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnRightToLeftLayoutChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnRightToLeftLayoutChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnRightToLeftLayoutChangedEventArgs">
+            <summary>Sets the stub of Form.OnRightToLeftLayoutChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnScroll(System.Windows.Forms.ScrollEventArgs)">
+            <summary>Sets the stub of ScrollableControl.OnScroll(ScrollEventArgs se)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnScrollScrollEventArgs">
+            <summary>Sets the stub of ScrollableControl.OnScroll(ScrollEventArgs se)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnShown(System.EventArgs)">
+            <summary>Sets the stub of Form.OnShown(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnShownEventArgs">
+            <summary>Sets the stub of Form.OnShown(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnSizeChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnSizeChangedEventArgs">
+            <summary>Sets the stub of Control.OnSizeChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnStyleChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnStyleChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnStyleChangedEventArgs">
+            <summary>Sets the stub of Form.OnStyleChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnSystemColorsChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnSystemColorsChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnSystemColorsChangedEventArgs">
+            <summary>Sets the stub of Control.OnSystemColorsChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnTabIndexChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnTabIndexChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnTabIndexChangedEventArgs">
+            <summary>Sets the stub of Control.OnTabIndexChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnTabStopChanged(System.EventArgs)">
+            <summary>Sets the stub of Control.OnTabStopChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnTabStopChangedEventArgs">
+            <summary>Sets the stub of Control.OnTabStopChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnTextChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnTextChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnTextChangedEventArgs">
+            <summary>Sets the stub of Form.OnTextChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnValidated(System.EventArgs)">
+            <summary>Sets the stub of Control.OnValidated(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnValidatedEventArgs">
+            <summary>Sets the stub of Control.OnValidated(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnValidating(System.ComponentModel.CancelEventArgs)">
+            <summary>Sets the stub of Control.OnValidating(CancelEventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnValidatingCancelEventArgs">
+            <summary>Sets the stub of Control.OnValidating(CancelEventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.OnVisibleChanged(System.EventArgs)">
+            <summary>Sets the stub of Form.OnVisibleChanged(EventArgs e)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.OnVisibleChangedEventArgs">
+            <summary>Sets the stub of Form.OnVisibleChanged(EventArgs e)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.PreProcessMessage(System.Windows.Forms.Message@)">
+            <summary>Sets the stub of Control.PreProcessMessage(Message&amp; msg)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.PreProcessMessageMessageRef">
+            <summary>Sets the stub of Control.PreProcessMessage(Message&amp; msg)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>Sets the stub of Form.ProcessCmdKey(Message&amp; msg, Keys keyData)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessCmdKeyMessageRefKeys">
+            <summary>Sets the stub of Form.ProcessCmdKey(Message&amp; msg, Keys keyData)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessDialogChar(System.Char)">
+            <summary>Sets the stub of Form.ProcessDialogChar(Char charCode)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessDialogCharChar">
+            <summary>Sets the stub of Form.ProcessDialogChar(Char charCode)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessDialogKey(System.Windows.Forms.Keys)">
+            <summary>Sets the stub of Form.ProcessDialogKey(Keys keyData)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessDialogKeyKeys">
+            <summary>Sets the stub of Form.ProcessDialogKey(Keys keyData)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessKeyEventArgs(System.Windows.Forms.Message@)">
+            <summary>Sets the stub of Control.ProcessKeyEventArgs(Message&amp; m)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessKeyEventArgsMessageRef">
+            <summary>Sets the stub of Control.ProcessKeyEventArgs(Message&amp; m)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessKeyMessage(System.Windows.Forms.Message@)">
+            <summary>Sets the stub of Control.ProcessKeyMessage(Message&amp; m)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessKeyMessageMessageRef">
+            <summary>Sets the stub of Control.ProcessKeyMessage(Message&amp; m)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessKeyPreview(System.Windows.Forms.Message@)">
+            <summary>Sets the stub of Form.ProcessKeyPreview(Message&amp; m)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessKeyPreviewMessageRef">
+            <summary>Sets the stub of Form.ProcessKeyPreview(Message&amp; m)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessMnemonic(System.Char)">
+            <summary>Sets the stub of Form.ProcessMnemonic(Char charCode)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessMnemonicChar">
+            <summary>Sets the stub of Form.ProcessMnemonic(Char charCode)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ProcessTabKey(System.Boolean)">
+            <summary>Sets the stub of Form.ProcessTabKey(Boolean forward)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ProcessTabKeyBoolean">
+            <summary>Sets the stub of Form.ProcessTabKey(Boolean forward)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.Refresh">
+            <summary>Sets the stub of Control.Refresh()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.Refresh01">
+            <summary>Sets the stub of Control.Refresh()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ResetBackColor">
+            <summary>Sets the stub of Control.ResetBackColor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ResetBackColor01">
+            <summary>Sets the stub of Control.ResetBackColor()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ResetCursor">
+            <summary>Sets the stub of Control.ResetCursor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ResetCursor01">
+            <summary>Sets the stub of Control.ResetCursor()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ResetFont">
+            <summary>Sets the stub of Control.ResetFont()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ResetFont01">
+            <summary>Sets the stub of Control.ResetFont()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ResetForeColor">
+            <summary>Sets the stub of Control.ResetForeColor()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ResetForeColor01">
+            <summary>Sets the stub of Control.ResetForeColor()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ResetRightToLeft">
+            <summary>Sets the stub of Control.ResetRightToLeft()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ResetRightToLeft01">
+            <summary>Sets the stub of Control.ResetRightToLeft()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ResetText">
+            <summary>Sets the stub of Control.ResetText()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ResetText01">
+            <summary>Sets the stub of Control.ResetText()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.RightToLeftGet">
+            <summary>Sets the stub of Control.get_RightToLeft()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.RightToLeftLayoutGet">
+            <summary>Sets the stub of Form.get_RightToLeftLayout()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.RightToLeftLayoutSetBoolean">
+            <summary>Sets the stub of Form.set_RightToLeftLayout(Boolean value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.RightToLeftSetRightToLeft">
+            <summary>Sets the stub of Control.set_RightToLeft(RightToLeft value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ScaleChildrenGet">
+            <summary>Sets the stub of Control.get_ScaleChildren()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+            <summary>Sets the stub of Form.ScaleControl(SizeF factor, BoundsSpecified specified)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ScaleControlSizeFBoundsSpecified">
+            <summary>Sets the stub of Form.ScaleControl(SizeF factor, BoundsSpecified specified)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ScaleCore(System.Single,System.Single)">
+            <summary>Sets the stub of Form.ScaleCore(Single x, Single y)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ScaleCoreSingleSingle">
+            <summary>Sets the stub of Form.ScaleCore(Single x, Single y)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ScrollToControl(System.Windows.Forms.Control)">
+            <summary>Sets the stub of ScrollableControl.ScrollToControl(Control activeControl)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ScrollToControlControl">
+            <summary>Sets the stub of ScrollableControl.ScrollToControl(Control activeControl)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.Select(System.Boolean,System.Boolean)">
+            <summary>Sets the stub of Form.Select(Boolean directed, Boolean forward)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.SelectBooleanBoolean">
+            <summary>Sets the stub of Form.Select(Boolean directed, Boolean forward)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)">
+            <summary>Sets the stub of Form.SetBoundsCore(Int32 x, Int32 y, Int32 width, Int32 height, BoundsSpecified specified)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.SetBoundsCoreInt32Int32Int32Int32BoundsSpecified">
+            <summary>Sets the stub of Form.SetBoundsCore(Int32 x, Int32 y, Int32 width, Int32 height, BoundsSpecified specified)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.SetClientSizeCore(System.Int32,System.Int32)">
+            <summary>Sets the stub of Form.SetClientSizeCore(Int32 x, Int32 y)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.SetClientSizeCoreInt32Int32">
+            <summary>Sets the stub of Form.SetClientSizeCore(Int32 x, Int32 y)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.SetVisibleCore(System.Boolean)">
+            <summary>Sets the stub of Form.SetVisibleCore(Boolean value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.SetVisibleCoreBoolean">
+            <summary>Sets the stub of Form.SetVisibleCore(Boolean value)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ShowFocusCuesGet">
+            <summary>Sets the stub of Control.get_ShowFocusCues()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ShowKeyboardCuesGet">
+            <summary>Sets the stub of Control.get_ShowKeyboardCues()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ShowWithoutActivationGet">
+            <summary>Sets the stub of Form.get_ShowWithoutActivation()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.SiteGet">
+            <summary>Sets the stub of Control.get_Site()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.SiteSetISite">
+            <summary>Sets the stub of Control.set_Site(ISite value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.SizeFromClientSize(System.Drawing.Size)">
+            <summary>Sets the stub of Control.SizeFromClientSize(Size clientSize)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.SizeFromClientSizeSize">
+            <summary>Sets the stub of Control.SizeFromClientSize(Size clientSize)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.TextGet">
+            <summary>Sets the stub of Form.get_Text()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.TextSetString">
+            <summary>Sets the stub of Form.set_Text(String value)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ToString">
+            <summary>Sets the stub of Form.ToString()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ToString01">
+            <summary>Sets the stub of Form.ToString()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.UpdateDefaultButton">
+            <summary>Sets the stub of Form.UpdateDefaultButton()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.UpdateDefaultButton01">
+            <summary>Sets the stub of Form.UpdateDefaultButton()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ValidateChildren">
+            <summary>Sets the stub of Form.ValidateChildren()</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.ValidateChildren(System.Windows.Forms.ValidationConstraints)">
+            <summary>Sets the stub of Form.ValidateChildren(ValidationConstraints validationConstraints)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ValidateChildren01">
+            <summary>Sets the stub of Form.ValidateChildren()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.ValidateChildrenValidationConstraints">
+            <summary>Sets the stub of Form.ValidateChildren(ValidationConstraints validationConstraints)</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubForm1.WndProc(System.Windows.Forms.Message@)">
+            <summary>Sets the stub of Form.WndProc(Message&amp; m)</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubForm1.WndProcMessageRef">
+            <summary>Sets the stub of Form.WndProc(Message&amp; m)</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.AllowDrop">
+            <summary>Sets the stub of Control.get_AllowDrop()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.Anchor">
+            <summary>Sets the stub of Control.get_Anchor()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.AutoScaleBaseSize">
+            <summary>Sets the stub of Form.get_AutoScaleBaseSize()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.AutoScroll">
+            <summary>Sets the stub of Form.get_AutoScroll()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.AutoScrollOffset">
+            <summary>Sets the stub of Control.get_AutoScrollOffset()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.AutoSize">
+            <summary>Sets the stub of Form.get_AutoSize()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.AutoValidate">
+            <summary>Sets the stub of Form.get_AutoValidate()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.BackColor">
+            <summary>Sets the stub of Form.get_BackColor()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.BackgroundImage">
+            <summary>Sets the stub of Control.get_BackgroundImage()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.BackgroundImageLayout">
+            <summary>Sets the stub of Control.get_BackgroundImageLayout()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.BindingContext">
+            <summary>Sets the stub of ContainerControl.get_BindingContext()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.CanEnableIme">
+            <summary>Sets the stub of ContainerControl.get_CanEnableIme()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.CanRaiseEvents">
+            <summary>Sets the stub of Control.get_CanRaiseEvents()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ContextMenu">
+            <summary>Sets the stub of Control.get_ContextMenu()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ContextMenuStrip">
+            <summary>Sets the stub of Control.get_ContextMenuStrip()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.CreateParams">
+            <summary>Sets the stub of Form.get_CreateParams()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.Cursor">
+            <summary>Sets the stub of Control.get_Cursor()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DefaultCursor">
+            <summary>Sets the stub of Control.get_DefaultCursor()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DefaultImeMode">
+            <summary>Sets the stub of Form.get_DefaultImeMode()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DefaultMargin">
+            <summary>Sets the stub of Control.get_DefaultMargin()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DefaultMaximumSize">
+            <summary>Sets the stub of Control.get_DefaultMaximumSize()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DefaultMinimumSize">
+            <summary>Sets the stub of Control.get_DefaultMinimumSize()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DefaultPadding">
+            <summary>Sets the stub of Control.get_DefaultPadding()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DefaultSize">
+            <summary>Sets the stub of Form.get_DefaultSize()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DisplayRectangle">
+            <summary>Sets the stub of ScrollableControl.get_DisplayRectangle()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.Dock">
+            <summary>Sets the stub of Control.get_Dock()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.DoubleBuffered">
+            <summary>Sets the stub of Control.get_DoubleBuffered()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.Focused">
+            <summary>Sets the stub of Control.get_Focused()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.Font">
+            <summary>Sets the stub of Control.get_Font()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ForeColor">
+            <summary>Sets the stub of Control.get_ForeColor()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ImeModeBase">
+            <summary>Sets the stub of Control.get_ImeModeBase()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.LayoutEngine">
+            <summary>Sets the stub of Control.get_LayoutEngine()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.MaximumSize">
+            <summary>Sets the stub of Form.get_MaximumSize()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.MinimumSize">
+            <summary>Sets the stub of Form.get_MinimumSize()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.RightToLeft">
+            <summary>Sets the stub of Control.get_RightToLeft()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.RightToLeftLayout">
+            <summary>Sets the stub of Form.get_RightToLeftLayout()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ScaleChildren">
+            <summary>Sets the stub of Control.get_ScaleChildren()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ShowFocusCues">
+            <summary>Sets the stub of Control.get_ShowFocusCues()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ShowKeyboardCues">
+            <summary>Sets the stub of Control.get_ShowKeyboardCues()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.ShowWithoutActivation">
+            <summary>Sets the stub of Form.get_ShowWithoutActivation()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.Site">
+            <summary>Sets the stub of Control.get_Site()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubForm1.Text">
+            <summary>Sets the stub of Form.get_Text()</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubHDDManager">
+            <summary>Stub type of VirtualRealMachine.HDDManager</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubHDDManager.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubHDDManager.InitializeStub">
+            <summary>Initializes a new instance of type StubHDDManager</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubHDDManager.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubHDDManager.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubHDDManager.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubInputDevice">
+            <summary>Stub type of VirtualRealMachine.InputDevice</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubInputDevice.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubInputDevice.InitializeStub">
+            <summary>Initializes a new instance of type StubInputDevice</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubInputDevice.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubInputDevice.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubInputDevice.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubInterpretator">
+            <summary>Stub type of VirtualRealMachine.Interpretator</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubInterpretator.#ctor(VirtualRealMachine.CPU@,VirtualRealMachine.Memory@,VirtualRealMachine.Memory@,VirtualRealMachine.InputDevice@,VirtualRealMachine.OutputDevice@,VirtualRealMachine.HDDManager@)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubInterpretator.InitializeStub">
+            <summary>Initializes a new instance of type StubInterpretator</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubInterpretator.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubInterpretator.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubInterpretator.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubMemory">
+            <summary>Stub type of VirtualRealMachine.Memory</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubMemory.#ctor(System.Int32)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubMemory.InitializeStub">
+            <summary>Initializes a new instance of type StubMemory</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubMemory.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubMemory.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubMemory.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubMemoryBlock">
+            <summary>Stub type of VirtualRealMachine.MemoryBlock</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubMemoryBlock.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubMemoryBlock.InitializeStub">
+            <summary>Initializes a new instance of type StubMemoryBlock</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubMemoryBlock.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubMemoryBlock.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubMemoryBlock.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubOutputDevice">
+            <summary>Stub type of VirtualRealMachine.OutputDevice</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubOutputDevice.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubOutputDevice.InitializeStub">
+            <summary>Initializes a new instance of type StubOutputDevice</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubOutputDevice.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubOutputDevice.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubOutputDevice.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubRegister1B">
+            <summary>Stub type of VirtualRealMachine.Register1B</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubRegister1B.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubRegister1B.InitializeStub">
+            <summary>Initializes a new instance of type StubRegister1B</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister1B.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister1B.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister1B.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubRegister2B">
+            <summary>Stub type of VirtualRealMachine.Register2B</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubRegister2B.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubRegister2B.InitializeStub">
+            <summary>Initializes a new instance of type StubRegister2B</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister2B.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister2B.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister2B.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubRegister4B">
+            <summary>Stub type of VirtualRealMachine.Register4B</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubRegister4B.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubRegister4B.InitializeStub">
+            <summary>Initializes a new instance of type StubRegister4B</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister4B.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister4B.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubRegister4B.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:VirtualRealMachine.Fakes.StubWord">
+            <summary>Stub type of VirtualRealMachine.Word</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubWord.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubWord.InitializeStub">
+            <summary>Initializes a new instance of type StubWord</summary>
+        </member>
+        <member name="M:VirtualRealMachine.Fakes.StubWord.ToString">
+            <summary>Sets the stub of Word.ToString()</summary>
+        </member>
+        <member name="F:VirtualRealMachine.Fakes.StubWord.ToString01">
+            <summary>Sets the stub of Word.ToString()</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubWord.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubWord.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:VirtualRealMachine.Fakes.StubWord.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>
