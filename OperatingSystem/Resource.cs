@@ -7,7 +7,7 @@ namespace OperatingSystem
 {
     public class Resource
     {
-        private ResourceDescriptor descriptor;
+        protected ResourceDescriptor descriptor;
 
         public Resource(int ID, OSCore.ResourceName externalID,
                         OSCore os, Process creator)
