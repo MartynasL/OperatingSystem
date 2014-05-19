@@ -27,5 +27,25 @@ namespace OperatingSystem
             PRANESIMAS_PEOCESUI_INPUT_LINE, PRANESIMAS_PROCESUI_PRINT_LINE, PERTRAUKIMAS,
             UZDUOTIES_IVEDIMAS
         }
+
+        public void createResource(Process process, ResourceName resourceName)
+        {
+
+        }
+
+        public void createProcess(Process process, ProcessName processName)
+        {
+
+        }
+
+        public void destroyResource(Resource resource)
+        {
+
+        }
+
+        public void destroyProcess(Process process)
+        {
+
+        }
     }
 }
