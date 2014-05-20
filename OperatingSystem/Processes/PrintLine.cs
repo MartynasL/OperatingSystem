@@ -34,7 +34,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 5:
-                    descriptor.ownedResList.RemoveFirst();
+                    descriptor.os.releaseResource(descriptor.ownedResList.First<Resource>());
                     step++;
                     break;
                 case 6:

@@ -42,15 +42,15 @@ namespace OperatingSystem.Processes
                     //not implemented
                     break;
                 case 6:
-                    descriptor.os.releaseResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
+                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
                 case 7:
-                    descriptor.os.releaseResource(this, OSCore.ResourceName.PIRMAS_KANALAS);
+                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
                 case 8:
-                    descriptor.os.releaseResource(this, OSCore.ResourceName.TRECIAS_KANALAS);
+                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
                 case 9:

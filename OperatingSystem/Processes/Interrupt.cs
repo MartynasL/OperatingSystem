@@ -24,18 +24,30 @@ namespace OperatingSystem.Processes
                     break;
                 case 2:
                     //not implemented
+                    step++;
                     break;
                 case 3:
                     //not implemented
+                    step++;
                     break;
                 case 4:
-                    //not implemented                    
+                    //not implemented 
+                    step++;
                     break;
                 case 5:
                     //not implemented
+                    step++;
                     break;
                 case 6:
                     //gsd
+                    step++;
+                    break;
+                case 7:
+                    descriptor.ownedResList.RemoveFirst();
+                    step++;
+                    break;
+                case 8:
+                    step = 1;
                     break;
             }
         }

@@ -53,7 +53,7 @@ namespace OperatingSystem
 
         }
 
-        public void releaseResource(Process process, ResourceName resourceName)
+        public void releaseResource(Resource resource)
         {
 
         }
