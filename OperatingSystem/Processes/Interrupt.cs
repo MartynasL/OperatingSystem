@@ -19,7 +19,8 @@ namespace OperatingSystem.Processes
             switch (step)
             {
                 case 1:
-                    //not implemented
+                    descriptor.os.requestResource(this, OSCore.ResourceName.PERTRAUKIMAS);
+                    step++;
                     break;
                 case 2:
                     //not implemented

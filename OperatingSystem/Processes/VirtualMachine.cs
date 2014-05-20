@@ -20,12 +20,18 @@ namespace OperatingSystem.Processes
             {
                 case 1:
                     //not implemented
+                    step++;
                     break;
                 case 2:
                     //not implemented
+                    step++;
                     break;
                 case 3:
                     //not implemented
+                    step++;
+                    break;
+                case 4:
+                    step = 1;
                     break;
             }
         }

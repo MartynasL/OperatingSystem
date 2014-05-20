@@ -19,19 +19,30 @@ namespace OperatingSystem.Processes
             switch (step)
             {
                 case 1:
-                    //not implemented
+                    descriptor.os.requestResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE);
+                    step++;
                     break;
                 case 2:
-                    //not implemented
+                    descriptor.os.requestResource(this, OSCore.ResourceName.PIRMAS_KANALAS);
+                    step++;
                     break;
                 case 3:
                     //not implemented
                     break;
                 case 4:
-                    //not implemented                    
+                    descriptor.ownedResList.RemoveFirst();
+                    step++;
                     break;
                 case 5:
-                    //not implemented
+                    descriptor.ownedResList.RemoveFirst();
+                    step++;
+                    break;
+                case 6:
+                    descriptor.os.createResource(this, OSCore.ResourceName.EILUTE_IVESTA);
+                    step++;
+                    break;
+                case 7:
+                    step = 1;
                     break;
             }
         }

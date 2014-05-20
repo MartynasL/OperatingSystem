@@ -19,19 +19,26 @@ namespace OperatingSystem.Processes
             switch (step)
             {
                 case 1:
-                    //not implemented
+                    descriptor.os.requestResource(this, OSCore.ResourceName.UZDUOTIS_ISORINEJE_ATMINTYJE);
+                    step++;
                     break;
                 case 2:
-                    //not implemented
+                    descriptor.os.requestResource(this, OSCore.ResourceName.VARTOTOJO_ATMINTIS);
+                    step++;
                     break;
                 case 3:
                     //not implemented
                     break;
                 case 4:
-                    //not implemented                    
+                    descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE);
+                    step++;
                     break;
                 case 5:
-                    //not implemented
+                    descriptor.ownedResList.RemoveFirst();
+                    step++;
+                    break;
+                case 6:
+                    step = 1;
                     break;
             }
         }

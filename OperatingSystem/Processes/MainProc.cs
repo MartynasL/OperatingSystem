@@ -19,13 +19,14 @@ namespace OperatingSystem.Processes
             switch (step)
             {
                 case 1:
-                    //not implemented
+                    descriptor.os.requestResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE);
+                    step++;
                     break;
                 case 2:
                     //not implemented
                     break;
                 case 3:
-                    //not implemented
+                    step = 1;
                     break;
             }
         }
