@@ -16,6 +16,11 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, savedState, processor, os, state,
                                            parent, priority)
         {
+
+        }
+
+        public void execute()
+        {
             switch (step)
             {
                 case 1:
