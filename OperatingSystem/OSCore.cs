@@ -141,6 +141,21 @@ namespace OperatingSystem
 
         }
 
+        public void stopProcess(Process process)
+        {
+
+        }
+
+        public void activateProcess(Process process)
+        {
+
+        }
+
+        public void changePriority(Process process, int newPriority)
+        {
+
+        }
+
         public void requestResource(Process process, ResourceName resourceName)
         {
 
