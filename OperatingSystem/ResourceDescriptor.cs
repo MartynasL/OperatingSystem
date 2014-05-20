@@ -15,6 +15,7 @@ namespace OperatingSystem
         public Process creator;
         public LinkedList<Resource> resources;
         public Object component;
+        public Process user;
 
         public ResourceDescriptor(int ID, OSCore.ResourceName externalID,
                                   OSCore os, Process creator, Object component)
@@ -27,6 +28,7 @@ namespace OperatingSystem
 
             processes = new LinkedList<Process>();
             resources = new LinkedList<Resource>();
+            user = null;
         }
     }
 }

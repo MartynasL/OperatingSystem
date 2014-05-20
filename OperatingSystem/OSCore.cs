@@ -64,19 +64,6 @@ namespace OperatingSystem
             machine = new VirtualRealMachine.Machine();
         }
 
-        public Resource createResource(Process process, ResourceName resourceName, Object component)
-        {
-            Resource tempRes = null;
-            currentResID++;
-
-            tempRes = new Resource(currentResID, resourceName, this, process, component);
-
-            resources.AddLast(tempRes);
-            freeResources.AddLast(tempRes);
-            resourcesManager.execute();
-            return tempRes;
-        }
-
         public Process createProcess(Process process, ProcessName processName)
         {
             Process tempProc = null;
@@ -131,11 +118,6 @@ namespace OperatingSystem
             return tempProc;
         }
 
-        public void destroyResource(Resource resource)
-        {
-
-        }
-
         public void destroyProcess(Process process)
         {
 
@@ -151,7 +133,25 @@ namespace OperatingSystem
 
         }
 
-        public void changePriority(Process process, int newPriority)
+        public void changeProcessPriority(Process process, int newPriority)
+        {
+
+        }
+
+        public Resource createResource(Process process, ResourceName resourceName, Object component)
+        {
+            Resource tempRes = null;
+            currentResID++;
+
+            tempRes = new Resource(currentResID, resourceName, this, process, component);
+
+            resources.AddLast(tempRes);
+            freeResources.AddLast(tempRes);
+            resourcesManager.execute();
+            return tempRes;
+        }
+
+        public void destroyResource(Resource resource)
         {
 
         }
