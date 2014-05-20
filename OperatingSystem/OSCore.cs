@@ -163,12 +163,13 @@ namespace OperatingSystem
 
         public void activateProcess(Process process)
         {
-
+            stoppedProcesses.Remove(process);
+            process.getDescriptor().state = ProcessState.READY;
         }
 
         public void changeProcessPriority(Process process, int newPriority)
         {
-
+            process.getDescriptor().priority = newPriority;
         }
 
         public Resource createResource(Process process, ResourceName resourceName, Object component)
