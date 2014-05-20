@@ -48,12 +48,12 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 7:
-                    descriptor.ownedResList.RemoveFirst();
+                    descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                     step++;
                     break;
                 case 8:
                     step = 1;
-                    break;
+                    break;        
             }
         }
     }

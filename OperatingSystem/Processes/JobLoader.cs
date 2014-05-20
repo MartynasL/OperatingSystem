@@ -39,7 +39,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 5:
-                    descriptor.ownedResList.RemoveFirst();
+                    descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                     step++;
                     break;
                 case 6:
