@@ -10,7 +10,6 @@ namespace OperatingSystem
     {
         public int ID;
         public OSCore.ResourceName externalID;
-        public LinkedList<ResourceElements> elements;
         public LinkedList<Process> processes;
         public OSCore os;
         public Process creator;

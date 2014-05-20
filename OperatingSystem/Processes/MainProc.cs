@@ -10,10 +10,10 @@ namespace OperatingSystem.Processes
     {
         public MainProc(LinkedList<Process> processList,
                        int ID, OSCore.ProcessName externalID,
-                       RegState savedState, VirtualRealMachine.CPU processor,
+                       VirtualRealMachine.CPU processor,
                        OSCore os, OSCore.ProcessState state, Process parent,
                        int priority)
-            : base(processList, ID, externalID, savedState, processor, os, state,
+            : base(processList, ID, externalID, processor, os, state,
                                            parent, priority)
         {
 

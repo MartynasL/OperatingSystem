@@ -24,13 +24,13 @@ namespace OperatingSystem
 
         public ProcessDescriptor(LinkedList<Process> processList,
                                  int ID, OSCore.ProcessName externalID,
-                                 RegState savedState, VirtualRealMachine.CPU processor,
+                                 VirtualRealMachine.CPU processor,
                                  OSCore os, OSCore.ProcessState state, Process parent,
                                  int priority)
         {
             this.processList = processList;
             this.ID = ID;
-            this.savedState = savedState;
+            this.savedState = new RegState();
             this.processor = processor;
             this.os = os;
             this.state = state;

@@ -8,6 +8,22 @@ namespace OperatingSystem
 {
     public class OSCore
     {
+        public LinkedList<Process> processes;
+        public LinkedList<Process> readyProcesses;
+        public LinkedList<Process> blockedProcesses;
+        public LinkedList<Process> stoppedProcesses;
+
+        public LinkedList<Resource> resources;
+        public LinkedList<Resource> usingResources;
+        public LinkedList<Resource> freeResources;
+
+        public ProcessManager processManager;
+        public ResourcesManager resourcesManager;
+
+        public VirtualRealMachine.Machine machine;
+
+        private int currentProcID;
+
         public enum ProcessName
         {
             START_STOP, JOB_INPUT, JOB_LOADER, MAIN_PROC, PRINT_LINE,
@@ -28,14 +44,76 @@ namespace OperatingSystem
             UZDUOTIES_IVEDIMAS
         }
 
+        public OSCore()
+        {
+            processes = new LinkedList<Process>();
+            readyProcesses = new LinkedList<Process>();
+            blockedProcesses = new LinkedList<Process>();
+            stoppedProcesses = new LinkedList<Process>();
+
+            resources = new LinkedList<Resource>();
+            usingResources = new LinkedList<Resource>();
+            freeResources = new LinkedList<Resource>();
+
+            processManager = new ProcessManager();
+            resourcesManager = new ResourcesManager();
+            currentProcID = 0;
+
+            machine = new VirtualRealMachine.Machine();
+        }
+
         public void createResource(Process process, ResourceName resourceName)
         {
-
+            
         }
 
         public void createProcess(Process process, ProcessName processName)
         {
+            Process tempProc;
+            currentProcID++;
+            int intID = currentProcID;
 
+            switch (processName)
+            {
+                case ProcessName.INPUT_LINE:
+                    tempProc = new Processes.InputLine(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.INTERRUPT:
+                    tempProc = new Processes.Interrupt(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.JOB_GOVERNOR:
+                    tempProc = new Processes.JobGovernor(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.JOB_INPUT:
+                    tempProc = new Processes.JobInput(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.JOB_LOADER:
+                    tempProc = new Processes.JobLoader(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.MAIN_PROC:
+                    tempProc = new Processes.MainProc(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.PRINT_LINE:
+                    tempProc = new Processes.PrintLine(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.START_STOP:
+                    tempProc = new Processes.StartStop(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                case ProcessName.VIRTUAL_MACHINE:
+                    tempProc = new Processes.VirtualMachine(processes, intID, processName,
+                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void destroyResource(Resource resource)

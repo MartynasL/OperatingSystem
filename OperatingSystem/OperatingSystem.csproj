@@ -63,6 +63,7 @@
     <Compile Include="Processes\PrintLine.cs" />
     <Compile Include="Processes\StartStop.cs" />
     <Compile Include="Processes\VirtualMachine.cs" />
+    <Compile Include="ProcessManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegState.cs" />
