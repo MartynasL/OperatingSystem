@@ -159,17 +159,20 @@ namespace OperatingSystem
                     process.getDescriptor().state = ProcessState.STOPPED;
                     break;
             }
+            processManager.execute();
         }
 
         public void activateProcess(Process process)
         {
             stoppedProcesses.Remove(process);
             process.getDescriptor().state = ProcessState.READY;
+            processManager.execute();
         }
 
         public void changeProcessPriority(Process process, int newPriority)
         {
             process.getDescriptor().priority = newPriority;
+            processManager.execute();
         }
 
         public Resource createResource(Process process, ResourceName resourceName, Object component)
@@ -187,17 +190,30 @@ namespace OperatingSystem
 
         public void destroyResource(Resource resource)
         {
+            resource.getDescriptor().user.getDescriptor().ownedResList.Remove(resource);
+            resource.getDescriptor().user = null;
+            resource.getDescriptor().creator.getDescriptor().createdResList.Remove(resource);
 
+            resources.Remove(resource);
+            freeResources.Remove(resource);
+            usingResources.Remove(resource);
         }
 
         public void requestResource(Process process, ResourceName resourceName)
         {
-
+            process.getDescriptor().waitingResList.AddLast(resourceName);
+            resourcesManager.execute();
         }
 
         public void releaseResource(Resource resource)
         {
+            resource.getDescriptor().user.getDescriptor().ownedResList.Remove(resource);
+            resource.getDescriptor().user = null;
 
+            freeResources.AddLast(resource);
+            usingResources.Remove(resource);
+
+            resourcesManager.execute();
         }
     }
 }
