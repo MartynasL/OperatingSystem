@@ -9,5 +9,9 @@ namespace OperatingSystem
     public class ResourcesManager
     {
 
+        internal void execute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

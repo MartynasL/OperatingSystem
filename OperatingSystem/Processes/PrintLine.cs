@@ -43,7 +43,8 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 6:
-                    descriptor.os.createResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
+                    //descriptor.os.createResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
+                    //Parasyt koks komponentas pridedamas
                     step++;
                     break;
                 case 7:

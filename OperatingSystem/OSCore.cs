@@ -23,6 +23,7 @@ namespace OperatingSystem
         public VirtualRealMachine.Machine machine;
 
         private int currentProcID;
+        private int currentResID;
 
         public enum ProcessName
         {
@@ -58,18 +59,27 @@ namespace OperatingSystem
             processManager = new ProcessManager();
             resourcesManager = new ResourcesManager();
             currentProcID = 0;
+            currentResID = 0;
 
             machine = new VirtualRealMachine.Machine();
         }
 
-        public void createResource(Process process, ResourceName resourceName)
+        public Resource createResource(Process process, ResourceName resourceName, Object component)
         {
-            
+            Resource tempRes = null;
+            currentResID++;
+
+            tempRes = new Resource(currentResID, resourceName, this, process, component);
+
+            resources.AddLast(tempRes);
+            freeResources.AddLast(tempRes);
+            resourcesManager.execute();
+            return tempRes;
         }
 
-        public void createProcess(Process process, ProcessName processName)
+        public Process createProcess(Process process, ProcessName processName)
         {
-            Process tempProc;
+            Process tempProc = null;
             currentProcID++;
             int intID = currentProcID;
 
@@ -114,6 +124,11 @@ namespace OperatingSystem
                 default:
                     break;
             }
+
+            processes.AddLast(tempProc);
+            readyProcesses.AddLast(tempProc);
+            processManager.execute();
+            return tempProc;
         }
 
         public void destroyResource(Resource resource)

@@ -13,6 +13,7 @@ namespace OperatingSystem
                         OSCore os, Process creator, Object component)
         {
             this.descriptor = new ResourceDescriptor(ID, externalID, os, creator, component);
+            creator.getDescriptor().createdResList.AddLast(this);
         }
 
         public ResourceDescriptor getDescriptor()

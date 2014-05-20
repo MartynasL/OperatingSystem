@@ -73,11 +73,12 @@ namespace OperatingSystem.Processes
 
         private void createStaticResources()
         {
-            descriptor.os.createResource(this, OSCore.ResourceName.TRECIAS_KANALAS);
-            descriptor.os.createResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
-            descriptor.os.createResource(this, OSCore.ResourceName.VARTOTOJO_ATMINTIS);
-            descriptor.os.createResource(this, OSCore.ResourceName.PIRMAS_KANALAS);
-            descriptor.os.createResource(this, OSCore.ResourceName.ANTRAS_KANALAS);
+            //descriptor.os.createResource(this, OSCore.ResourceName.TRECIAS_KANALAS);
+            //descriptor.os.createResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
+            //descriptor.os.createResource(this, OSCore.ResourceName.VARTOTOJO_ATMINTIS);
+            //descriptor.os.createResource(this, OSCore.ResourceName.PIRMAS_KANALAS);
+            //descriptor.os.createResource(this, OSCore.ResourceName.ANTRAS_KANALAS);
+            //Parasyt koks komponentas pridedamas
         }
 
     }

@@ -35,7 +35,8 @@ namespace OperatingSystem.Processes
                     //not implemented
                     break;
                 case 4:
-                    descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE);
+                    //descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE); 
+                    //Parasyt koks komponentas pridedamas
                     step++;
                     break;
                 case 5:
