@@ -33,7 +33,7 @@ namespace OperatingSystem
 
         public enum ProcessState
         {
-            RUN, READY, BLOCKED_STOPPED, READY_STOPPED, BLOCKED
+            RUN, READY, STOPPED, BLOCKED
         }
 
         public enum ResourceName
@@ -140,7 +140,25 @@ namespace OperatingSystem
 
         public void stopProcess(Process process)
         {
+            switch (process.getDescriptor().state)
+            {
+                case ProcessState.RUN:
+                    readyProcesses.AddLast(process);
+                    process.getDescriptor().state = ProcessState.STOPPED;
+                    break;
 
+                case ProcessState.BLOCKED:
+                    blockedProcesses.Remove(process);
+                    stoppedProcesses.AddLast(process);
+                    process.getDescriptor().state = ProcessState.STOPPED;
+                    break;
+                
+                case ProcessState.READY:
+                    readyProcesses.Remove(process);
+                    stoppedProcesses.AddLast(process);
+                    process.getDescriptor().state = ProcessState.STOPPED;
+                    break;
+            }
         }
 
         public void activateProcess(Process process)
