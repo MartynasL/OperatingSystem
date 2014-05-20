@@ -87,35 +87,35 @@ namespace OperatingSystem
             {
                 case ProcessName.INPUT_LINE:
                     tempProc = new Processes.InputLine(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 4);                                                                                                    
                     break;
                 case ProcessName.INTERRUPT:
                     tempProc = new Processes.Interrupt(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 3);                                                                                                    
                     break;
                 case ProcessName.JOB_GOVERNOR:
                     tempProc = new Processes.JobGovernor(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 2);                                                                                                    
                     break;
                 case ProcessName.JOB_INPUT:
                     tempProc = new Processes.JobInput(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 6);                                                                                                    
                     break;
                 case ProcessName.JOB_LOADER:
                     tempProc = new Processes.JobLoader(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 6);                                                                                                    
                     break;
                 case ProcessName.MAIN_PROC:
                     tempProc = new Processes.MainProc(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 5);                                                                                                    
                     break;
                 case ProcessName.PRINT_LINE:
                     tempProc = new Processes.PrintLine(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 4);                                                                                                    
                     break;
                 case ProcessName.START_STOP:
                     tempProc = new Processes.StartStop(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 1);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 7);                                                                                                    
                     break;
                 case ProcessName.VIRTUAL_MACHINE:
                     tempProc = new Processes.VirtualMachine(processes, intID, processName,
