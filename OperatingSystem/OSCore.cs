@@ -47,5 +47,15 @@ namespace OperatingSystem
         {
 
         }
+
+        public void requestResource(Process process, ResourceName resourceName)
+        {
+
+        }
+
+        public void releaseResource(Process process, ResourceName resourceName)
+        {
+
+        }
     }
 }

@@ -25,13 +25,21 @@ namespace OperatingSystem.Processes
             {
                 case 1:
                     createStaticResources();
-                    createSystemProcesses();
                     step++;
                     break;
                 case 2:
-                    //request resources
+                    createSystemProcesses();
+                    step++;
+                    break;
                 case 3:
+                    descriptor.os.requestResource(this, OSCore.ResourceName.PABAIGA);
+                    step++;
+                    break;
+                case 4:
                     destroySystemProcesses();
+                    step++;
+                    break;
+                case 5:
                     destroyStaticResources();
                     break;                    
             }

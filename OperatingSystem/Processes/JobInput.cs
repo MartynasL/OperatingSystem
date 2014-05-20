@@ -18,5 +18,47 @@ namespace OperatingSystem.Processes
         {
 
         }
+
+        public void execute()
+        {
+            switch (step)
+            {
+                case 1:
+                    descriptor.os.requestResource(this, OSCore.ResourceName.UZDUOTIES_IVEDIMAS);
+                    step++;
+                    break;
+                case 2:
+                    descriptor.os.requestResource(this, OSCore.ResourceName.TRECIAS_KANALAS);
+                    step++;
+                    break;
+                case 3:
+                    descriptor.os.requestResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
+                    step++;
+                    break;
+                case 4:
+                    //not implemented                    
+                    break;
+                case 5:
+                    //not implemented
+                    break;
+                case 6:
+                    descriptor.os.releaseResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
+                    step++;
+                    break;
+                case 7:
+                    descriptor.os.releaseResource(this, OSCore.ResourceName.PIRMAS_KANALAS);
+                    step++;
+                    break;
+                case 8:
+                    descriptor.os.releaseResource(this, OSCore.ResourceName.TRECIAS_KANALAS);
+                    step++;
+                    break;
+                case 9:
+                    descriptor.os.destroyResource(descriptor.ownedResList.First());
+                    descriptor.ownedResList.RemoveFirst();
+                    break;
+            }
+        }
+
     }
 }

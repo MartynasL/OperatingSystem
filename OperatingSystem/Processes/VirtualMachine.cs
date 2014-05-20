@@ -16,7 +16,18 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, savedState, processor, os, state,
                                            parent, priority)
         {
-
+            switch (step)
+            {
+                case 1:
+                    //not implemented
+                    break;
+                case 2:
+                    //not implemented
+                    break;
+                case 3:
+                    //not implemented
+                    break;
+            }
         }
     }
 }
