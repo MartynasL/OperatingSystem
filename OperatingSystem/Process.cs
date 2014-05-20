@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OperatingSystem
 {
-    public class Process
+    public abstract class Process
     {
         protected ProcessDescriptor descriptor;
         protected int step;
@@ -26,6 +26,8 @@ namespace OperatingSystem
                 parent.descriptor.childrenList.AddLast(this);
             }
         }
+
+        public abstract void execute();
 
         public ProcessDescriptor getDescriptor()
         {
