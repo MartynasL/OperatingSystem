@@ -120,7 +120,22 @@ namespace OperatingSystem
 
         public void destroyProcess(Process process)
         {
+            foreach (Resource resource in process.getDescriptor().createdResList)
+            {
+                destroyResource(resource);
+            }
 
+            foreach (Process proc in process.getDescriptor().childrenList)
+            {
+                destroyProcess(proc);
+            }
+
+            processes.Remove(process);
+            readyProcesses.Remove(process);
+            blockedProcesses.Remove(process);
+            stoppedProcesses.Remove(process);
+
+            process.getDescriptor().parent.getDescriptor().childrenList.Remove(process);
         }
 
         public void stopProcess(Process process)
