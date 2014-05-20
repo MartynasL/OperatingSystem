@@ -68,7 +68,6 @@
     <Compile Include="RegState.cs" />
     <Compile Include="Resource.cs" />
     <Compile Include="ResourceDescriptor.cs" />
-    <Compile Include="ResourceElements.cs" />
     <Compile Include="ResourcesManager.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

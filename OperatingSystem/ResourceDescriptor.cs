@@ -15,16 +15,17 @@ namespace OperatingSystem
         public OSCore os;
         public Process creator;
         public LinkedList<Resource> resources;
+        public Object component;
 
         public ResourceDescriptor(int ID, OSCore.ResourceName externalID,
-                                  OSCore os, Process creator)
+                                  OSCore os, Process creator, Object component)
         {
             this.ID = ID;
             this.externalID = externalID;
             this.os = os;
             this.creator = creator;
+            this.component = component;
 
-            elements = new LinkedList<ResourceElements>();
             processes = new LinkedList<Process>();
             resources = new LinkedList<Resource>();
         }
