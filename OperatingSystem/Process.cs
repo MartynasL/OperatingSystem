@@ -20,6 +20,11 @@ namespace OperatingSystem
                                                     savedState, processor, os, state,
                                                     parent, priority);
             this.step = 1;
+
+            if (parent != null)
+            {
+                parent.descriptor.childrenList.AddLast(this);
+            }
         }
 
         public ProcessDescriptor getDescriptor()
