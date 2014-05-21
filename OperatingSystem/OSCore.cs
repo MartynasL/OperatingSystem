@@ -59,7 +59,6 @@ namespace OperatingSystem
             freeResources = new LinkedList<Resource>();
 
             processManager = new ProcessManager(this);
-            resourcesManager = new ResourcesManager(this);
             currentProcID = 0;
             currentResID = 0;
 
@@ -186,7 +185,7 @@ namespace OperatingSystem
 
             resources.AddLast(tempRes);
             freeResources.AddLast(tempRes);
-            resourcesManager.execute();
+            resourcesManagerExecute(resourceName);
             return tempRes;
         }
 
@@ -204,7 +203,7 @@ namespace OperatingSystem
         public void requestResource(Process process, ResourceName resourceName)
         {
             process.getDescriptor().waitingResList.AddLast(resourceName);
-            resourcesManager.execute();
+            resourcesManagerExecute(resourceName);
         }
 
         public void releaseResource(Resource resource)
@@ -215,7 +214,26 @@ namespace OperatingSystem
             freeResources.AddLast(resource);
             usingResources.Remove(resource);
 
-            resourcesManager.execute();
+            resourcesManagerExecute(resource.getDescriptor().externalID);
+        }
+
+        private void resourcesManagerExecute(OSCore.ResourceName name)
+        {
+            Resource foundResource = null;
+
+            foreach (Resource resource in resources)
+            {
+                if (name == resource.getDescriptor().externalID)
+                {
+                    foundResource = resource;
+                    break;
+                }
+            }
+
+            if (foundResource != null)
+            {
+                foundResource.getManager().execute();                
+            }
         }
     }
 }
