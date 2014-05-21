@@ -40,7 +40,7 @@ namespace OperatingSystem
 
         public void freeBlock(int number)
         {
-            blocks[number] = false;
+            blocks[number] =false;
         }
     }
 }
