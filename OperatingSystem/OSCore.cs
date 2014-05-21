@@ -19,6 +19,9 @@ namespace OperatingSystem
 
         public ProcessManager processManager;
 
+        public RAMManager ramManager;
+        public SupervisorMemManager supervisorMemManager;
+
         public VirtualRealMachine.Machine machine;
 
         private int currentProcID;
@@ -58,6 +61,10 @@ namespace OperatingSystem
             freeResources = new LinkedList<Resource>();
 
             processManager = new ProcessManager(this);
+            ramManager = new RAMManager(machine.memory, machine.memory.NUMBER_OF_BLOCKS);
+            supervisorMemManager = new SupervisorMemManager(machine.supervisorMemory, machine.supervisorMemory.NUMBER_OF_BLOCKS);
+
+
             currentProcID = 0;
             currentResID = 0;
 
@@ -208,6 +215,11 @@ namespace OperatingSystem
 
         public void releaseResource(Resource resource)
         {
+            if (resource.getDescriptor().externalID == ResourceName.VARTOTOJO_ATMINTIS ||
+                resource.getDescriptor().externalID == ResourceName.SUPERVIZORINE_ATMINTIS)
+            {
+               
+            }
             resource.getDescriptor().user.getDescriptor().ownedResList.Remove(resource);
             resource.getDescriptor().user = null;
 

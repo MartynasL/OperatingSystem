@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="RAMManager.cs" />
     <Compile Include="OSCore.cs" />
     <Compile Include="Process.cs" />
     <Compile Include="ProcessDescriptor.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Resource.cs" />
     <Compile Include="ResourceDescriptor.cs" />
     <Compile Include="ResourcesManager.cs" />
+    <Compile Include="SupervisorMemManager.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
