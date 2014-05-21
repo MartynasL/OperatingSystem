@@ -25,6 +25,8 @@ namespace OperatingSystem
         private int currentProcID;
         private int currentResID;
 
+        public Process curProcess;
+
         public enum ProcessName
         {
             START_STOP, JOB_INPUT, JOB_LOADER, MAIN_PROC, PRINT_LINE,

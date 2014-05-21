@@ -15,9 +15,36 @@ namespace OperatingSystem
             this.os = os;
         }
 
-        internal void execute()
+        public void execute()
         {
-            throw new NotImplementedException();
+            if (os.curProcess.getDescriptor().state == OSCore.ProcessState.BLOCKED)
+            {
+                os.blockedProcesses.AddLast(os.curProcess);
+            }
+            else
+            {
+                os.curProcess.getDescriptor().state = OSCore.ProcessState.READY;
+                os.readyProcesses.AddLast(os.curProcess);
+            }
+
+            os.curProcess = getHighestPriorityReadyProcess();
+        }
+
+        private Process getHighestPriorityReadyProcess()
+        {
+            Process tempProc = null;
+            int highestPriority = 0;
+
+            foreach (Process process in os.readyProcesses)
+            {
+                if (process.getDescriptor().priority > highestPriority)
+                {
+                    tempProc = process;
+                    highestPriority = process.getDescriptor().priority;
+                }
+            }
+
+            return tempProc;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace OperatingSystem
             this.os = os;
         }
 
-        internal void execute()
+        public void execute()
         {
             throw new NotImplementedException();
         }
