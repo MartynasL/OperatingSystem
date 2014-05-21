@@ -30,7 +30,6 @@ namespace OperatingSystem.Processes
                 case 2:
                     descriptor.os.requestResource(this, OSCore.ResourceName.VARTOTOJO_ATMINTIS);
                     step++;
-                    prepared = true;
                     break;
                 case 3:
                     //not implemented

@@ -18,7 +18,6 @@ namespace OperatingSystem
         public LinkedList<Resource> freeResources;
 
         public ProcessManager processManager;
-        public ResourcesManager resourcesManager;
 
         public VirtualRealMachine.Machine machine;
 
@@ -202,6 +201,7 @@ namespace OperatingSystem
 
         public void requestResource(Process process, ResourceName resourceName)
         {
+            process.getDescriptor().state = ProcessState.BLOCKED;
             process.getDescriptor().waitingResList.AddLast(resourceName);
             resourcesManagerExecute(resourceName);
         }
