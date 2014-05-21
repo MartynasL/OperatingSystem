@@ -41,7 +41,11 @@ namespace OperatingSystem
                 os.freeResources.Remove(resource);
 
                 if (highestPriorityProcess.prepared)
+                {
                     highestPriorityProcess.getDescriptor().state = OSCore.ProcessState.READY;
+                    os.blockedProcesses.Remove(highestPriorityProcess);
+                    os.readyProcesses.AddLast(highestPriorityProcess);
+                }
             }
         }
     }
