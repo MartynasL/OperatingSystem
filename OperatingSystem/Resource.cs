@@ -10,9 +10,9 @@ namespace OperatingSystem
         protected ResourceDescriptor descriptor;
 
         public Resource(int ID, OSCore.ResourceName externalID,
-                        OSCore os, Process creator, Object component)
+                        OSCore os, Process creator, Object component, LinkedList<Resource> resources)
         {
-            this.descriptor = new ResourceDescriptor(ID, externalID, os, creator, component);
+            this.descriptor = new ResourceDescriptor(ID, externalID, os, creator, component, resources);
             creator.getDescriptor().createdResList.AddLast(this);
         }
 

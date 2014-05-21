@@ -182,7 +182,7 @@ namespace OperatingSystem
             Resource tempRes = null;
             currentResID++;
 
-            tempRes = new Resource(currentResID, resourceName, this, process, component);
+            tempRes = new Resource(currentResID, resourceName, this, process, component, resources);
 
             resources.AddLast(tempRes);
             freeResources.AddLast(tempRes);

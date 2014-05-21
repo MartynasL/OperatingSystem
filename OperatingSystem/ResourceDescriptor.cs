@@ -18,16 +18,16 @@ namespace OperatingSystem
         public Process user;
 
         public ResourceDescriptor(int ID, OSCore.ResourceName externalID,
-                                  OSCore os, Process creator, Object component)
+                                  OSCore os, Process creator, Object component, LinkedList<Resource> resources)
         {
             this.ID = ID;
             this.externalID = externalID;
             this.os = os;
             this.creator = creator;
             this.component = component;
+            this.resources = resources;
 
             processes = new LinkedList<Process>();
-            resources = new LinkedList<Resource>();
             user = null;
         }
     }

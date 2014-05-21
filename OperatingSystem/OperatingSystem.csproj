@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -93,7 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\VirtualRealMachine\VirtualRealMachine\VirtualRealMachine.csproj">
+    <ProjectReference Include="..\..\2 uzd\VirtualRealMachine\VirtualRealMachine.csproj">
       <Project>{eec70a36-1506-4eeb-ac13-12bcc26cf289}</Project>
       <Name>VirtualRealMachine</Name>
     </ProjectReference>
