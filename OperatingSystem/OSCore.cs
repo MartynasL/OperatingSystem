@@ -56,8 +56,8 @@ namespace OperatingSystem
             usingResources = new LinkedList<Resource>();
             freeResources = new LinkedList<Resource>();
 
-            processManager = new ProcessManager();
-            resourcesManager = new ResourcesManager();
+            processManager = new ProcessManager(this);
+            resourcesManager = new ResourcesManager(this);
             currentProcID = 0;
             currentResID = 0;
 

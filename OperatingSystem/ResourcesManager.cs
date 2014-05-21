@@ -8,6 +8,12 @@ namespace OperatingSystem
 {
     public class ResourcesManager
     {
+        private OSCore os;
+
+        public ResourcesManager(OSCore os)
+        {
+            this.os = os;
+        }
 
         internal void execute()
         {

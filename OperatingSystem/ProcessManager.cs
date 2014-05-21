@@ -8,6 +8,13 @@ namespace OperatingSystem
 {
     public class ProcessManager
     {
+        private OSCore os;
+
+        public ProcessManager(OSCore os)
+        {
+            this.os = os;
+        }
+
         internal void execute()
         {
             throw new NotImplementedException();
