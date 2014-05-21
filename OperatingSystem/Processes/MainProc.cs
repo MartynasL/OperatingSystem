@@ -26,6 +26,7 @@ namespace OperatingSystem.Processes
                 case 1:
                     descriptor.os.requestResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE);
                     step++;
+                    prepared = true;
                     break;
                 case 2:
                     //not implemented

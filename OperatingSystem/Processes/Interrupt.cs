@@ -26,6 +26,7 @@ namespace OperatingSystem.Processes
                 case 1:
                     descriptor.os.requestResource(this, OSCore.ResourceName.PERTRAUKIMAS);
                     step++;
+                    prepared = true;
                     break;
                 case 2:
                     //not implemented

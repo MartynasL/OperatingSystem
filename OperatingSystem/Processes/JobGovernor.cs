@@ -34,6 +34,7 @@ namespace OperatingSystem.Processes
                 case 3:
                     descriptor.os.requestResource(this, OSCore.ResourceName.IVYKO_PERTRAUKIMAS);
                     step++;
+                    prepared = true;
                     break;
                 case 4:
                     //not implemented                    

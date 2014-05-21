@@ -9,6 +9,7 @@ namespace OperatingSystem
     {
         protected ProcessDescriptor descriptor;
         protected int step;
+        public Boolean prepared = false;
 
         public Process(LinkedList<Process> processList,
                        int ID, OSCore.ProcessName externalID,

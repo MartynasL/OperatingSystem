@@ -34,6 +34,7 @@ namespace OperatingSystem.Processes
                 case 3:
                     descriptor.os.requestResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
                     step++;
+                    prepared = true;
                     break;
                 case 4:
                     //not implemented                    
