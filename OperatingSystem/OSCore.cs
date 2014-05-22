@@ -185,7 +185,7 @@ namespace OperatingSystem
 
             resources.AddLast(tempRes);
             freeResources.AddLast(tempRes);
-            resourcesManagerExecute(resourceName);
+            tempRes.getManager().execute();
             return tempRes;
         }
 
@@ -214,7 +214,7 @@ namespace OperatingSystem
             freeResources.AddLast(resource);
             usingResources.Remove(resource);
 
-            resourcesManagerExecute(resource.getDescriptor().externalID);
+            resource.getManager().execute();
         }
 
         private void resourcesManagerExecute(OSCore.ResourceName name)
