@@ -40,13 +40,15 @@ namespace OperatingSystem
                 os.usingResources.AddLast(resource);
                 os.freeResources.Remove(resource);
 
-                if (highestPriorityProcess.prepared)
+                if (highestPriorityProcess.getDescriptor().waitingResList.Count() == 0)
                 {
                     highestPriorityProcess.getDescriptor().state = OSCore.ProcessState.READY;
                     os.blockedProcesses.Remove(highestPriorityProcess);
                     os.readyProcesses.AddLast(highestPriorityProcess);
                 }
             }
+
+            os.processManager.execute();
         }
     }
 }

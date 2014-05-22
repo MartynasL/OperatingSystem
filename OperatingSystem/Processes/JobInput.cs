@@ -8,6 +8,9 @@ namespace OperatingSystem.Processes
 {
     public class JobInput: Process
     {
+        private int currentHDDJob;
+        private int[] supervisorBlocks;
+
         public JobInput(LinkedList<Process> processList,
                        int ID, OSCore.ProcessName externalID,
                         VirtualRealMachine.CPU processor,
@@ -16,7 +19,8 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, processor, os, state,
                                            parent, priority)
         {
-
+            currentHDDJob = 0;
+            supervisorBlocks = new int[10];
         }
 
         public override void execute()
@@ -32,33 +36,56 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    descriptor.os.requestResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.PIRMAS_KANALAS);
                     step++;
-                    prepared = true;
                     break;
                 case 4:
-                    //not implemented                    
-                    break;
-                case 5:
-                    //not implemented
-                    break;
-                case 6:
-                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
+                    descriptor.os.requestResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
                     step++;
                     break;
+                case 5:
+                    for (int i = 0; i < 10; i++)
+                    {
+                        supervisorBlocks[i] = descriptor.os.supervisorMemManager.getFreeBlock();
+                    }
+                    for (int i = 0; i < 10; i++)
+                    {
+                        descriptor.os.machine.cpu.input(descriptor.os.machine.supervisorMemory,
+                            descriptor.os.machine.inputDevice, supervisorBlocks[i]);
+                    }                 
+                    break;
+                case 6:
+                    for (int i = 0; i < 10; i++)
+                    {
+                        descriptor.os.machine.cpu.output(descriptor.os.machine.memory,
+                            descriptor.os.machine.hddManager, supervisorBlocks[i], currentHDDJob + i);
+                    }
+                    break;
                 case 7:
-                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
+                    descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_ISORINEJE_ATMINTYJE, currentHDDJob);
                     step++;
                     break;
                 case 8:
+                    for (int i = 0; i < 10; i++)
+                    {
+                        descriptor.os.supervisorMemManager.freeBlock(supervisorBlocks[i]);
+                    }
                     descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
                 case 9:
-                    descriptor.os.destroyResource(descriptor.ownedResList.Last<Resource>());
+                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
                 case 10:
+                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
+                    step++;
+                    break;
+                case 11:
+                    descriptor.os.destroyResource(descriptor.ownedResList.Last<Resource>());
+                    step++;
+                    break;
+                case 12:
                     step = 1;
                     break;
             }

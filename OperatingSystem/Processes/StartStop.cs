@@ -34,7 +34,6 @@ namespace OperatingSystem.Processes
                 case 3:
                     descriptor.os.requestResource(this, OSCore.ResourceName.PABAIGA);
                     step++;
-                    prepared = true;
                     break;
                 case 4:
                     destroySystemProcesses();
@@ -74,12 +73,13 @@ namespace OperatingSystem.Processes
 
         private void createStaticResources()
         {
-            //descriptor.os.createResource(this, OSCore.ResourceName.TRECIAS_KANALAS);
-            //descriptor.os.createResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS);
-            //descriptor.os.createResource(this, OSCore.ResourceName.VARTOTOJO_ATMINTIS);
-            //descriptor.os.createResource(this, OSCore.ResourceName.PIRMAS_KANALAS);
-            //descriptor.os.createResource(this, OSCore.ResourceName.ANTRAS_KANALAS);
-            //Parasyt koks komponentas pridedamas
+            VirtualRealMachine.Machine machine = descriptor.os.machine;
+
+            descriptor.os.createResource(this, OSCore.ResourceName.TRECIAS_KANALAS, machine.hddManager);
+            descriptor.os.createResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS, machine.supervisorMemory);
+            descriptor.os.createResource(this, OSCore.ResourceName.VARTOTOJO_ATMINTIS, machine.memory);
+            descriptor.os.createResource(this, OSCore.ResourceName.PIRMAS_KANALAS, machine.inputDevice);
+            descriptor.os.createResource(this, OSCore.ResourceName.ANTRAS_KANALAS, machine.outputDevice);
         }
 
     }

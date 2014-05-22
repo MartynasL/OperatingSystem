@@ -18,7 +18,9 @@ namespace OperatingSystem
         public LinkedList<Resource> freeResources;
 
         public ProcessManager processManager;
-        public ResourcesManager resourcesManager;
+
+        public RAMManager ramManager;
+        public SupervisorMemManager supervisorMemManager;
 
         public VirtualRealMachine.Machine machine;
 
@@ -59,6 +61,10 @@ namespace OperatingSystem
             freeResources = new LinkedList<Resource>();
 
             processManager = new ProcessManager(this);
+            ramManager = new RAMManager(machine.memory, machine.memory.NUMBER_OF_BLOCKS);
+            supervisorMemManager = new SupervisorMemManager(machine.supervisorMemory, machine.supervisorMemory.NUMBER_OF_BLOCKS);
+
+
             currentProcID = 0;
             currentResID = 0;
 
@@ -202,12 +208,18 @@ namespace OperatingSystem
 
         public void requestResource(Process process, ResourceName resourceName)
         {
+            process.getDescriptor().state = ProcessState.BLOCKED;
             process.getDescriptor().waitingResList.AddLast(resourceName);
             resourcesManagerExecute(resourceName);
         }
 
         public void releaseResource(Resource resource)
         {
+            if (resource.getDescriptor().externalID == ResourceName.VARTOTOJO_ATMINTIS ||
+                resource.getDescriptor().externalID == ResourceName.SUPERVIZORINE_ATMINTIS)
+            {
+               
+            }
             resource.getDescriptor().user.getDescriptor().ownedResList.Remove(resource);
             resource.getDescriptor().user = null;
 
@@ -221,7 +233,7 @@ namespace OperatingSystem
         {
             Resource foundResource = null;
 
-            foreach (Resource resource in resources)
+            foreach (Resource resource in freeResources)
             {
                 if (name == resource.getDescriptor().externalID)
                 {
