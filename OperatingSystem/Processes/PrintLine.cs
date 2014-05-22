@@ -32,7 +32,9 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    //not implemented
+                    descriptor.os.machine.cpu.output(descriptor.os.machine.memory, descriptor.os.machine.outputDevice, 
+                        (int) descriptor.ownedResList.First<Resource>().getDescriptor().component);
+                    step++;
                     break;
                 case 4:
                     descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
@@ -43,8 +45,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 6:
-                    //descriptor.os.createResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
-                    //Parasyt koks komponentas pridedamas
+                    descriptor.os.createResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA, null);
                     step++;
                     break;
                 case 7:
