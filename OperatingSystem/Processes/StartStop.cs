@@ -78,8 +78,8 @@ namespace OperatingSystem.Processes
             descriptor.os.createResource(this, OSCore.ResourceName.TRECIAS_KANALAS, machine.hddManager);
             descriptor.os.createResource(this, OSCore.ResourceName.SUPERVIZORINE_ATMINTIS, machine.supervisorMemory);
             descriptor.os.createResource(this, OSCore.ResourceName.VARTOTOJO_ATMINTIS, machine.memory);
-            descriptor.os.createResource(this, OSCore.ResourceName.PIRMAS_KANALAS, machine.cpu);
-            descriptor.os.createResource(this, OSCore.ResourceName.ANTRAS_KANALAS, machine.cpu);
+            descriptor.os.createResource(this, OSCore.ResourceName.PIRMAS_KANALAS, machine.inputDevice);
+            descriptor.os.createResource(this, OSCore.ResourceName.ANTRAS_KANALAS, machine.outputDevice);
         }
 
     }
