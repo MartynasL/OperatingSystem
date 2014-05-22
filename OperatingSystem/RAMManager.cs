@@ -33,7 +33,7 @@ namespace OperatingSystem
             return -1;
         }
 
-        public VirtualRealMachine.MemoryBlock getPageTable(ref VirtualRealMachine.Word PRValue)
+        public VirtualRealMachine.Word getPageTableAddress()
         {
             VirtualRealMachine.MemoryBlock pageTable;
 
@@ -47,7 +47,7 @@ namespace OperatingSystem
             {
                 pageTable = memory.getBlock(freeBlockNr);
                 string freeBlockNrStr = freeBlockNr.ToString();
-                PRValue = new VirtualRealMachine.Word(freeBlockNrStr);
+                VirtualRealMachine.Word PRValue = new VirtualRealMachine.Word(freeBlockNrStr);
                 blocks[freeBlockNr] = true;
 
                 for (int i = 0; i < 10; i++)
@@ -57,15 +57,15 @@ namespace OperatingSystem
                     pageTable.setBlockWord(i, new VirtualRealMachine.Word(freeBlStr));
                     blocks[freeBlockNr] = true;
                 }
-                return pageTable;
+                return PRValue;
             }
         }
 
-        public void freeBlocks(VirtualRealMachine.MemoryBlock pageTable, VirtualRealMachine.Word PRValue)
+        public void freeBlocks(VirtualRealMachine.Word PRValue)
         {
             for (int i = 0; 10 > i; i++)
             {
-                blocks[pageTable.getBlockWord(i).toInt()] = false;
+                blocks[memory.getBlock(PRValue.toInt()).getBlockWord(i).toInt()] = false;
             }
 
             blocks[PRValue.toInt()] = false;

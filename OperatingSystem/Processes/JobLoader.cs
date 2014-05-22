@@ -8,6 +8,8 @@ namespace OperatingSystem.Processes
 {
     public class JobLoader: Process
     {
+        private VirtualRealMachine.Word PRValue;
+
         public JobLoader(LinkedList<Process> processList,
                        int ID, OSCore.ProcessName externalID,
                        VirtualRealMachine.CPU processor,
@@ -32,18 +34,30 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    //not implemented
+                    PRValue = descriptor.os.ramManager.getPageTableAddress();
+                    for(int j = 0; j < 10; j++)
+                    {
+                        for(int i = 0; i < 10; i++)
+                        {
+                            descriptor.os.machine.cpu.input(descriptor.os.machine.memory,
+                                descriptor.os.machine.hddManager, (PRValue.toInt() + j) * 10 + i,
+                                (int)descriptor.ownedResList.First.Value.getDescriptor().component - 10 + i);
+                        }
+                    }
                     break;
                 case 4:
-                    //descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE); 
-                    //Parasyt koks komponentas pridedamas
+                    descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE, PRValue);
                     step++;
                     break;
                 case 5:
-                    descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
+                    descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
                 case 6:
+                    descriptor.os.destroyResource(descriptor.ownedResList.Last<Resource>());
+                    step++;
+                    break;
+                case 7:
                     step = 1;
                     break;
             }
