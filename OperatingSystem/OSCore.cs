@@ -233,7 +233,7 @@ namespace OperatingSystem
         {
             Resource foundResource = null;
 
-            foreach (Resource resource in resources)
+            foreach (Resource resource in freeResources)
             {
                 if (name == resource.getDescriptor().externalID)
                 {

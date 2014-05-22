@@ -24,32 +24,28 @@ namespace OperatingSystem.Processes
             switch (step)
             {
                 case 1:
-                    descriptor.os.requestResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE);
-                    step++;
-                    break;
-                case 2:
                     descriptor.os.createProcess(this, OSCore.ProcessName.VIRTUAL_MACHINE);
                     step++;
                     break;
-                case 3:
+                case 2:
                     descriptor.os.requestResource(this, OSCore.ResourceName.IVYKO_PERTRAUKIMAS);
                     step++;
                     break;
-                case 4:
+                case 3:
                     //not implemented                    
                     break;
-                case 5:
+                case 4:
                     step = 3;
                     break;
-                case 6:
+                case 5:
                     descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                     step++;
                     break;
-                case 7:
-                    descriptor.os.destroyProcess(descriptor.childrenList.First());
+                case 6:
+                    descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE, null);
                     step++;
                     break;
-                case 8:
+                case 7:
                     step = 1;
                     break;
             }
