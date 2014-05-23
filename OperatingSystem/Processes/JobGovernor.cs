@@ -32,7 +32,8 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    //not implemented                    
+                    handleInterrupt();
+                    step++;
                     break;
                 case 4:
                     step = 3;
@@ -49,6 +50,72 @@ namespace OperatingSystem.Processes
                     step = 1;
                     break;
             }
+        }
+
+        private void handleInterrupt()
+        {
+            string interrupt = (string) descriptor.ownedResList.First().getDescriptor().component;
+            interrupt = interrupt.Substring(1);
+
+            switch (interrupt)
+            {
+                case "PI1":
+
+                    break;
+                case "PI2":
+
+                    break;
+                case "PI3":
+
+                    break;
+                case "PI4":
+
+                    break;
+                case "PI5":
+
+                    break;
+                case "SI1":
+
+                    break;
+                case "SI2":
+
+                    break;
+                case "PI1":
+
+                    break;
+                case "SI3":
+
+                    break;
+                case "SI4":
+
+                    break;
+                case "SI5":
+
+                    break;
+                case "IOI1":
+
+                    break;
+                case "IOI2":
+
+                    break;
+                case "IOI3":
+
+                    break;
+                case "IOI4":
+
+                    break;
+                case "IOI5":
+
+                    break;
+                case "IOI6":
+
+                    break;
+                case "IOI7":
+
+                    break;
+                case "TI1":
+
+                    break;
         }
     }
 }

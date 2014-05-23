@@ -78,7 +78,7 @@ namespace OperatingSystem.Processes
             }
             if (descriptor.os.machine.cpu.TI.getValue() != '0')
             {
-                return "TI" + innerIdentificate(descriptor.os.machine.cpu.TI.getValue(), 2);
+                return "TI" + innerIdentificate(descriptor.os.machine.cpu.TI.getValue(), 1);
             }
 
             return null;
