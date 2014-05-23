@@ -19,6 +19,8 @@ namespace OperatingSystem.Processes
 
         }
 
+        private string interrupt = null;
+
         public override void execute()
         {
             switch (step)
@@ -28,15 +30,17 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 2:
-                    //not implemented
+                    interrupt = identificateInterrupt();
                     step++;
                     break;
                 case 3:
-                    //not implemented
+                    if (interrupt == "SI4")
+                        descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIES_IVEDIMAS, null);
                     step++;
                     break;
                 case 4:
-                    //not implemented 
+                    if (interrupt == "SI5")
+                        descriptor.os.createResource(this, OSCore.ResourceName.PABAIGA, null); 
                     step++;
                     break;
                 case 5:
@@ -55,6 +59,39 @@ namespace OperatingSystem.Processes
                     step = 1;
                     break;        
             }
+        }
+
+        private string identificateInterrupt()
+        {
+            if (descriptor.os.machine.cpu.PI.getValue() != '0')
+            {
+                return "PI" + innerIdentificate(descriptor.os.machine.cpu.PI.getValue(), 5);
+            }
+            if (descriptor.os.machine.cpu.SI.getValue() != '0')
+            {
+                return "SI" + innerIdentificate(descriptor.os.machine.cpu.SI.getValue(), 5);
+            }
+            if (descriptor.os.machine.cpu.IOI.getValue() != '0')
+            {
+                return "IOI" + innerIdentificate(descriptor.os.machine.cpu.IOI.getValue(), 7);
+            }
+            if (descriptor.os.machine.cpu.TI.getValue() != '0')
+            {
+                return "TI" + innerIdentificate(descriptor.os.machine.cpu.TI.getValue(), 2);
+            }
+
+            return null;
+        }
+
+        private int innerIdentificate(int interrupt, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                if (interrupt == i)
+                    return i;
+            }
+
+            return -1;
         }
     }
 }
