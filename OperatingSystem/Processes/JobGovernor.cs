@@ -36,6 +36,12 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 4:
+                    foreach (Resource resource in descriptor.ownedResList)
+                    {
+                        if ((resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_ATSPAUSDINTA) ||
+                        (resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_IVESTA))
+                            descriptor.os.destroyResource(resource);
+                    }
                     step = 3;
                     break;
                 case 5:
@@ -75,15 +81,17 @@ namespace OperatingSystem.Processes
                     //msg
                     break;
                 case "SI1":
-                    //???
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE, null);
+                    int block = descriptor.childrenList.First().getDescriptor().os.machine.cpu.B.getValue().toInt() / 10;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE, block);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_IVESTA);
                     break;
                 case "SI2":
-                    int block = descriptor.childrenList.First().getDescriptor().os.machine.cpu.B.getValue().toInt() / 10;
+                    block = descriptor.childrenList.First().getDescriptor().os.machine.cpu.B.getValue().toInt() / 10;
                     descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "SI3":
-                    descriptor.os.destroyProcess(this);
+                    step = 5;
                     break;
                 case "IOI1":
                     //msg
@@ -107,7 +115,7 @@ namespace OperatingSystem.Processes
                     //msg
                     break;
                 case "TI1":
-
+                    //ready?
                     break;
             }
         }
