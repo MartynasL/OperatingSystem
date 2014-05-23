@@ -64,21 +64,31 @@ namespace OperatingSystem.Processes
 
         private string identificateInterrupt()
         {
+            int innerInterrupt = 0;
+
             if (descriptor.os.machine.cpu.PI.getValue() != '0')
             {
-                return "PI" + innerIdentificate(descriptor.os.machine.cpu.PI.getValue(), 5);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.PI.getValue(), 5);
+                descriptor.os.machine.cpu.PI.setValue('0');
+                return "PI" + innerInterrupt;
             }
             if (descriptor.os.machine.cpu.SI.getValue() != '0')
             {
-                return "SI" + innerIdentificate(descriptor.os.machine.cpu.SI.getValue(), 5);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.SI.getValue(), 5);
+                descriptor.os.machine.cpu.SI.setValue('0');
+                return "SI" + innerInterrupt;
             }
             if (descriptor.os.machine.cpu.IOI.getValue() != '0')
             {
-                return "IOI" + innerIdentificate(descriptor.os.machine.cpu.IOI.getValue(), 7);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.IOI.getValue(), 7);
+                descriptor.os.machine.cpu.IOI.setValue('0');
+                return "IOI" + innerInterrupt;
             }
             if (descriptor.os.machine.cpu.TI.getValue() != '0')
             {
-                return "TI" + innerIdentificate(descriptor.os.machine.cpu.TI.getValue(), 1);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.TI.getValue(), 1);
+                descriptor.os.machine.cpu.TI.setValue('0');
+                return "TI" + innerInterrupt;
             }
 
             return null;

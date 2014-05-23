@@ -80,9 +80,6 @@ namespace OperatingSystem.Processes
                 case "SI2":
 
                     break;
-                case "PI1":
-
-                    break;
                 case "SI3":
 
                     break;
@@ -116,6 +113,7 @@ namespace OperatingSystem.Processes
                 case "TI1":
 
                     break;
+            }
         }
     }
 }
