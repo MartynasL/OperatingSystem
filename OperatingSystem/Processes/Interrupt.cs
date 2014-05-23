@@ -20,6 +20,7 @@ namespace OperatingSystem.Processes
         }
 
         private string interrupt = null;
+        private int machine = 0;
 
         public override void execute()
         {
@@ -44,7 +45,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 5:
-                    //not implemented
+                    machine = identificateMachine();
                     step++;
                     break;
                 case 6:
@@ -92,6 +93,11 @@ namespace OperatingSystem.Processes
             }
 
             return -1;
+        }
+
+        private int identificateMachine()
+        {
+            return descriptor.os.machine.cpu.M.getIntValue();
         }
     }
 }
