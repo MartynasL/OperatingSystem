@@ -18,7 +18,6 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, processor, os, state,
                                            parent, priority)
         {
-
         }
 
         public override void execute()

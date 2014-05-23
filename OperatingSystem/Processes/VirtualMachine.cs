@@ -16,7 +16,11 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, processor, os, state,
                                            parent, priority)
         {
-
+            descriptor.savedState.saveState(descriptor.os.machine.cpu);
+            JobGovernor governor = (JobGovernor)parent;
+            descriptor.os.machine.cpu.M.setValue((char)('0' + governor.machineNumber));
+            descriptor.os.machine.cpu.PR.setValue((VirtualRealMachine.Word)governor.getDescriptor().ownedResList
+                .Last.Value.getDescriptor().component);
         }
 
         public override void execute()
@@ -24,15 +28,26 @@ namespace OperatingSystem.Processes
             switch (step)
             {
                 case 1:
-                    //not implemented
+                    descriptor.savedState.setState(descriptor.os.machine.cpu);
+                    descriptor.os.machine.cpu.MODE.setValue('V');
                     step++;
                     break;
                 case 2:
-                    //not implemented
+                    int i = 0;
+                    while (!descriptor.os.machine.cpu.stopMachine && i != 10000)
+                    {
+                        if (descriptor.os.machine.cpu.execute(descriptor.os.machine.interpretator) == true)
+                        {
+                            break;
+                        }
+                        i++;
+                    }
                     step++;
                     break;
                 case 3:
-                    //not implemented
+                    descriptor.savedState.saveState(descriptor.os.machine.cpu);
+                    descriptor.os.createResource(this, OSCore.ResourceName.PERTRAUKIMAS, null);
+                    descriptor.os.machine.cpu.MODE.setValue('S');
                     step++;
                     break;
                 case 4:

@@ -8,6 +8,8 @@ namespace OperatingSystem.Processes
 {
     public class JobGovernor: Process
     {
+        public int machineNumber;
+
         public JobGovernor(LinkedList<Process> processList,
                        int ID, OSCore.ProcessName externalID,
                        VirtualRealMachine.CPU processor,
@@ -25,6 +27,9 @@ namespace OperatingSystem.Processes
             {
                 case 1:
                     descriptor.os.createProcess(this, OSCore.ProcessName.VIRTUAL_MACHINE);
+                    descriptor.childrenList.Last.Value.getDescriptor()
+                       .ownedResList.AddLast(descriptor.ownedResList.Last.Value);
+                    descriptor.ownedResList.RemoveLast();
                     step++;
                     break;
                 case 2:
@@ -42,7 +47,7 @@ namespace OperatingSystem.Processes
                         (resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_IVESTA))
                             descriptor.os.destroyResource(resource);
                     }
-                    step = 3;
+                    step = 2;
                     break;
                 case 5:
                     descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
@@ -81,12 +86,12 @@ namespace OperatingSystem.Processes
                     //msg
                     break;
                 case "SI1":
-                    int block = descriptor.childrenList.First().getDescriptor().os.machine.cpu.B.getValue().toInt() / 10;
+                    int block = descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
                     descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE, block);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_IVESTA);
                     break;
                 case "SI2":
-                    block = descriptor.childrenList.First().getDescriptor().os.machine.cpu.B.getValue().toInt() / 10;
+                    block = descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
                     descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
