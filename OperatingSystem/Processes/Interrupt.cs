@@ -49,7 +49,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 6:
-                    //gsd
+                    descriptor.os.createResource(this, OSCore.ResourceName.IVYKO_PERTRAUKIMAS, machine + interrupt);
                     step++;
                     break;
                 case 7:
