@@ -60,55 +60,51 @@ namespace OperatingSystem.Processes
             switch (interrupt)
             {
                 case "PI1":
-
+                    //msg
                     break;
                 case "PI2":
-
+                    //msg
                     break;
                 case "PI3":
-
+                    //msg
                     break;
                 case "PI4":
-
+                    //msg
                     break;
                 case "PI5":
-
+                    //msg
                     break;
                 case "SI1":
-
+                    //???
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE, null);
                     break;
                 case "SI2":
-
+                    int block = descriptor.childrenList.First().getDescriptor().os.machine.cpu.B.getValue().toInt() / 10;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
                     break;
                 case "SI3":
-
-                    break;
-                case "SI4":
-
-                    break;
-                case "SI5":
-
+                    descriptor.os.destroyProcess(this);
                     break;
                 case "IOI1":
-
+                    //msg
                     break;
                 case "IOI2":
-
+                    //msg
                     break;
                 case "IOI3":
-
+                    //msg
                     break;
                 case "IOI4":
-
+                    //msg
                     break;
                 case "IOI5":
-
+                    //msg
                     break;
                 case "IOI6":
-
+                    //msg
                     break;
                 case "IOI7":
-
+                    //msg
                     break;
                 case "TI1":
 

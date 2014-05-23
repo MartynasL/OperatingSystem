@@ -36,13 +36,23 @@ namespace OperatingSystem.Processes
                     break;
                 case 3:
                     if (interrupt == "SI4")
+                    {
+                        descriptor.os.machine.cpu.SI.setValue('0');
                         descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIES_IVEDIMAS, null);
-                    step++;
+                        step = 1;
+                    }
+                    else
+                        step++;
                     break;
                 case 4:
                     if (interrupt == "SI5")
-                        descriptor.os.createResource(this, OSCore.ResourceName.PABAIGA, null); 
-                    step++;
+                    {
+                        descriptor.os.machine.cpu.SI.setValue('0');
+                        descriptor.os.createResource(this, OSCore.ResourceName.PABAIGA, null);
+                        step = 1;
+                    }
+                    else
+                        step++;
                     break;
                 case 5:
                     machine = identificateMachine();
