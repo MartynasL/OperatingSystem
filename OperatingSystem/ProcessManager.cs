@@ -17,17 +17,23 @@ namespace OperatingSystem
 
         public void execute()
         {
-            if (os.curProcess.getDescriptor().state == OSCore.ProcessState.BLOCKED)
+            if (os.curProcess != null)
             {
-                os.blockedProcesses.AddLast(os.curProcess);
-            }
-            else
-            {
-                os.curProcess.getDescriptor().state = OSCore.ProcessState.READY;
-                os.readyProcesses.AddLast(os.curProcess);
+                if (os.curProcess.getDescriptor().state == OSCore.ProcessState.BLOCKED)
+                {
+                    os.readyProcesses.Remove(os.curProcess);
+                    os.blockedProcesses.AddLast(os.curProcess);
+                }
+                else
+                {
+                    os.curProcess.getDescriptor().state = OSCore.ProcessState.READY;
+                    os.readyProcesses.AddLast(os.curProcess);
+                }
             }
 
             os.curProcess = getHighestPriorityReadyProcess();
+            os.readyProcesses.Remove(os.curProcess);
+            os.curProcess.getDescriptor().state = OSCore.ProcessState.RUN;
         }
 
         private Process getHighestPriorityReadyProcess()

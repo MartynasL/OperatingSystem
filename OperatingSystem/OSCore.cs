@@ -8,6 +8,8 @@ namespace OperatingSystem
 {
     public class OSCore
     {
+        Form1 form = Form1.Self;
+
         public LinkedList<Process> processes;
         public LinkedList<Process> readyProcesses;
         public LinkedList<Process> blockedProcesses;
@@ -61,14 +63,18 @@ namespace OperatingSystem
             freeResources = new LinkedList<Resource>();
 
             processManager = new ProcessManager(this);
-            ramManager = new RAMManager(machine.memory, machine.memory.NUMBER_OF_BLOCKS);
-            supervisorMemManager = new SupervisorMemManager(machine.supervisorMemory, machine.supervisorMemory.NUMBER_OF_BLOCKS);
-
 
             currentProcID = 0;
             currentResID = 0;
 
             machine = new VirtualRealMachine.Machine();
+            ramManager = new RAMManager(machine.memory, machine.memory.NUMBER_OF_BLOCKS);
+            supervisorMemManager = new SupervisorMemManager(machine.supervisorMemory, machine.supervisorMemory.NUMBER_OF_BLOCKS);
+        }
+
+        public void executeOSStep()
+        {
+            curProcess.execute();
         }
 
         public Process createProcess(Process process, ProcessName processName)
@@ -121,6 +127,7 @@ namespace OperatingSystem
 
             processes.AddLast(tempProc);
             readyProcesses.AddLast(tempProc);
+            form.writeToOutputConsole("Created process: " + processName);
             processManager.execute();
             return tempProc;
         }
@@ -142,7 +149,9 @@ namespace OperatingSystem
             blockedProcesses.Remove(process);
             stoppedProcesses.Remove(process);
 
-            process.getDescriptor().parent.getDescriptor().childrenList.Remove(process);
+            process.getDescriptor().parent.getDescriptor().childrenList.Remove(process);            
+            form.writeToOutputConsole("Destroyed process: " + process.getDescriptor().externalID);
+            processManager.execute();
         }
 
         public void stopProcess(Process process)
@@ -166,6 +175,7 @@ namespace OperatingSystem
                     process.getDescriptor().state = ProcessState.STOPPED;
                     break;
             }
+            form.writeToOutputConsole("Stopped process: " + process.getDescriptor().externalID);
             processManager.execute();
         }
 
@@ -173,12 +183,15 @@ namespace OperatingSystem
         {
             stoppedProcesses.Remove(process);
             process.getDescriptor().state = ProcessState.READY;
+            form.writeToOutputConsole("Activated process: " + process.getDescriptor().externalID);
             processManager.execute();
         }
 
         public void changeProcessPriority(Process process, int newPriority)
         {
             process.getDescriptor().priority = newPriority;
+            form.writeToOutputConsole("Changed process " + process.getDescriptor().externalID 
+                + " priority to " + newPriority);
             processManager.execute();
         }
 
@@ -191,6 +204,8 @@ namespace OperatingSystem
 
             resources.AddLast(tempRes);
             freeResources.AddLast(tempRes);
+            form.writeToOutputConsole("Process " + process.getDescriptor().externalID
+                + " created resource: " + resourceName);
             tempRes.getManager().execute();
             return tempRes;
         }
@@ -204,12 +219,15 @@ namespace OperatingSystem
             resources.Remove(resource);
             freeResources.Remove(resource);
             usingResources.Remove(resource);
+            form.writeToOutputConsole("Destroyed resource: " + resource.getDescriptor().externalID);
         }
 
         public void requestResource(Process process, ResourceName resourceName)
         {
             process.getDescriptor().state = ProcessState.BLOCKED;
             process.getDescriptor().waitingResList.AddLast(resourceName);
+            form.writeToOutputConsole("Process " + process.getDescriptor().externalID 
+                + " requests: " + resourceName);
             resourcesManagerExecute(resourceName);
         }
 
@@ -225,6 +243,8 @@ namespace OperatingSystem
 
             freeResources.AddLast(resource);
             usingResources.Remove(resource);
+
+            form.writeToOutputConsole("Released resource: " + resource.getDescriptor().externalID);
 
             resource.getManager().execute();
         }
@@ -244,7 +264,11 @@ namespace OperatingSystem
 
             if (foundResource != null)
             {
-                foundResource.getManager().execute();                
+                foundResource.getManager().execute();
+            }
+            else
+            {
+                processManager.execute();
             }
         }
     }

@@ -31,6 +31,7 @@ namespace OperatingSystem
             this.processList = processList;
             this.ID = ID;
             this.savedState = new RegState();
+            this.externalID = externalID;
             this.processor = processor;
             this.os = os;
             this.state = state;
