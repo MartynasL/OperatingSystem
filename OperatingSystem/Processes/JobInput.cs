@@ -19,7 +19,7 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, processor, os, state,
                                            parent, priority)
         {
-            currentHDDJob = 0;
+            currentHDDJob = 10;
             supervisorBlocks = new int[10];
         }
 

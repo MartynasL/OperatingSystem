@@ -43,6 +43,7 @@ namespace OperatingSystem.Processes
                                 (int)descriptor.ownedResList.First.Value.getDescriptor().component - 10 + i);
                         }
                     }
+                    step++;
                     break;
                 case 4:
                     descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE, PRValue);

@@ -36,9 +36,12 @@ namespace OperatingSystem
             if (highestPriorityProcess != null)
             {
                 highestPriorityProcess.getDescriptor().ownedResList.AddLast(resource);
+                resource.getDescriptor().user = highestPriorityProcess;
                 highestPriorityProcess.getDescriptor().waitingResList.Remove(resource.getDescriptor().externalID);
                 os.usingResources.AddLast(resource);
                 os.freeResources.Remove(resource);
+                os.form.writeToOutputConsole("Process " + highestPriorityProcess.getDescriptor().externalID
+                    + " gets " + resource.getDescriptor().externalID);
 
                 if (highestPriorityProcess.getDescriptor().waitingResList.Count() == 0)
                 {

@@ -19,14 +19,16 @@ namespace OperatingSystem
         {
             if (os.curProcess != null)
             {
-                if (os.curProcess.getDescriptor().state == OSCore.ProcessState.BLOCKED)
-                {
-                    os.readyProcesses.Remove(os.curProcess);
-                    os.blockedProcesses.AddLast(os.curProcess);
-                }
-                else
+                if (os.curProcess.getDescriptor().state != OSCore.ProcessState.BLOCKED &&
+                    !os.readyProcesses.Contains(os.curProcess))
+                //{
+                //    os.readyProcesses.Remove(os.curProcess);
+                //    os.blockedProcesses.AddLast(os.curProcess);
+                //}
+                //else
                 {
                     os.curProcess.getDescriptor().state = OSCore.ProcessState.READY;
+                    os.stoppedProcesses.Remove(os.curProcess);
                     os.readyProcesses.AddLast(os.curProcess);
                 }
             }

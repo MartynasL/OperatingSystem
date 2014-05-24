@@ -8,7 +8,7 @@ namespace OperatingSystem
 {
     public class OSCore
     {
-        Form1 form = Form1.Self;
+        public Form1 form = Form1.Self;
 
         public LinkedList<Process> processes;
         public LinkedList<Process> readyProcesses;
@@ -225,6 +225,8 @@ namespace OperatingSystem
         public void requestResource(Process process, ResourceName resourceName)
         {
             process.getDescriptor().state = ProcessState.BLOCKED;
+            readyProcesses.Remove(process);
+            blockedProcesses.AddLast(process);
             process.getDescriptor().waitingResList.AddLast(resourceName);
             form.writeToOutputConsole("Process " + process.getDescriptor().externalID 
                 + " requests: " + resourceName);
@@ -233,11 +235,11 @@ namespace OperatingSystem
 
         public void releaseResource(Resource resource)
         {
-            if (resource.getDescriptor().externalID == ResourceName.VARTOTOJO_ATMINTIS ||
-                resource.getDescriptor().externalID == ResourceName.SUPERVIZORINE_ATMINTIS)
-            {
+            //if (resource.getDescriptor().externalID == ResourceName.VARTOTOJO_ATMINTIS ||
+            //    resource.getDescriptor().externalID == ResourceName.SUPERVIZORINE_ATMINTIS)
+            //{
                
-            }
+            //}
             resource.getDescriptor().user.getDescriptor().ownedResList.Remove(resource);
             resource.getDescriptor().user = null;
 

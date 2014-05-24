@@ -29,6 +29,7 @@ namespace OperatingSystem.Processes
                     descriptor.os.createProcess(this, OSCore.ProcessName.VIRTUAL_MACHINE);
                     descriptor.childrenList.Last.Value.getDescriptor()
                        .ownedResList.AddLast(descriptor.ownedResList.Last.Value);
+                    descriptor.ownedResList.Last.Value.getDescriptor().user = descriptor.childrenList.Last.Value;
                     descriptor.ownedResList.RemoveLast();
                     step++;
                     break;

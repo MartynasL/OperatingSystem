@@ -50,12 +50,14 @@ namespace OperatingSystem
                 VirtualRealMachine.Word PRValue = new VirtualRealMachine.Word(freeBlockNrStr);
                 blocks[freeBlockNr] = true;
 
+                int freeBlNumber;
+                string freeBlStr;
                 for (int i = 0; i < 10; i++)
                 {
-                    int freeBlNumber = getFreeBlockNumber();
-                    string freeBlStr = freeBlNumber.ToString();
+                    freeBlNumber = getFreeBlockNumber();
+                    freeBlStr = freeBlNumber.ToString();
                     pageTable.setBlockWord(i, new VirtualRealMachine.Word(freeBlStr));
-                    blocks[freeBlockNr] = true;
+                    blocks[freeBlNumber] = true;
                 }
                 return PRValue;
             }

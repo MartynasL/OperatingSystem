@@ -36,6 +36,7 @@ namespace OperatingSystem.Processes
                         descriptor.childrenList.Last.Value.getDescriptor()
                             .ownedResList.AddLast(descriptor.ownedResList.Last.Value);
                         JobGovernor childrenGovernor = (JobGovernor)descriptor.childrenList.Last.Value;
+                        descriptor.ownedResList.Last.Value.getDescriptor().user = childrenGovernor;
                         for (int i = 0; i < 10; i++)
                         {
                             if (machines[i] == false)
@@ -53,6 +54,7 @@ namespace OperatingSystem.Processes
                         JobGovernor childrenGovernor = (JobGovernor)descriptor.ownedResList.Last.Value.getDescriptor().creator;
                         machines[childrenGovernor.machineNumber] = false;
                     }
+                    step++;
                     break;
                 case 3:
                     step = 1;

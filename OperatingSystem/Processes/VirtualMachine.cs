@@ -33,21 +33,24 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 2:
-                    int i = 0;
-                    while (!descriptor.os.machine.cpu.stopMachine && i != 10000)
-                    {
-                        if (descriptor.os.machine.cpu.execute(descriptor.os.machine.interpretator) == true)
-                        {
-                            break;
-                        }
-                        i++;
-                    }
+                    //int i = 0;
+                    //while (!descriptor.os.machine.cpu.stopMachine && i != 10000)
+                    //{
+                    //    if (descriptor.os.machine.cpu.execute(descriptor.os.machine.interpretator) == true)
+                    //    {
+                    //        break;
+                    //    }
+                    //    i++;
+                    //}
+                    VirtualRealMachine.Form1 VMForm = new VirtualRealMachine.Form1();
+                    VMForm.machine = descriptor.os.machine;
+                    VMForm.ShowDialog();
                     step++;
                     break;
                 case 3:
                     descriptor.savedState.saveState(descriptor.os.machine.cpu);
-                    descriptor.os.createResource(this, OSCore.ResourceName.PERTRAUKIMAS, null);
                     descriptor.os.machine.cpu.MODE.setValue('S');
+                    descriptor.os.createResource(this, OSCore.ResourceName.PERTRAUKIMAS, null);
                     step++;
                     break;
                 case 4:
