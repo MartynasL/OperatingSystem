@@ -41,13 +41,21 @@ namespace OperatingSystem.Processes
                     break;
                 case 5:
                     destroyStaticResources();
+                    descriptor.os.destroyProcess(this);
+                    descriptor.os.curProcess = null;
+                    descriptor.os.form.writeToOutputConsole("OS HAS BEEN HALTED");
                     break;                    
             }
         }
 
         private void destroyStaticResources()
         {
-            foreach(Resource resource in descriptor.createdResList)
+            LinkedList<Resource> destrResList = new LinkedList<Resource>();
+            foreach (Resource resource in descriptor.createdResList)
+            {
+                destrResList.AddLast(resource);
+            }
+            foreach (Resource resource in destrResList)
             {
                 descriptor.os.destroyResource(resource);
             }
@@ -55,7 +63,12 @@ namespace OperatingSystem.Processes
 
         private void destroySystemProcesses()
         {
+            LinkedList<Process> destrProcList = new LinkedList<Process>();
             foreach (Process process in descriptor.childrenList)
+            {
+                destrProcList.AddLast(process);
+            }
+            foreach (Process process in destrProcList)
             {
                 descriptor.os.destroyProcess(process);
             }

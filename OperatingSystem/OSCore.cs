@@ -134,12 +134,22 @@ namespace OperatingSystem
 
         public void destroyProcess(Process process)
         {
+            LinkedList<Resource> destroyResList = new LinkedList<Resource>();
             foreach (Resource resource in process.getDescriptor().createdResList)
+            {
+                destroyResList.AddLast(resource);
+            }
+            foreach (Resource resource in destroyResList)
             {
                 destroyResource(resource);
             }
 
+            LinkedList<Process> destroyProcList = new LinkedList<Process>();
             foreach (Process proc in process.getDescriptor().childrenList)
+            {
+                destroyProcList.AddLast(proc);
+            }
+            foreach (Process proc in destroyProcList)
             {
                 destroyProcess(proc);
             }
@@ -149,9 +159,11 @@ namespace OperatingSystem
             blockedProcesses.Remove(process);
             stoppedProcesses.Remove(process);
 
-            process.getDescriptor().parent.getDescriptor().childrenList.Remove(process);            
+            if (process.getDescriptor().parent != null)
+            {
+                process.getDescriptor().parent.getDescriptor().childrenList.Remove(process);
+            }
             form.writeToOutputConsole("Destroyed process: " + process.getDescriptor().externalID);
-            processManager.execute();
         }
 
         public void stopProcess(Process process)
@@ -212,8 +224,11 @@ namespace OperatingSystem
 
         public void destroyResource(Resource resource)
         {
-            resource.getDescriptor().user.getDescriptor().ownedResList.Remove(resource);
-            resource.getDescriptor().user = null;
+            if (resource.getDescriptor().user != null)
+            {
+                resource.getDescriptor().user.getDescriptor().ownedResList.Remove(resource);
+                resource.getDescriptor().user = null;
+            }
             resource.getDescriptor().creator.getDescriptor().createdResList.Remove(resource);
 
             resources.Remove(resource);

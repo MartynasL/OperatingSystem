@@ -78,25 +78,25 @@ namespace OperatingSystem.Processes
 
             if (descriptor.os.machine.cpu.PI.getValue() != '0')
             {
-                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.PI.getValue(), 5);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.PI.getIntValue(), 5);
                 descriptor.os.machine.cpu.PI.setValue('0');
                 return "PI" + innerInterrupt;
             }
             if (descriptor.os.machine.cpu.SI.getValue() != '0')
             {
-                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.SI.getValue(), 5);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.SI.getIntValue(), 5);
                 descriptor.os.machine.cpu.SI.setValue('0');
                 return "SI" + innerInterrupt;
             }
             if (descriptor.os.machine.cpu.IOI.getValue() != '0')
             {
-                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.IOI.getValue(), 7);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.IOI.getIntValue(), 7);
                 descriptor.os.machine.cpu.IOI.setValue('0');
                 return "IOI" + innerInterrupt;
             }
             if (descriptor.os.machine.cpu.TI.getValue() != '0')
             {
-                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.TI.getValue(), 1);
+                innerInterrupt = innerIdentificate(descriptor.os.machine.cpu.TI.getIntValue(), 1);
                 descriptor.os.machine.cpu.TI.setValue('0');
                 return "TI" + innerInterrupt;
             }
@@ -117,7 +117,8 @@ namespace OperatingSystem.Processes
 
         private int identificateMachine()
         {
-            return descriptor.os.machine.cpu.M.getIntValue();
+            return (int)Char.GetNumericValue(descriptor.ownedResList.First.Value
+                .getDescriptor().creator.getDescriptor().savedState.Machine);
         }
     }
 }
