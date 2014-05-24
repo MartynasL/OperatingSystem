@@ -39,8 +39,9 @@ namespace OperatingSystem.Processes
                         for(int i = 0; i < 10; i++)
                         {
                             descriptor.os.machine.cpu.input(descriptor.os.machine.memory,
-                                descriptor.os.machine.hddManager, (PRValue.toInt() + j) * 10 + i,
-                                (int)descriptor.ownedResList.First.Value.getDescriptor().component - 10 + i);
+                                descriptor.os.machine.hddManager, descriptor.os.machine.memory
+                                .getWordAtAddress(PRValue.toInt() + j).toInt() * 10 + i,
+                                ((int)descriptor.ownedResList.First.Value.getDescriptor().component + j) * 10 + i);
                         }
                     }
                     step++;
