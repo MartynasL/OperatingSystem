@@ -25,20 +25,22 @@ namespace OperatingSystem
             int i = 0;
             foreach (string line in textBox1.Lines)
             {
-                memoryBlock.setBlockWord(i % 9, new VirtualRealMachine.Word(line));
+                memoryBlock.setBlockWord(i % 10, new VirtualRealMachine.Word(line));
                 i++;
-                if (i % 9 == 0)
+                if (i % 10 == 0)
                 {
                     inputDevice.enqueueInput(memoryBlock);
+                    memoryBlock = new VirtualRealMachine.MemoryBlock();
                 }
             }
-            while(i < 99)
+            while(i < 100)
             {
-                memoryBlock.setBlockWord(i % 9, new VirtualRealMachine.Word("0000"));
+                memoryBlock.setBlockWord(i % 10, new VirtualRealMachine.Word("0000"));
                 i++;
-                if (i % 9 == 0)
+                if (i % 10 == 0)
                 {
                     inputDevice.enqueueInput(memoryBlock);
+                    memoryBlock = new VirtualRealMachine.MemoryBlock();
                 }
             }
             this.Close();
