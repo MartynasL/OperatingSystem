@@ -16,11 +16,12 @@ namespace OperatingSystem.Processes
             : base(processList, ID, externalID, processor, os, state,
                                            parent, priority)
         {
-            descriptor.savedState.saveState(descriptor.os.machine.cpu);
             JobGovernor governor = (JobGovernor)parent;
             descriptor.os.machine.cpu.M.setValue((char)('0' + governor.machineNumber));
             descriptor.os.machine.cpu.PR.setValue((VirtualRealMachine.Word)governor.getDescriptor().ownedResList
                 .Last.Value.getDescriptor().component);
+            descriptor.os.machine.cpu.TIMER.setValue("10");
+            descriptor.savedState.saveState(descriptor.os.machine.cpu);
         }
 
         public override void execute()

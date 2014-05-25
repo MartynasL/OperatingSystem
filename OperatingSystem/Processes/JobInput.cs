@@ -44,6 +44,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 5:
+                    descriptor.os.form.showInputForm(descriptor.os.machine.inputDevice);
                     for (int i = 0; i < 10; i++)
                     {
                         supervisorBlocks[i] = descriptor.os.supervisorMemManager.getFreeBlock();
@@ -52,7 +53,8 @@ namespace OperatingSystem.Processes
                     {
                         descriptor.os.machine.cpu.input(descriptor.os.machine.supervisorMemory,
                             descriptor.os.machine.inputDevice, supervisorBlocks[i]);
-                    }                 
+                    }
+                    step++;
                     break;
                 case 6:
                     for (int i = 0; i < 10; i++)
@@ -60,6 +62,7 @@ namespace OperatingSystem.Processes
                         descriptor.os.machine.cpu.output(descriptor.os.machine.memory,
                             descriptor.os.machine.hddManager, supervisorBlocks[i], currentHDDJob + i);
                     }
+                    step++;
                     break;
                 case 7:
                     descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_ISORINEJE_ATMINTYJE, currentHDDJob);

@@ -44,6 +44,8 @@ namespace OperatingSystem.Processes
                     descriptor.os.destroyProcess(this);
                     descriptor.os.curProcess = null;
                     descriptor.os.form.writeToOutputConsole("OS HAS BEEN HALTED");
+                    descriptor.os.form.enableStart();
+                    descriptor.os.form.disableStep();
                     break;                    
             }
         }

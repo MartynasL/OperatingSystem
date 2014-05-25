@@ -35,6 +35,25 @@ namespace OperatingSystem
         private void startButton_Click(object sender, EventArgs e)
         {
             os.createProcess(null, OSCore.ProcessName.START_STOP);
+            stepButton.Enabled = true;
+            startButton.Enabled = false;
+        }
+
+        public void disableStep()
+        {
+            stepButton.Enabled = false;
+        }
+
+        public void enableStart()
+        {
+            startButton.Enabled = true;
+        }
+
+        public void showInputForm(VirtualRealMachine.InputDevice inputDevice)
+        {
+            InputForm form = new InputForm();
+            form.setInputDevice(inputDevice);
+            form.ShowDialog();
         }
     }
 }

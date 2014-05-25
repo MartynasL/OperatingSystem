@@ -55,6 +55,7 @@
             // 
             // stepButton
             // 
+            this.stepButton.Enabled = false;
             this.stepButton.Location = new System.Drawing.Point(12, 35);
             this.stepButton.Name = "stepButton";
             this.stepButton.Size = new System.Drawing.Size(75, 23);
