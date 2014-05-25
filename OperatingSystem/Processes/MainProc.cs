@@ -50,9 +50,9 @@ namespace OperatingSystem.Processes
                     }
                     else if (descriptor.ownedResList.Last.Value.getDescriptor().creator is JobGovernor)
                     {
-                        descriptor.os.destroyProcess(descriptor.ownedResList.Last.Value.getDescriptor().creator);
                         JobGovernor childrenGovernor = (JobGovernor)descriptor.ownedResList.Last.Value.getDescriptor().creator;
                         machines[childrenGovernor.machineNumber] = false;
+                        descriptor.os.destroyProcess(descriptor.ownedResList.Last.Value.getDescriptor().creator);
                     }
                     step++;
                     break;

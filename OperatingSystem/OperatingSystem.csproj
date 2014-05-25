@@ -110,7 +110,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\2 uzd\VirtualRealMachine\VirtualRealMachine.csproj">
+    <ProjectReference Include="..\..\VirtualRealMachine\VirtualRealMachine\VirtualRealMachine.csproj">
       <Project>{eec70a36-1506-4eeb-ac13-12bcc26cf289}</Project>
       <Name>VirtualRealMachine</Name>
     </ProjectReference>

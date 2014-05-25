@@ -40,7 +40,7 @@ namespace OperatingSystem.Processes
                         {
                             descriptor.os.machine.cpu.input(descriptor.os.machine.memory,
                                 descriptor.os.machine.hddManager, descriptor.os.machine.memory
-                                .getWordAtAddress(PRValue.toInt() + j).toInt() * 10 + i,
+                                .getWordAtAddress(PRValue.toInt() * 10 + j).toInt() * 10 + i,
                                 ((int)descriptor.ownedResList.First.Value.getDescriptor().component + j) * 10 + i);
                         }
                     }

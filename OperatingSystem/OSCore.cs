@@ -99,7 +99,7 @@ namespace OperatingSystem
                     break;
                 case ProcessName.JOB_INPUT:
                     tempProc = new Processes.JobInput(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 6);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 7);                                                                                                    
                     break;
                 case ProcessName.JOB_LOADER:
                     tempProc = new Processes.JobLoader(processes, intID, processName,
@@ -115,7 +115,7 @@ namespace OperatingSystem
                     break;
                 case ProcessName.START_STOP:
                     tempProc = new Processes.StartStop(processes, intID, processName,
-                        machine.cpu, this, ProcessState.READY, process, 7);                                                                                                    
+                        machine.cpu, this, ProcessState.READY, process, 8);                                                                                                    
                     break;
                 case ProcessName.VIRTUAL_MACHINE:
                     tempProc = new Processes.VirtualMachine(processes, intID, processName,

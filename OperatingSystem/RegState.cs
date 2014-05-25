@@ -14,18 +14,20 @@ namespace OperatingSystem
         public VirtualRealMachine.Word PR;
         public VirtualRealMachine.Word SP;
         public VirtualRealMachine.Word IC;
-        private char[] TIMER;
+        public char[] TIMER;
 
         public void saveState(VirtualRealMachine.CPU cpu)
         {
             this.Machine = cpu.M.getValue();
-            this.A = cpu.A.getValue();
-            this.B = cpu.B.getValue();
+            this.A = new VirtualRealMachine.Word(cpu.A.getValue().ToString());
+            this.B = new VirtualRealMachine.Word(cpu.B.getValue().ToString());
             this.C = cpu.C.getValue();
-            this.PR = cpu.PR.getValue();
-            this.SP = cpu.SP.getValue();
-            this.IC = cpu.IC.getValue();
-            this.TIMER = cpu.TIMER.getValue();
+            this.PR = new VirtualRealMachine.Word(cpu.PR.getValue().ToString());
+            this.SP = new VirtualRealMachine.Word(cpu.SP.getValue().ToString());
+            this.IC = new VirtualRealMachine.Word(cpu.IC.getValue().ToString());
+            this.TIMER = new char[2];
+            this.TIMER[0] = cpu.TIMER.getValue()[0];
+            this.TIMER[1] = cpu.TIMER.getValue()[1];
         }
 
         public void setState(VirtualRealMachine.CPU cpu)
