@@ -34,8 +34,15 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    descriptor.os.machine.cpu.output(descriptor.os.machine.supervisorMemory, descriptor.os.machine.outputDevice, 
-                        (int) descriptor.ownedResList.First<Resource>().getDescriptor().component);
+                    string component = (string) descriptor.ownedResList.First<Resource>().getDescriptor().component;
+                    char[] info = component.ToCharArray();
+                    int block = Convert.ToInt32(String.Concat(info[1], info[2]));
+                    if (info[0] == 'S')
+                        descriptor.os.machine.cpu.output(descriptor.os.machine.supervisorMemory, 
+                            descriptor.os.machine.outputDevice, block);
+                    else
+                        descriptor.os.machine.cpu.output(descriptor.os.machine.memory,
+                            descriptor.os.machine.outputDevice, block);
                     form.getOutput();
                     step++;
                     break;

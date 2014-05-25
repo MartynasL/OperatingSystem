@@ -73,63 +73,77 @@ namespace OperatingSystem.Processes
             switch (interrupt)
             {
                 case "PI1":                    
-                    int block = 14;
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);                    
+                    string component = "S14";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);                    
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);                    
                     break;
                 case "PI2":
-                    block = 15;
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    component = "S15";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "PI3":
-                    block = 16;
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    component = "S16";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "PI4":
-                    block = 17;
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    component = "S17";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "PI5":
-                    block = 18;
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    component = "S18";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "SI1":
-                    block = descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE, block);
+                    int block = descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_INPUT_LINE, block);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_IVESTA);
                     break;
                 case "SI2":
-                    block = descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
-                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    component = "V" + descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "SI3":
                     step = 5;
                     break;
                 case "IOI1":
-                    //msg
+                    component = "S19";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "IOI2":
-                    //msg
+                    component = "S20";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "IOI3":
-                    //msg
+                    component = "S21";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "IOI4":
-                    //msg
+                    component = "S22";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "IOI5":
-                    //msg
+                    component = "S23";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "IOI6":
-                    //msg
+                    component = "S24";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "IOI7":
-                    //msg
+                    component = "S25";
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, component);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "TI1":
                     //ready?

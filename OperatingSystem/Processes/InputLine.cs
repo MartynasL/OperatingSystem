@@ -24,7 +24,7 @@ namespace OperatingSystem.Processes
             switch (step)
             {
                 case 1:
-                    descriptor.os.requestResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_INPUT_LINE);
                     step++;
                     break;
                 case 2:
