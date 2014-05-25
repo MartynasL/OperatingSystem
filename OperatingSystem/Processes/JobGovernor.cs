@@ -9,6 +9,7 @@ namespace OperatingSystem.Processes
     public class JobGovernor: Process
     {
         public int machineNumber;
+        public Form1 form = Form1.Self;
 
         public JobGovernor(LinkedList<Process> processList,
                        int ID, OSCore.ProcessName externalID,
@@ -38,7 +39,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    handleInterrupt();
+                    handleInterrupt();                    
                     step++;
                     break;
                 case 4:
@@ -47,7 +48,7 @@ namespace OperatingSystem.Processes
                         if ((resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_ATSPAUSDINTA) ||
                         (resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_IVESTA))
                             descriptor.os.destroyResource(resource);
-                    }
+                    }                    
                     step = 2;
                     break;
                 case 5:
@@ -71,23 +72,33 @@ namespace OperatingSystem.Processes
 
             switch (interrupt)
             {
-                case "PI1":
-                    //msg
+                case "PI1":                    
+                    int block = 14;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);                    
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);                    
                     break;
                 case "PI2":
-                    //msg
+                    block = 15;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "PI3":
-                    //msg
+                    block = 16;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "PI4":
-                    //msg
+                    block = 17;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "PI5":
-                    //msg
+                    block = 18;
+                    descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PROCESUI_PRINT_LINE, block);
+                    descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "SI1":
-                    int block = descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
+                    block = descriptor.childrenList.First().getDescriptor().savedState.B.toInt() / 10;
                     descriptor.os.createResource(this, OSCore.ResourceName.PRANESIMAS_PEOCESUI_INPUT_LINE, block);
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_IVESTA);
                     break;

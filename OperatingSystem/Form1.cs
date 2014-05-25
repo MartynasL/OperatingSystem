@@ -55,5 +55,18 @@ namespace OperatingSystem
             form.setInputDevice(inputDevice);
             form.ShowDialog();
         }
+
+        public void getOutput()
+        {
+            string outputString = "";
+            VirtualRealMachine.MemoryBlock outputBlock = os.machine.outputDevice.getOutput();
+
+            for (int i = 0; i < 10; i++)
+            {
+                outputString += outputBlock.getBlockWord(i).ToString();
+            }
+
+            MessageBox.Show(outputString, "Output", MessageBoxButtons.OK);
+        }
     }
 }

@@ -19,6 +19,8 @@ namespace OperatingSystem.Processes
 
         }
 
+        public Form1 form = Form1.Self;
+
         public override void execute()
         {
             switch (step)
@@ -32,8 +34,9 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    descriptor.os.machine.cpu.output(descriptor.os.machine.memory, descriptor.os.machine.outputDevice, 
+                    descriptor.os.machine.cpu.output(descriptor.os.machine.supervisorMemory, descriptor.os.machine.outputDevice, 
                         (int) descriptor.ownedResList.First<Resource>().getDescriptor().component);
+                    form.getOutput();
                     step++;
                     break;
                 case 4:
