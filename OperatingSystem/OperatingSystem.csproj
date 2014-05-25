@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -80,6 +81,12 @@
     <Compile Include="Resource.cs" />
     <Compile Include="ResourceDescriptor.cs" />
     <Compile Include="ResourcesManager.cs" />
+    <Compile Include="SimpleInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleInput.Designer.cs">
+      <DependentUpon>SimpleInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupervisorMemManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -96,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SimpleInput.resx">
+      <DependentUpon>SimpleInput.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,7 +120,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\VirtualRealMachine\VirtualRealMachine\VirtualRealMachine.csproj">
+    <ProjectReference Include="..\..\2 uzd\VirtualRealMachine\VirtualRealMachine.csproj">
       <Project>{eec70a36-1506-4eeb-ac13-12bcc26cf289}</Project>
       <Name>VirtualRealMachine</Name>
     </ProjectReference>

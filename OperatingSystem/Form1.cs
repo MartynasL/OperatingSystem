@@ -68,5 +68,33 @@ namespace OperatingSystem
 
             MessageBox.Show(outputString, "Output", MessageBoxButtons.OK);
         }
+
+        public void getInput()
+        {
+            string inputString = Microsoft.VisualBasic.Interaction.
+                                    InputBox("Enter the input", "Input");
+            VirtualRealMachine.MemoryBlock inputBlock = new VirtualRealMachine.MemoryBlock();
+            string tempWordString = "";
+
+            for (int i = 0; i < 40; i = i + 4)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (inputString.Length > i + j)
+                    {
+                        tempWordString += inputString[i + j];
+                    }
+                    else
+                    {
+                        tempWordString += "0";
+                    }
+                }
+
+                inputBlock.setBlockWord(i / 4, new VirtualRealMachine.Word(tempWordString));
+                tempWordString = "";
+            }
+
+            os.machine.inputDevice.enqueueInput(inputBlock);
+        }
     }
 }
