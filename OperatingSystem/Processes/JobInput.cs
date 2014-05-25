@@ -59,8 +59,11 @@ namespace OperatingSystem.Processes
                 case 6:
                     for (int i = 0; i < 10; i++)
                     {
-                        descriptor.os.machine.cpu.output(descriptor.os.machine.memory,  //supervisorMemory?
-                            descriptor.os.machine.hddManager, supervisorBlocks[i], currentHDDJob + i);
+                        for (int j = 0; j < 10; j++)
+                        {
+                            descriptor.os.machine.cpu.output(descriptor.os.machine.supervisorMemory,
+                                descriptor.os.machine.hddManager, supervisorBlocks[i] * 10 + j, currentHDDJob + i * 10 + j);
+                        }
                     }
                     step++;
                     break;
