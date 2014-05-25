@@ -47,7 +47,10 @@ namespace OperatingSystem.Processes
                     {
                         if ((resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_ATSPAUSDINTA) ||
                         (resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_IVESTA))
+                        {
                             descriptor.os.destroyResource(resource);
+                            break;
+                        }
                     }                    
                     step = 2;
                     break;
