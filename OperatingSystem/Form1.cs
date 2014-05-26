@@ -19,8 +19,6 @@ namespace OperatingSystem
         {
             InitializeComponent();
             Self = this;
-            os = new OSCore();
-            initializeLists();
         }
 
         public void writeToOutputConsole(string outputString)
@@ -52,6 +50,8 @@ namespace OperatingSystem
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            os = new OSCore();
+            initializeLists();
             os.createProcess(null, OSCore.ProcessName.START_STOP);
             stepButton.Enabled = true;
             startButton.Enabled = false;

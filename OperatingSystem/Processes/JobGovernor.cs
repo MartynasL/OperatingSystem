@@ -61,6 +61,8 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 6:
+                    descriptor.os.ramManager.freeBlocks((VirtualRealMachine.Word) descriptor.childrenList
+                        .First.Value.getDescriptor().ownedResList.First.Value.getDescriptor().component);
                     descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                     descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE, null);
                     step++;
