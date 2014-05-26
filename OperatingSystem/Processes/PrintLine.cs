@@ -51,6 +51,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 4:
+                    descriptor.os.machine.cpu.tempK2 = descriptor.os.machine.cpu.K2.getValue();
                     descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                     step++;
                     break;
