@@ -116,8 +116,8 @@ namespace OperatingSystem
 
         private void initializeLists()
         {
-            listView1.View = View.Details;
-            listView2.View = View.Details;
+            listView1.View = View.SmallIcon;
+            listView2.View = View.SmallIcon;
 
             listView1.Columns.Add("Resource name");
             listView2.Columns.Add("Resource name");

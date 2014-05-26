@@ -120,15 +120,15 @@
             // 
             this.listView1.Location = new System.Drawing.Point(40, 278);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 148);
+            this.listView1.Size = new System.Drawing.Size(218, 148);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(242, 278);
+            this.listView2.Location = new System.Drawing.Point(280, 278);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(121, 148);
+            this.listView2.Size = new System.Drawing.Size(239, 148);
             this.listView2.TabIndex = 9;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -144,7 +144,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(242, 259);
+            this.label5.Location = new System.Drawing.Point(277, 259);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 11;
