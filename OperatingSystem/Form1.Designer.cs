@@ -40,6 +40,12 @@
             this.listView2 = new System.Windows.Forms.ListView();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.listView5 = new System.Windows.Forms.ListView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // outputConsole
@@ -118,24 +124,24 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(40, 278);
+            this.listView1.Location = new System.Drawing.Point(40, 261);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(218, 148);
+            this.listView1.Size = new System.Drawing.Size(280, 120);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(280, 278);
+            this.listView2.Location = new System.Drawing.Point(358, 261);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(239, 148);
+            this.listView2.Size = new System.Drawing.Size(280, 120);
             this.listView2.TabIndex = 9;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 259);
+            this.label4.Location = new System.Drawing.Point(37, 245);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 13);
             this.label4.TabIndex = 10;
@@ -144,17 +150,74 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(277, 259);
+            this.label5.Location = new System.Drawing.Point(355, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Used resources";
             // 
+            // listView3
+            // 
+            this.listView3.Location = new System.Drawing.Point(12, 400);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(175, 155);
+            this.listView3.TabIndex = 12;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView4
+            // 
+            this.listView4.Location = new System.Drawing.Point(226, 400);
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(188, 155);
+            this.listView4.TabIndex = 13;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView5
+            // 
+            this.listView5.Location = new System.Drawing.Point(441, 400);
+            this.listView5.Name = "listView5";
+            this.listView5.Size = new System.Drawing.Size(197, 155);
+            this.listView5.TabIndex = 14;
+            this.listView5.UseCompatibleStateImageBehavior = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 384);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Ready processes";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(223, 384);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Blocked processes";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(438, 384);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Stopped processes";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 438);
+            this.ClientSize = new System.Drawing.Size(671, 567);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.listView5);
+            this.Controls.Add(this.listView4);
+            this.Controls.Add(this.listView3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listView2);
@@ -168,7 +231,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.outputConsole);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(687, 476);
+            this.MaximumSize = new System.Drawing.Size(687, 700);
             this.MinimumSize = new System.Drawing.Size(687, 476);
             this.Name = "Form1";
             this.Text = "Operating System";
@@ -191,6 +254,12 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ListView listView5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
