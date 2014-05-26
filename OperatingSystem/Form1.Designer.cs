@@ -32,6 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.stepButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
+            this.currentProcessText = new System.Windows.Forms.TextBox();
+            this.currentStepBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // outputConsole
@@ -74,11 +78,49 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
+            // currentProcessText
+            // 
+            this.currentProcessText.Location = new System.Drawing.Point(12, 85);
+            this.currentProcessText.Name = "currentProcessText";
+            this.currentProcessText.ReadOnly = true;
+            this.currentProcessText.Size = new System.Drawing.Size(178, 20);
+            this.currentProcessText.TabIndex = 4;
+            // 
+            // currentStepBox
+            // 
+            this.currentStepBox.Location = new System.Drawing.Point(167, 111);
+            this.currentStepBox.Name = "currentStepBox";
+            this.currentStepBox.ReadOnly = true;
+            this.currentStepBox.Size = new System.Drawing.Size(23, 20);
+            this.currentStepBox.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Current Process";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(95, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Current Step";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 438);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.currentStepBox);
+            this.Controls.Add(this.currentProcessText);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.stepButton);
             this.Controls.Add(this.label1);
@@ -99,6 +141,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button stepButton;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.TextBox currentProcessText;
+        private System.Windows.Forms.TextBox currentStepBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

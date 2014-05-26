@@ -165,6 +165,8 @@ namespace OperatingSystem.Processes
                             descriptor.os.activateProcess(process);
                             descriptor.os.activateProcess(process.getDescriptor().childrenList.First.Value);
                             process.getDescriptor().childrenList.First.Value.getDescriptor().savedState.setTimerSavedValue("10");
+                            break;
+                        }
                     }
                     break;
             }

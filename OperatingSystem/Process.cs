@@ -33,5 +33,10 @@ namespace OperatingSystem
         {
             return descriptor;
         }
+
+        public int getStep()
+        {
+            return step;
+        }
     }
 }

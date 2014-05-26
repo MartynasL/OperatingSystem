@@ -30,6 +30,13 @@ namespace OperatingSystem
         private void stepButton_Click(object sender, EventArgs e)
         {
             os.executeOSStep();
+            refreshProcessText();
+        }
+
+        private void refreshProcessText()
+        {
+            currentProcessText.Text = "" + os.curProcess.getDescriptor().externalID;
+            currentStepBox.Text = "" + os.curProcess.getStep();
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -37,6 +44,7 @@ namespace OperatingSystem
             os.createProcess(null, OSCore.ProcessName.START_STOP);
             stepButton.Enabled = true;
             startButton.Enabled = false;
+            refreshProcessText();
         }
 
         public void disableStep()
