@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.runButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // outputConsole
@@ -207,11 +208,23 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Stopped processes";
             // 
+            // runButton
+            // 
+            this.runButton.Enabled = false;
+            this.runButton.Location = new System.Drawing.Point(12, 139);
+            this.runButton.Name = "runButton";
+            this.runButton.Size = new System.Drawing.Size(75, 23);
+            this.runButton.TabIndex = 18;
+            this.runButton.Text = "Run";
+            this.runButton.UseVisualStyleBackColor = true;
+            this.runButton.Click += new System.EventHandler(this.runButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 567);
+            this.Controls.Add(this.runButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -260,6 +273,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button runButton;
     }
 }
 

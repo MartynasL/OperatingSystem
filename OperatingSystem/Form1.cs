@@ -39,9 +39,10 @@ namespace OperatingSystem
         {
             if (os.curProcess != null)
             {
-            currentProcessText.Text = "" + os.curProcess.getDescriptor().externalID;
-            currentStepBox.Text = "" + os.curProcess.getStep();
-        }
+                currentProcessText.Text = os.curProcess.getDescriptor().externalID + " " 
+                    + os.curProcess.getDescriptor().ID;
+                currentStepBox.Text = "" + os.curProcess.getStep();
+            }
             else
             {
                 currentProcessText.Text = "";
@@ -54,6 +55,7 @@ namespace OperatingSystem
             os.createProcess(null, OSCore.ProcessName.START_STOP);
             stepButton.Enabled = true;
             startButton.Enabled = false;
+            runButton.Enabled = true;
             refreshProcessText();
         }
 
@@ -179,6 +181,17 @@ namespace OperatingSystem
             {
                 listView5.Items.Add(new ListViewItem(new string[] {process.getDescriptor().ID.ToString(),
                                                                     process.getDescriptor().externalID.ToString()}));
+            }
+        }
+
+        private void runButton_Click(object sender, EventArgs e)
+        {
+            runButton.Enabled = false;
+            while(os.curProcess != null)
+            {
+                os.executeOSStep();
+                refreshProcessText();
+                updateLists();
             }
         }
     }

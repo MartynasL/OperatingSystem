@@ -50,6 +50,7 @@ namespace OperatingSystem.Processes
                         (resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_IVESTA))
                         {
                             descriptor.os.destroyResource(resource);
+                            descriptor.os.destroyResource(descriptor.ownedResList.First.Value);
                             break;
                         }
                     }                    
