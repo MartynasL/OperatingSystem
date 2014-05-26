@@ -71,6 +71,7 @@ namespace OperatingSystem.Processes
                 case 7:
                     descriptor.os.machine.cpu.tempK3 = descriptor.os.machine.cpu.K3.getValue();
                     descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_ISORINEJE_ATMINTYJE, currentHDDJob);
+                    currentHDDJob += 10;
                     step++;
                     break;
                 case 8:
