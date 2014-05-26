@@ -20,6 +20,7 @@ namespace OperatingSystem
             InitializeComponent();
             Self = this;
             os = new OSCore();
+            initializeLists();
         }
 
         public void writeToOutputConsole(string outputString)
@@ -31,15 +32,16 @@ namespace OperatingSystem
         {
             os.executeOSStep();
             refreshProcessText();
+            updateLists();
         }
 
         private void refreshProcessText()
         {
             if (os.curProcess != null)
             {
-                currentProcessText.Text = "" + os.curProcess.getDescriptor().externalID;
-                currentStepBox.Text = "" + os.curProcess.getStep();
-            }
+            currentProcessText.Text = "" + os.curProcess.getDescriptor().externalID;
+            currentStepBox.Text = "" + os.curProcess.getStep();
+        }
             else
             {
                 currentProcessText.Text = "";
@@ -111,6 +113,33 @@ namespace OperatingSystem
             }
 
             os.machine.inputDevice.enqueueInput(inputBlock);
+        }
+
+        private void initializeLists()
+        {
+            listView1.View = View.SmallIcon;
+            listView2.View = View.SmallIcon;
+
+            listView1.Columns.Add("Resource name");
+            listView2.Columns.Add("Resource name");
+
+            updateLists();
+        }
+
+        private void updateLists()
+        {
+            listView1.Items.Clear();
+            listView2.Items.Clear();
+
+            foreach (Resource resource in os.freeResources)
+            {
+                listView1.Items.Add(new ListViewItem(resource.getDescriptor().externalID.ToString()));
+            }
+
+            foreach (Resource resource in os.usingResources)
+            {
+                listView2.Items.Add(new ListViewItem(resource.getDescriptor().externalID.ToString()));
+            }
         }
     }
 }
