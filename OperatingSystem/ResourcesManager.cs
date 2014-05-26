@@ -28,8 +28,29 @@ namespace OperatingSystem
                 {
                     if ((name == resource.getDescriptor().externalID) && (process.getDescriptor().priority > priority))
                     {
-                        highestPriorityProcess = process;
-                        priority = process.getDescriptor().priority;
+                        if (name == OSCore.ResourceName.IVYKO_PERTRAUKIMAS || name == OSCore.ResourceName.EILUTE_ATSPAUSDINTA
+                            || name == OSCore.ResourceName.EILUTE_IVESTA)
+                        {
+                            string machine = (string)resource.getDescriptor().component;
+                            for (int i = 0; i < machine.Length; i++)
+                            {
+                                if (!Char.IsDigit(machine, i))
+                                {
+                                    machine = machine.Substring(0, i);
+                                    break;
+                                }
+                            }
+                            if (process.getDescriptor().childrenList.First.Value.getDescriptor().ID == Convert.ToInt32(machine))
+                            {
+                                highestPriorityProcess = process;
+                                priority = process.getDescriptor().priority;
+                            }
+                        }
+                        else
+                        {
+                            highestPriorityProcess = process;
+                            priority = process.getDescriptor().priority;
+                        }
                     }
                 }
             }

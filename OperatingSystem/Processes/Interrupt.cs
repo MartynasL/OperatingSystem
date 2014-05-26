@@ -117,8 +117,7 @@ namespace OperatingSystem.Processes
 
         private int identificateMachine()
         {
-            return (int)Char.GetNumericValue(descriptor.ownedResList.First.Value
-                .getDescriptor().creator.getDescriptor().savedState.Machine);
+            return (int)descriptor.ownedResList.First.Value.getDescriptor().component;
         }
     }
 }

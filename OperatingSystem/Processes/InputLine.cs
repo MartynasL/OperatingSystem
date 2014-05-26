@@ -20,6 +20,7 @@ namespace OperatingSystem.Processes
         }
 
         public Form1 form = Form1.Self;
+        private string component = null;
 
         public override void execute()
         {
@@ -37,6 +38,8 @@ namespace OperatingSystem.Processes
                     form.getInput();
                     descriptor.os.machine.cpu.input(descriptor.os.machine.memory, descriptor.os.machine.inputDevice, 
                         (int) descriptor.ownedResList.First<Resource>().getDescriptor().component);
+                    component = (string)descriptor.ownedResList.First.Value.getDescriptor()
+                        .creator.getDescriptor().ownedResList.First.Value.getDescriptor().component;
                     step++;
                     break;
                 case 4:
@@ -48,7 +51,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 6:
-                    descriptor.os.createResource(this, OSCore.ResourceName.EILUTE_IVESTA, null); 
+                    descriptor.os.createResource(this, OSCore.ResourceName.EILUTE_IVESTA, component); 
                     step++;
                     break;
                 case 7:

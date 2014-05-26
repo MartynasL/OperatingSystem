@@ -71,7 +71,14 @@ namespace OperatingSystem.Processes
         private void handleInterrupt()
         {
             string interrupt = (string) descriptor.ownedResList.First().getDescriptor().component;
-            interrupt = interrupt.Substring(1);
+            for (int i = 0; i < interrupt.Length; i++)
+            {
+                if (!Char.IsDigit(interrupt, i))
+                {
+                    interrupt = interrupt.Substring(i);
+                    break;
+                }
+            }
 
             switch (interrupt)
             {
@@ -149,7 +156,16 @@ namespace OperatingSystem.Processes
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "TI1":
-                    //ready?
+                    descriptor.os.stopProcess(descriptor.childrenList.First.Value);
+                    descriptor.os.stopProcess(this);
+                    foreach (Process process in descriptor.os.stoppedProcesses)
+                    {
+                        if (process.getDescriptor().externalID == OSCore.ProcessName.JOB_GOVERNOR)
+                        {
+                            descriptor.os.activateProcess(process);
+                            descriptor.os.activateProcess(process.getDescriptor().childrenList.First.Value);
+                            process.getDescriptor().childrenList.First.Value.getDescriptor().savedState.setTimerSavedValue("10");
+                    }
                     break;
             }
         }

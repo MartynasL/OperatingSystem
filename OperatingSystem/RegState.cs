@@ -41,5 +41,11 @@ namespace OperatingSystem
             cpu.IC.setValue(IC);
             cpu.TIMER.setValue(new string(TIMER));
         }
+
+        public void setTimerSavedValue(string value)
+        {
+            this.TIMER[0] = value[0];
+            this.TIMER[1] = value[1];
+        }
     }
 }
