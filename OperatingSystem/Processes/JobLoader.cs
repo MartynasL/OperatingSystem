@@ -44,6 +44,7 @@ namespace OperatingSystem.Processes
                                 ((int)descriptor.ownedResList.First.Value.getDescriptor().component + j) * 10 + i);
                         }
                     }
+                    descriptor.os.machine.cpu.tempK3 = descriptor.os.machine.cpu.K3.getValue();
                     step++;
                     break;
                 case 4:

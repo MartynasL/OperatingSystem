@@ -36,7 +36,8 @@ namespace OperatingSystem.Processes
                     break;
                 case 3:
                     string component = (string) descriptor.ownedResList.First<Resource>().getDescriptor().component;
-                    char[] info = component.ToCharArray();
+                    char[] info = new char[3];
+                    component.ToCharArray().CopyTo(info, 0);
                     int block = Convert.ToInt32(String.Concat(info[1], info[2]));
                     if (info[0] == 'S')
                         descriptor.os.machine.cpu.output(descriptor.os.machine.supervisorMemory, 

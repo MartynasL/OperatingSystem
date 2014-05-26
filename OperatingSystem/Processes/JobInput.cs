@@ -57,6 +57,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 6:
+                    descriptor.os.machine.cpu.tempK1 = descriptor.os.machine.cpu.K1.getValue();
                     for (int i = 0; i < 10; i++)
                     {
                         for (int j = 0; j < 10; j++)
@@ -68,6 +69,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 7:
+                    descriptor.os.machine.cpu.tempK3 = descriptor.os.machine.cpu.K3.getValue();
                     descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_ISORINEJE_ATMINTYJE, currentHDDJob);
                     step++;
                     break;
@@ -83,7 +85,7 @@ namespace OperatingSystem.Processes
                     descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
-                case 10:
+                case 10:                    
                     descriptor.os.releaseResource(descriptor.ownedResList.Last<Resource>());
                     step++;
                     break;
