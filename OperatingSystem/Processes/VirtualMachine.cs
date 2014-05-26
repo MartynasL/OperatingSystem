@@ -21,8 +21,8 @@ namespace OperatingSystem.Processes
             descriptor.os.machine.cpu.PR.setValue((VirtualRealMachine.Word)governor.getDescriptor().ownedResList
                 .Last.Value.getDescriptor().component);
             descriptor.os.machine.cpu.TIMER.setValue("10");
-            descriptor.os.machine.cpu.SP.setValue(new VirtualRealMachine.Word(descriptor.os.machine.memory.
-                getWordAtAddress(descriptor.os.machine.cpu.PR.getValue().toInt() * 10 + 9).ToString()));
+            descriptor.os.machine.cpu.SP.setValue(new VirtualRealMachine.Word((descriptor.os.machine.memory.
+                getWordAtAddress(descriptor.os.machine.cpu.PR.getValue().toInt() * 10 + 9).toInt() * 10).ToString()));
             descriptor.savedState.saveState(descriptor.os.machine.cpu);
         }
 

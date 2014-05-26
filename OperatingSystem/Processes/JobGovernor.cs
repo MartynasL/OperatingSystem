@@ -60,6 +60,7 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 6:
+                    descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                     descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE, null);
                     step++;
                     break;

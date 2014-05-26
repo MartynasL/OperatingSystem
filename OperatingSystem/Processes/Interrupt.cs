@@ -39,6 +39,8 @@ namespace OperatingSystem.Processes
                     {
                         descriptor.os.machine.cpu.SI.setValue('0');
                         descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIES_IVEDIMAS, null);
+                        descriptor.os.activateProcess(descriptor.ownedResList.First.Value.getDescriptor().creator);
+                        descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                         step = 1;
                     }
                     else
@@ -49,6 +51,8 @@ namespace OperatingSystem.Processes
                     {
                         descriptor.os.machine.cpu.SI.setValue('0');
                         descriptor.os.createResource(this, OSCore.ResourceName.PABAIGA, null);
+                        descriptor.os.activateProcess(descriptor.ownedResList.First.Value.getDescriptor().creator);
+                        descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                         step = 1;
                     }
                     else
