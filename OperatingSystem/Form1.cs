@@ -117,11 +117,27 @@ namespace OperatingSystem
 
         private void initializeLists()
         {
-            listView1.View = View.SmallIcon;
-            listView2.View = View.SmallIcon;
+            listView1.View = View.Details;
+            listView2.View = View.Details;
+            listView3.View = View.Details;
+            listView4.View = View.Details;
+            listView5.View = View.Details;
 
-            listView1.Columns.Add("Resource name");
-            listView2.Columns.Add("Resource name");
+            listView1.Columns.Add("ID");
+            listView1.Columns.Add("External ID").Width = -2;
+
+
+            listView2.Columns.Add("ID");
+            listView2.Columns.Add("External ID").Width = -2;
+
+            listView3.Columns.Add("ID");
+            listView3.Columns.Add("External ID").Width = -2;
+
+            listView4.Columns.Add("ID");
+            listView4.Columns.Add("External ID").Width = -2;
+
+            listView5.Columns.Add("ID");
+            listView5.Columns.Add("External ID").Width = -2;
 
             updateLists();
         }
@@ -130,15 +146,39 @@ namespace OperatingSystem
         {
             listView1.Items.Clear();
             listView2.Items.Clear();
+            listView3.Items.Clear();
+            listView4.Items.Clear();
+            listView5.Items.Clear();
+
 
             foreach (Resource resource in os.freeResources)
             {
-                listView1.Items.Add(new ListViewItem(resource.getDescriptor().externalID.ToString()));
+                listView1.Items.Add(new ListViewItem(new string[] {resource.getDescriptor().ID.ToString(),
+                                                                    resource.getDescriptor().externalID.ToString()}));
             }
 
             foreach (Resource resource in os.usingResources)
             {
-                listView2.Items.Add(new ListViewItem(resource.getDescriptor().externalID.ToString()));
+                listView2.Items.Add(new ListViewItem(new string[] {resource.getDescriptor().ID.ToString(),
+                                                                    resource.getDescriptor().externalID.ToString()}));
+            }
+
+            foreach (Process process in os.readyProcesses)
+            {
+                listView3.Items.Add(new ListViewItem(new string[] {process.getDescriptor().ID.ToString(),
+                                                                    process.getDescriptor().externalID.ToString()}));
+            }
+
+            foreach (Process process in os.blockedProcesses)
+            {
+                listView4.Items.Add(new ListViewItem(new string[] {process.getDescriptor().ID.ToString(),
+                                                                    process.getDescriptor().externalID.ToString()}));
+            }
+
+            foreach (Process process in os.stoppedProcesses)
+            {
+                listView5.Items.Add(new ListViewItem(new string[] {process.getDescriptor().ID.ToString(),
+                                                                    process.getDescriptor().externalID.ToString()}));
             }
         }
     }
