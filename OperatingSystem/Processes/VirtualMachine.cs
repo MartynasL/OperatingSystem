@@ -51,6 +51,7 @@ namespace OperatingSystem.Processes
                 case 3:
                     descriptor.savedState.saveState(descriptor.os.machine.cpu);
                     descriptor.os.machine.cpu.MODE.setValue('S');
+                    descriptor.os.stopProcess(this);
                     descriptor.os.createResource(this, OSCore.ResourceName.PERTRAUKIMAS, descriptor.ID);
                     step++;
                     break;

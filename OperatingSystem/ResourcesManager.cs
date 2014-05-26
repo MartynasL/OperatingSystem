@@ -61,8 +61,8 @@ namespace OperatingSystem
                 highestPriorityProcess.getDescriptor().waitingResList.Remove(resource.getDescriptor().externalID);
                 os.usingResources.AddLast(resource);
                 os.freeResources.Remove(resource);
-                os.form.writeToOutputConsole("Process " + highestPriorityProcess.getDescriptor().externalID
-                    + " gets " + resource.getDescriptor().externalID);
+                os.form.writeToOutputConsole("Process " + highestPriorityProcess.getDescriptor().externalID + " ID: " + highestPriorityProcess.getDescriptor().ID
+                    + " gets " + resource.getDescriptor().externalID + " ID: " + resource.getDescriptor().ID);
 
                 if (highestPriorityProcess.getDescriptor().waitingResList.Count() == 0)
                 {

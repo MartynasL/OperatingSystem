@@ -127,7 +127,7 @@ namespace OperatingSystem
 
             processes.AddLast(tempProc);
             readyProcesses.AddLast(tempProc);
-            form.writeToOutputConsole("Created process: " + processName);
+            form.writeToOutputConsole("Created process: " + processName + " ID: " + tempProc.getDescriptor().ID);
             processManager.execute();
             return tempProc;
         }
@@ -163,7 +163,7 @@ namespace OperatingSystem
             {
                 process.getDescriptor().parent.getDescriptor().childrenList.Remove(process);
             }
-            form.writeToOutputConsole("Destroyed process: " + process.getDescriptor().externalID);
+            form.writeToOutputConsole("Destroyed process: " + process.getDescriptor().externalID + " ID: " + process.getDescriptor().ID);
         }
 
         public void stopProcess(Process process)
@@ -187,7 +187,7 @@ namespace OperatingSystem
                     process.getDescriptor().state = ProcessState.STOPPED;
                     break;
             }
-            form.writeToOutputConsole("Stopped process: " + process.getDescriptor().externalID);
+            form.writeToOutputConsole("Stopped process: " + process.getDescriptor().externalID + " ID: " + process.getDescriptor().ID);
             processManager.execute();
         }
 
@@ -195,14 +195,14 @@ namespace OperatingSystem
         {
             stoppedProcesses.Remove(process);
             process.getDescriptor().state = ProcessState.READY;
-            form.writeToOutputConsole("Activated process: " + process.getDescriptor().externalID);
+            form.writeToOutputConsole("Activated process: " + process.getDescriptor().externalID + " ID: " + process.getDescriptor().ID);
             processManager.execute();
         }
 
         public void changeProcessPriority(Process process, int newPriority)
         {
             process.getDescriptor().priority = newPriority;
-            form.writeToOutputConsole("Changed process " + process.getDescriptor().externalID 
+            form.writeToOutputConsole("Changed process " + process.getDescriptor().externalID + " ID: " + process.getDescriptor().ID
                 + " priority to " + newPriority);
             processManager.execute();
         }
@@ -216,8 +216,8 @@ namespace OperatingSystem
 
             resources.AddLast(tempRes);
             freeResources.AddLast(tempRes);
-            form.writeToOutputConsole("Process " + process.getDescriptor().externalID
-                + " created resource: " + resourceName);
+            form.writeToOutputConsole("Process " + process.getDescriptor().externalID + " ID: " + process.getDescriptor().ID
+                + " created resource: " + resourceName + " ID: " + tempRes.getDescriptor().ID);
             tempRes.getManager().execute();
             return tempRes;
         }
@@ -234,7 +234,7 @@ namespace OperatingSystem
             resources.Remove(resource);
             freeResources.Remove(resource);
             usingResources.Remove(resource);
-            form.writeToOutputConsole("Destroyed resource: " + resource.getDescriptor().externalID);
+            form.writeToOutputConsole("Destroyed resource: " + resource.getDescriptor().externalID + " ID: " + resource.getDescriptor().ID);
         }
 
         public void requestResource(Process process, ResourceName resourceName)
@@ -243,7 +243,7 @@ namespace OperatingSystem
             readyProcesses.Remove(process);
             blockedProcesses.AddLast(process);
             process.getDescriptor().waitingResList.AddLast(resourceName);
-            form.writeToOutputConsole("Process " + process.getDescriptor().externalID 
+            form.writeToOutputConsole("Process " + process.getDescriptor().externalID + " ID: " + process.getDescriptor().ID
                 + " requests: " + resourceName);
             resourcesManagerExecute(resourceName);
         }
@@ -261,7 +261,7 @@ namespace OperatingSystem
             freeResources.AddLast(resource);
             usingResources.Remove(resource);
 
-            form.writeToOutputConsole("Released resource: " + resource.getDescriptor().externalID);
+            form.writeToOutputConsole("Released resource: " + resource.getDescriptor().externalID + " ID: " + resource.getDescriptor().ID);
 
             resource.getManager().execute();
         }

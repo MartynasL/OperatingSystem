@@ -39,7 +39,8 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    handleInterrupt();                    
+                    handleInterrupt();
+                    descriptor.os.activateProcess(descriptor.childrenList.Last.Value);
                     step++;
                     break;
                 case 4:
@@ -156,18 +157,19 @@ namespace OperatingSystem.Processes
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "TI1":
-                    descriptor.os.stopProcess(descriptor.childrenList.First.Value);
-                    descriptor.os.stopProcess(this);
-                    foreach (Process process in descriptor.os.stoppedProcesses)
-                    {
-                        if (process.getDescriptor().externalID == OSCore.ProcessName.JOB_GOVERNOR)
-                        {
-                            descriptor.os.activateProcess(process);
-                            descriptor.os.activateProcess(process.getDescriptor().childrenList.First.Value);
-                            process.getDescriptor().childrenList.First.Value.getDescriptor().savedState.setTimerSavedValue("10");
-                            break;
-                        }
-                    }
+                    //descriptor.os.stopProcess(descriptor.childrenList.First.Value);
+                    //descriptor.os.stopProcess(this);
+                    //foreach (Process process in descriptor.os.stoppedProcesses)
+                    //{
+                    //    if (process.getDescriptor().externalID == OSCore.ProcessName.JOB_GOVERNOR)
+                    //    {
+                    //        descriptor.os.activateProcess(process);
+                    //        descriptor.os.activateProcess(process.getDescriptor().childrenList.First.Value);
+                            //process.getDescriptor().childrenList.First.Value.getDescriptor().savedState.setTimerSavedValue("10");
+                    //        break;
+                    //    }
+                    //}
+                    descriptor.childrenList.First.Value.getDescriptor().savedState.setTimerSavedValue("10");
                     break;
             }
         }
