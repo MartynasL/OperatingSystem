@@ -21,6 +21,8 @@ namespace OperatingSystem.Processes
             descriptor.os.machine.cpu.PR.setValue((VirtualRealMachine.Word)governor.getDescriptor().ownedResList
                 .Last.Value.getDescriptor().component);
             descriptor.os.machine.cpu.TIMER.setValue("10");
+            descriptor.os.machine.cpu.SP.setValue(new VirtualRealMachine.Word(descriptor.os.machine.memory.
+                getWordAtAddress(descriptor.os.machine.cpu.PR.getValue().toInt() * 10 + 9).ToString()));
             descriptor.savedState.saveState(descriptor.os.machine.cpu);
         }
 
@@ -49,10 +51,11 @@ namespace OperatingSystem.Processes
                     step++;
                     break;
                 case 3:
-                    descriptor.savedState.saveState(descriptor.os.machine.cpu);
+                    descriptor.savedState.saveState(descriptor.processor);
+                    descriptor.savedState.refreshCPU(descriptor.processor);
                     descriptor.os.machine.cpu.MODE.setValue('S');
-                    descriptor.os.stopProcess(this);
                     descriptor.os.createResource(this, OSCore.ResourceName.PERTRAUKIMAS, descriptor.ID);
+                    descriptor.os.stopProcess(this);
                     step++;
                     break;
                 case 4:

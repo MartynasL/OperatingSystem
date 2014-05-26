@@ -47,5 +47,17 @@ namespace OperatingSystem
             this.TIMER[0] = value[0];
             this.TIMER[1] = value[1];
         }
+
+        public void refreshCPU(VirtualRealMachine.CPU cpu)
+        {
+            cpu.M.setValue('0');
+            cpu.A.setValue(new VirtualRealMachine.Word("0000"));
+            cpu.B.setValue(new VirtualRealMachine.Word("0000"));
+            cpu.C.setValue('0');
+            cpu.PR.setValue(new VirtualRealMachine.Word("0000"));
+            cpu.SP.setValue(new VirtualRealMachine.Word("0000"));
+            cpu.IC.setValue(new VirtualRealMachine.Word("0000"));
+            cpu.TIMER.setValue("00");
+        }
     }
 }

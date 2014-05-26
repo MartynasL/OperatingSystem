@@ -171,7 +171,7 @@ namespace OperatingSystem
             switch (process.getDescriptor().state)
             {
                 case ProcessState.RUN:
-                    readyProcesses.AddLast(process);
+                    stoppedProcesses.AddLast(process);
                     process.getDescriptor().state = ProcessState.STOPPED;
                     break;
 
@@ -195,6 +195,7 @@ namespace OperatingSystem
         {
             stoppedProcesses.Remove(process);
             process.getDescriptor().state = ProcessState.READY;
+            readyProcesses.AddLast(process);
             form.writeToOutputConsole("Activated process: " + process.getDescriptor().externalID + " ID: " + process.getDescriptor().ID);
             processManager.execute();
         }

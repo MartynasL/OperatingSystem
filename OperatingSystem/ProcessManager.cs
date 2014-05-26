@@ -20,7 +20,8 @@ namespace OperatingSystem
             if (os.curProcess != null)
             {
                 if (os.curProcess.getDescriptor().state != OSCore.ProcessState.BLOCKED &&
-                    !os.readyProcesses.Contains(os.curProcess))
+                    !os.readyProcesses.Contains(os.curProcess) &&
+                    os.curProcess.getDescriptor().state != OSCore.ProcessState.STOPPED)
                 //{
                 //    os.readyProcesses.Remove(os.curProcess);
                 //    os.blockedProcesses.AddLast(os.curProcess);

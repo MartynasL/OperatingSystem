@@ -35,8 +35,16 @@ namespace OperatingSystem
 
         private void refreshProcessText()
         {
-            currentProcessText.Text = "" + os.curProcess.getDescriptor().externalID;
-            currentStepBox.Text = "" + os.curProcess.getStep();
+            if (os.curProcess != null)
+            {
+                currentProcessText.Text = "" + os.curProcess.getDescriptor().externalID;
+                currentStepBox.Text = "" + os.curProcess.getStep();
+            }
+            else
+            {
+                currentProcessText.Text = "";
+                currentStepBox.Text = "";
+            }
         }
 
         private void startButton_Click(object sender, EventArgs e)
