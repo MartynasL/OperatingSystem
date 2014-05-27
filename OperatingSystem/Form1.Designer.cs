@@ -244,8 +244,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.outputConsole);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(687, 700);
-            this.MinimumSize = new System.Drawing.Size(687, 476);
+            this.MaximumSize = new System.Drawing.Size(687, 605);
+            this.MinimumSize = new System.Drawing.Size(687, 605);
             this.Name = "Form1";
             this.Text = "Operating System";
             this.ResumeLayout(false);

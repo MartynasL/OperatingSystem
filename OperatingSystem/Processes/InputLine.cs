@@ -39,7 +39,7 @@ namespace OperatingSystem.Processes
                     descriptor.os.machine.cpu.input(descriptor.os.machine.memory, descriptor.os.machine.inputDevice, 
                         (int) descriptor.ownedResList.First<Resource>().getDescriptor().component);
                     component = (string)descriptor.ownedResList.First.Value.getDescriptor()
-                        .creator.getDescriptor().ownedResList.First.Value.getDescriptor().component;
+                        .creator.getDescriptor().ownedResList.Last.Value.getDescriptor().component;
                     step++;
                     break;
                 case 4:

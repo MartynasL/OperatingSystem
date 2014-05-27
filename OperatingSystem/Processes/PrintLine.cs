@@ -47,7 +47,7 @@ namespace OperatingSystem.Processes
                             descriptor.os.machine.outputDevice, block);
                     form.getOutput();
                     comp = (string)descriptor.ownedResList.First.Value.getDescriptor()
-                        .creator.getDescriptor().ownedResList.First.Value.getDescriptor().component;
+                        .creator.getDescriptor().ownedResList.Last.Value.getDescriptor().component;
                     step++;
                     break;
                 case 4:

@@ -28,10 +28,10 @@ namespace OperatingSystem.Processes
             {
                 case 1:
                     descriptor.os.createProcess(this, OSCore.ProcessName.VIRTUAL_MACHINE);
-                    descriptor.childrenList.Last.Value.getDescriptor()
-                       .ownedResList.AddLast(descriptor.ownedResList.Last.Value);
-                    descriptor.ownedResList.Last.Value.getDescriptor().user = descriptor.childrenList.Last.Value;
-                    descriptor.ownedResList.RemoveLast();
+                    //descriptor.childrenList.Last.Value.getDescriptor()
+                    //   .ownedResList.AddLast(descriptor.ownedResList.Last.Value);
+                    //descriptor.ownedResList.Last.Value.getDescriptor().user = descriptor.childrenList.Last.Value;
+                    //descriptor.ownedResList.RemoveLast();
                     step++;
                     break;
                 case 2:
@@ -50,20 +50,22 @@ namespace OperatingSystem.Processes
                         (resource.getDescriptor().externalID == OSCore.ResourceName.EILUTE_IVESTA))
                         {
                             descriptor.os.destroyResource(resource);
-                            descriptor.os.destroyResource(descriptor.ownedResList.First.Value);
+                            //descriptor.os.destroyResource(descriptor.ownedResList.Last.Value);
                             break;
                         }
-                    }                    
+                    }
+                    descriptor.os.destroyResource(descriptor.ownedResList.Last<Resource>());
                     step = 2;
                     break;
                 case 5:
+                    descriptor.os.ramManager.freeBlocks((VirtualRealMachine.Word)descriptor.ownedResList.First.
+                        Value.getDescriptor().component);
                     descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
                     step++;
                     break;
                 case 6:
-                    descriptor.os.ramManager.freeBlocks((VirtualRealMachine.Word) descriptor.childrenList
-                        .First.Value.getDescriptor().ownedResList.First.Value.getDescriptor().component);
-                    descriptor.os.destroyResource(descriptor.ownedResList.First<Resource>());
+                    //descriptor.os.ramManager.freeBlocks((VirtualRealMachine.Word)descriptor.childrenList
+                    //    .First.Value.getDescriptor().ownedResList.First.Value.getDescriptor().component);
                     descriptor.os.createResource(this, OSCore.ResourceName.UZDUOTIS_VARTOTOJO_ATMINTYJE, null);
                     step++;
                     break;
@@ -75,7 +77,7 @@ namespace OperatingSystem.Processes
 
         private void handleInterrupt()
         {
-            string interrupt = (string) descriptor.ownedResList.First().getDescriptor().component;
+            string interrupt = (string) descriptor.ownedResList.Last().getDescriptor().component;
             for (int i = 0; i < interrupt.Length; i++)
             {
                 if (!Char.IsDigit(interrupt, i))
@@ -123,7 +125,8 @@ namespace OperatingSystem.Processes
                     descriptor.os.requestResource(this, OSCore.ResourceName.EILUTE_ATSPAUSDINTA);
                     break;
                 case "SI3":
-                    step = 5;
+                    descriptor.os.destroyResource(descriptor.ownedResList.Last<Resource>());
+                    step = 4;
                     break;
                 case "IOI1":
                     component = "S19";
