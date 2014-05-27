@@ -187,12 +187,23 @@ namespace OperatingSystem
         private void runButton_Click(object sender, EventArgs e)
         {
             runButton.Enabled = false;
+            stepButton.Enabled = false;
             while(os.curProcess != null)
             {
                 os.executeOSStep();
                 refreshProcessText();
                 updateLists();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            os.machine.cpu.SI.setValue('5');
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            os.machine.cpu.SI.setValue('4');
         }
     }
 }

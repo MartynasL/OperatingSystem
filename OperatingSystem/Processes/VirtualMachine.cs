@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace OperatingSystem.Processes
 {
@@ -45,9 +46,14 @@ namespace OperatingSystem.Processes
                     //    }
                     //    i++;
                     //}
-                    VirtualRealMachine.Form1 VMForm = new VirtualRealMachine.Form1();
-                    VMForm.machine = descriptor.os.machine;
-                    VMForm.ShowDialog();
+                    //VirtualRealMachine.Form1 VMForm = new VirtualRealMachine.Form1();
+                    //VMForm.machine = descriptor.os.machine;
+                    //VMForm.ShowDialog();
+                    while (!descriptor.os.machine.cpu.execute(descriptor.os.machine.interpretator))
+                    {
+                        Application.DoEvents();
+                        //Thread.Sleep(TimeSpan.FromMilliseconds(50));
+                    }
                     step++;
                     break;
                 case 3:
